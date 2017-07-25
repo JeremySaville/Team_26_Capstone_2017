@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace App1 {
+namespace DiabetesApp {
     public partial class MainPage : ContentPage {
 
         private const string FirebaseURL = "https://diabetesarp.firebaseio.com/";
@@ -36,6 +36,7 @@ namespace App1 {
                 status.Text = item.Object.name;
                 if (item.Object.name.ToLower().Equals(uName.ToLower())){
                     loggedIn = item.Object.password.Equals(pWord);
+                    uName = item.Object.name;
                 }
             }
 

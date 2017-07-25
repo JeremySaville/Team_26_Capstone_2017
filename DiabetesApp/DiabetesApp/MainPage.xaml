@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:App1"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             x:Class="App1.MainPage"
+             x:Class="DiabetesApp.MainPage"
              Style="{StaticResource pageStyle}">
     <StackLayout>
         <Label Text="Diabetes Management App" 

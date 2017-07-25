@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace App1{
+namespace DiabetesApp{
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class HomePage : ContentPage{
 
@@ -42,7 +42,7 @@ namespace App1{
                 .OnceAsync<User>();
 
             foreach (var item in items) {
-                if (item.Object.name.Equals(username)) {
+                if (item.Object.name.ToLower().Equals(username.ToLower())) {
                     bdaylabel.Text = $"Birthday: {item.Object.birthday}";
                 }
             }

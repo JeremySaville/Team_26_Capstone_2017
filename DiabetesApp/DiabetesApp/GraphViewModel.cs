@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace App1{
+namespace DiabetesApp{
     class GraphViewModel : INotifyPropertyChanged {
         public event PropertyChangedEventHandler PropertyChanged;
 
