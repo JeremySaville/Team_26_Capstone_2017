@@ -1,4 +1,6 @@
-﻿using OxyPlot;
+﻿using App1.DataTypes;
+using Firebase.Xamarin.Database;
+using OxyPlot;
 using OxyPlot.Axes;
 using OxyPlot.Series;
 using System;
@@ -17,15 +19,33 @@ namespace App1{
         String username;
         public PlotModel BSLModel { get; set; }
 
-		public HomePage (String username, String birthdate){
+        private const string FirebaseURL = "https://diabetesarp.firebaseio.com/";
+
+        public HomePage (String username){
 			InitializeComponent ();
             this.username = username;
             welcomeLabel.Text = $"Hello {username}";
-            bdaylabel.Text = $"Birthday: {birthdate}";
+
+            updateBirthday();
+
             NavigationPage.SetHasNavigationBar(this, true);
 
             var viewmodel = new GraphViewModel();
             this.BindingContext = viewmodel;
+        }
+
+        private async void updateBirthday() {
+            var firebase = new FirebaseClient(FirebaseURL);
+
+            var items = await firebase
+                .Child("users")
+                .OnceAsync<User>();
+
+            foreach (var item in items) {
+                if (item.Object.name.Equals(username)) {
+                    bdaylabel.Text = $"Birthday: {item.Object.birthday}";
+                }
+            }
         }
 
     }

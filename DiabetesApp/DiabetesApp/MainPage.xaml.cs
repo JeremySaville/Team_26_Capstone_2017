@@ -11,7 +11,7 @@ using Xamarin.Forms;
 namespace App1 {
     public partial class MainPage : ContentPage {
 
-        private const string FirebaseURL = "https://testapp-18ee0.firebaseio.com/";
+        private const string FirebaseURL = "https://diabetesarp.firebaseio.com/";
 
         public MainPage() {
             InitializeComponent();
@@ -32,17 +32,16 @@ namespace App1 {
                 .Child("users")
                 .OnceAsync<User>();
 
-            status.Text = "Items Retrieved";
-
             foreach(var item in items){
-                if (item.Object.name.Equals(uName)){
+                status.Text = item.Object.name;
+                if (item.Object.name.ToLower().Equals(uName.ToLower())){
                     loggedIn = item.Object.password.Equals(pWord);
                 }
             }
 
             if (loggedIn){
                 status.Text = "Success";
-                var nextPage = new HomePage(uName, bDate);
+                var nextPage = new HomePage(uName);
                 await Navigation.PushAsync(nextPage);
             }
             else{

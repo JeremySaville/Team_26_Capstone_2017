@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "209826641196",
-    "firebase_url": "https://testapp-18ee0.firebaseio.com",
-    "project_id": "testapp-18ee0",
-    "storage_bucket": "testapp-18ee0.appspot.com"
+    "project_number": "411612735580",
+    "firebase_url": "https://diabetesarp.firebaseio.com",
+    "project_id": "diabetesarp",
+    "storage_bucket": "diabetesarp.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:209826641196:android:b85ff87af51c851a",
+        "mobilesdk_app_id": "1:411612735580:android:1205441ea36e02ac",
         "android_client_info": {
-          "package_name": "com.xamarin.App1"
+          "package_name": "com.xamarin.diabetesapp.android"
         }
       },
       "oauth_client": [
         {
-          "client_id": "209826641196-pas8f7b93ni3a3mj3tcudhd69utn8uap.apps.googleusercontent.com",
+          "client_id": "411612735580-tcrd75ino1i4rb897d51e935gqj963d4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.xamarin.App1",
-            "certificate_hash": "963665487f71cfcb5af551d65f93e8e2b6f9ca9f"
+            "package_name": "com.xamarin.diabetesapp.android",
+            "certificate_hash": "2d1b0a0c2be206c75a652b6c906e929b1614b3fd"
           }
         },
         {
-          "client_id": "209826641196-8pq1anuq1kc19028islft1o5ck0822ca.apps.googleusercontent.com",
+          "client_id": "411612735580-kh1j60bprthifeim4lpf2efiah15b689.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCaORjx9AmLVP6uPP_7RHMFo0Hpz5aJzsI"
+          "current_key": "AIzaSyDMHZSuyi3F5RqkhDBJnTOSNxwDaxzRSVQ"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "209826641196-8pq1anuq1kc19028islft1o5ck0822ca.apps.googleusercontent.com",
+              "client_id": "411612735580-kh1j60bprthifeim4lpf2efiah15b689.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

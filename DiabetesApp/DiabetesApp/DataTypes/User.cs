@@ -7,5 +7,6 @@ namespace App1.DataTypes{
         public string name { get; set; }
         public string password { get; set; }
         public bool gamified { get; set; }
+        public string birthday { get; set; }
     }
 }
