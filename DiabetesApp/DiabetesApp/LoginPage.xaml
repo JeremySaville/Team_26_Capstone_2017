@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="DiabetesApp.LoginPage"
+             Style="{StaticResource pageStyle}">
+    <ContentPage.Content>
+        <StackLayout>
+        <StackLayout BackgroundColor="#1561db">
+            <Label Text="Diabetes Research App" VerticalOptions="Center" HorizontalOptions="Center"
+                   FontSize="Large" Margin="30, 30" HorizontalTextAlignment="Center" TextColor="White">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <OnPlatform.iOS>Chelsea Market</OnPlatform.iOS>
+                        <OnPlatform.Android>ChelseaMarket-Regular.ttf#Chelsea Market</OnPlatform.Android>
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+        </StackLayout>
+        <StackLayout>
+            <Label Text="Username:" FontSize="Medium" Margin="20, 20, 0, 0"/>
+            <Entry x:Name="usernameEntry" Placeholder="Username" Margin="20, 0"/>
+            <Label Text="Date of Birth:" FontSize="Medium" Margin="20, 20, 0, 0"/>
+            <DatePicker x:Name="birthdayEntry" Margin="20, 0" Date="{x:Static sys:DateTime.Now}" Format="yyyy-MM-dd" MaximumDate="{x:Static sys:DateTime.Now}">
+                <DatePicker.MinimumDate>
+                    <sys:DateTime x:FactoryMethod="Parse"><x:Arguments><x:String>Jan 1 1900</x:String></x:Arguments></sys:DateTime>
+                </DatePicker.MinimumDate>
+            </DatePicker>
+            <Button Style="{StaticResource buttonStyle}" Text="Login" Clicked="onClick_loginButton"/>
+        </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

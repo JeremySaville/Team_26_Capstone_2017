@@ -8,11 +8,11 @@
             <Style x:Key="buttonStyle" TargetType="Button">
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="BackgroundColor" Value="#fff3e6"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="#1561db"/>
             </Style>
             <Style x:Key="pageStyle" TargetType="ContentPage">
-                <Setter Property="BackgroundColor" Value="#d9ccff"/>
+                <Setter Property="BackgroundColor" Value="White"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

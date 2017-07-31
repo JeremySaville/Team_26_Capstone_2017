@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+             x:Class="DiabetesApp.HomeTestPage"
+             Style="{StaticResource pageStyle}">
+    <StackLayout>
+        <Label x:Name="welcomeLabel" Text="Hello" FontSize="30" HorizontalOptions="Center" Margin="20"/>
+        <Label x:Name="bdaylabel" Text="Birthdate" FontSize="20" HorizontalOptions="Center" Margin="20"/>
+        <oxy:PlotView Model="{Binding BSLModel}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="300"/>
+    </StackLayout>
+</ContentPage>

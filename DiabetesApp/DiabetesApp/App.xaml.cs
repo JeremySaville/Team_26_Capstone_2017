@@ -13,7 +13,7 @@ namespace DiabetesApp
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new DiabetesApp.MainPage());
+			MainPage = new DiabetesApp.LoginPage();
 		}
 
 		protected override void OnStart ()
