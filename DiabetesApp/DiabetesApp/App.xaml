@@ -5,14 +5,22 @@
     <Application.Resources>
         <!-- Application resource dictionary -->
         <ResourceDictionary>
+            <Color x:Key="mainColour">White</Color>
+            <Color x:Key="accentColour">DodgerBlue</Color>
+            <Color x:Key="mainTextColour">Black</Color>
+            <Color x:Key="accentTextColour">White</Color>
             <Style x:Key="buttonStyle" TargetType="Button">
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="TextColor" Value="White"/>
-                <Setter Property="BackgroundColor" Value="#1561db"/>
+                <Setter Property="TextColor" Value="{StaticResource accentTextColour}"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource accentColour}"/>
             </Style>
             <Style x:Key="pageStyle" TargetType="ContentPage">
-                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource mainColour}"/>
+            </Style>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource accentColour}"/>
+                <Setter Property="BarTextColor" Value="{StaticResource accentTextColour}"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

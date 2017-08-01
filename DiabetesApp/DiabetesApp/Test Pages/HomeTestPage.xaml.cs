@@ -1,4 +1,4 @@
-﻿using App1.DataTypes;
+﻿using DiabetesApp.DataTypes;
 using Firebase.Xamarin.Database;
 using OxyPlot;
 using OxyPlot.Axes;
@@ -41,11 +41,11 @@ namespace DiabetesApp{
                 .Child("users")
                 .OnceAsync<User>();
 
-            foreach (var item in items) {
-                if (item.Object.name.ToLower().Equals(username.ToLower())) {
-                    bdaylabel.Text = $"Birthday: {item.Object.birthday}";
-                }
-            }
+            //foreach (var item in items) {
+            //    if (item.Object.name.ToLower().Equals(username.ToLower())) {
+            //        bdaylabel.Text = $"Birthday: {item.Object.birthday}";
+            //    }
+            //}
         }
 
     }

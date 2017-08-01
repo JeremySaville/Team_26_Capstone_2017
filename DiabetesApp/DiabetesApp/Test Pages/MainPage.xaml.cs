@@ -1,4 +1,4 @@
-﻿using App1.DataTypes;
+﻿using DiabetesApp.DataTypes;
 using Firebase.Database;
 using Firebase.Xamarin.Database;
 using System;
@@ -32,13 +32,13 @@ namespace DiabetesApp {
                 .Child("users")
                 .OnceAsync<User>();
 
-            foreach(var item in items){
-                status.Text = item.Object.name;
-                if (item.Object.name.ToLower().Equals(uName.ToLower())){
-                    loggedIn = item.Object.password.Equals(pWord);
-                    uName = item.Object.name;
-                }
-            }
+            //foreach(var item in items){
+            //    status.Text = item.Object.name;
+            //    if (item.Object.name.ToLower().Equals(uName.ToLower())){
+            //        loggedIn = item.Object.password.Equals(pWord);
+            //        uName = item.Object.name;
+            //    }
+            //}
 
             if (loggedIn){
                 status.Text = "Success";

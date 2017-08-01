@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace App1.DataTypes{
+namespace DiabetesApp.DataTypes{
     public class User{
-        public string name { get; set; }
-        public string password { get; set; }
-        public bool gamified { get; set; }
+        public int gamified { get; set; }
         public string birthday { get; set; }
+        public string phone { get; set; }
+        public string email { get; set; }
     }
 }
