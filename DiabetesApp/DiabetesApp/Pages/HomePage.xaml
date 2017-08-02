@@ -5,7 +5,7 @@
              Icon="ic_home_white.png">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="The Home Page" />
+            <Label Text="The Home Page" />he
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

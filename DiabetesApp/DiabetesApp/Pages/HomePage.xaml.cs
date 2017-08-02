@@ -22,6 +22,11 @@ namespace DiabetesApp{
 
         }
 
+        /// <summary>
+        /// Test code to create an item in the users table
+        /// TODO: DELETE THIS CODE WHEN NO LONGER NEEDED FOR REFERENCE
+        /// </summary>
+        /// <param name="auth">Authenticated User details</param>
         private async void postItem(FirebaseAuthLink auth) {
             var firebase = new FirebaseClient(FirebaseURL);
 

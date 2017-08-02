@@ -33,7 +33,6 @@ namespace DiabetesApp
             try {
                 var auth = await authProvider.SignInWithEmailAndPasswordAsync(emailEntered, birthdayEntered);
                 App.Current.MainPage = new TabbedContent(auth);
-                
             } catch (Exception ex) {
                 await DisplayAlert("Login Failed", "Unable to login at this time", "OK");
             }
