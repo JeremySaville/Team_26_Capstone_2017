@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Firebase.Xamarin.Auth;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,14 @@ namespace DiabetesApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TabbedContent : TabbedPage
     {
-        public TabbedContent (String username)
+        public TabbedContent (FirebaseAuthLink auth)
         {
             InitializeComponent();
-            Children.Add(new LogbookPage(username));
-            Children.Add(new AnalyticsPage(username));
-            Children.Add(new HomePage(username));
-            Children.Add(new ProfilePage(username));
-            Children.Add(new SettingsPage(username));
+            Children.Add(new LogbookPage(auth));
+            Children.Add(new AnalyticsPage(auth));
+            Children.Add(new HomePage(auth));
+            Children.Add(new ProfilePage(auth));
+            Children.Add(new SettingsPage(auth));
 
             this.SelectedItem = this.Children[2];
         }

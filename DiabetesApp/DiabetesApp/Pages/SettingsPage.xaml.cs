@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Firebase.Xamarin.Auth;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,9 @@ using Xamarin.Forms.Xaml;
 namespace DiabetesApp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class AnalyticsPage : ContentPage
+	public partial class SettingsPage : ContentPage
 	{
-		public AnalyticsPage (String username)
+		public SettingsPage (FirebaseAuthLink auth)
 		{
 			InitializeComponent ();
 		}

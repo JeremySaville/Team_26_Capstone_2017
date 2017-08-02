@@ -42,7 +42,7 @@ namespace DiabetesApp {
 
             if (loggedIn){
                 status.Text = "Success";
-                var nextPage = new HomePage(uName);
+                var nextPage = new HomePage(null);
                 await Navigation.PushAsync(nextPage);
             }
             else{
