@@ -1,0 +1,12 @@
+1. First it needs to collect and store the participants trial identification number, surname and day and month of birth (for identification purposes). It would be useful as well if it could capture their baseline HbA1c (optional numerical field).
+
+2. If possible It would be useful to have a second page in the signup where participants complete the DKT and PeadsQL instruments (questions can be hand coded in)
+***** All info from 1 and 2 is to be stored on the web server (mysql should be easy) *****
+
+3. The site should then randomly allocate the person to the paper based, normal app, or gamified app group (random allocation, if one group has 30 participants then it should be locked out of having more participants allocated to it until all have 30 participants or more).
+***** After this allocation has been completed, the login details should also be posted to firebase in addition to any other info relevant (id say first name as well, and then generate a username based on their surname + another character if that user already exists) *****
+
+3. Instructions will then be given to the new participant of how to download the app and their login info (username and dob) (unless they are in the paper based group) by the researcher with them.
+
+4. When a user first downloads the app they should enter their surname and day and month of birth (and year for the app) to verify their identify. If they are part of the trial, and thus have an account, they will already be allocated to a group and the app should be themed appropriately. Then take them through a setup process asking any other base settings to be inputted, including a password (if you wanted for future logins) and email address + mobile number if they have it.
+
