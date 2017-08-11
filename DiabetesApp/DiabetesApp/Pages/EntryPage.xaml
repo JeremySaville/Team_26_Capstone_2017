@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="DiabetesApp.Pages.EntryPage"
+             Style="{StaticResource pageStyle}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout>
+                    <Label Text="New Logbook Entry" TextColor="Black" Margin="20" HorizontalOptions="Center" FontSize="Medium"/>
+                </StackLayout>
+                <TableView Intent="Form">
+                    <TableRoot>
+                        <TableSection>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Entry Date: " TextColor="Black" VerticalOptions="Center" Margin="15, 0, 0, 0"/>
+                                    <DatePicker x:Name="entryDate" Date="{x:Static sys:DateTime.Now}" Format="yyyy-MM-dd" MaximumDate="{x:Static sys:DateTime.Now}" VerticalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                            <EntryCell x:Name="BSLEntered" Label="BSL: " LabelColor="Black"/>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0" Grid.Row="0" Text="Submit" Clicked="onClick_submitEntry" Style="{StaticResource buttonStyle}"/>
+                                    <Button Grid.Column="1" Grid.Row="0" Text="Cancel" Clicked="onClick_cancelEntry" Style="{StaticResource buttonStyle}"/>
+                                </Grid>
+                            </ViewCell>
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
