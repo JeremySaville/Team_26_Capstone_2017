@@ -12,7 +12,6 @@ namespace DiabetesApp
 		public App ()
 		{
 			InitializeComponent();
-
 			MainPage = new DiabetesApp.LoginPage();
 		}
 

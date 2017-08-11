@@ -7,19 +7,45 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <StackLayout>
-                    <Label Text="New Logbook Entry" TextColor="Black" Margin="20" HorizontalOptions="Center" FontSize="Medium"/>
+                <StackLayout BackgroundColor="{StaticResource accentColour}">
+                    <Label Text="New Logbook Entry" TextColor="{StaticResource accentTextColour}" Margin="20" HorizontalOptions="Center" FontSize="Medium"/>
                 </StackLayout>
                 <TableView Intent="Form">
                     <TableRoot>
-                        <TableSection>
+                        <TableSection Title="Date and Time">
+                            <!-- Date of the Entry -->
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Entry Date: " TextColor="Black" VerticalOptions="Center" Margin="15, 0, 0, 0"/>
                                     <DatePicker x:Name="entryDate" Date="{x:Static sys:DateTime.Now}" Format="yyyy-MM-dd" MaximumDate="{x:Static sys:DateTime.Now}" VerticalOptions="Center"/>
                                 </StackLayout>
                             </ViewCell>
-                            <EntryCell x:Name="BSLEntered" Label="BSL: " LabelColor="Black"/>
+                            <!-- Time of the Entry -->
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Entry Time: " TextColor="Black" VerticalOptions="Center" Margin="15, 0, 0, 0"/>
+                                    <TimePicker x:Name="entryTime" VerticalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </TableSection>
+                        <TableSection Title="Corrections">
+                            <!-- QA Correction -->
+                            <EntryCell x:Name="QACorrectEntered" Label="QA Correction: " LabelColor="Black"/>
+                            <!-- Carb Exchange Correction -->
+                            <EntryCell x:Name="CarbCorrectEntered" Label="Carb Exchange Correction: " LabelColor="Black"/>
+                        </TableSection>
+                        <TableSection Title="Entry Details">
+                            <!-- Carb Exchange -->
+                            <EntryCell x:Name="CarbEntered" Label="Carb Exchange: " LabelColor="Black"/>
+                            <!-- BG -->
+                            <EntryCell x:Name="BGEntered" Label="Blood Glucose: " LabelColor="Black"/>
+                            <!-- QA -->
+                            <EntryCell x:Name="QAEntered" Label="Quick Acting Insulin: " LabelColor="Black"/>
+                            <!-- BI -->
+                            <EntryCell x:Name="BIEntered" Label="Background Insulin: " LabelColor="Black"/>
+                        </TableSection>
+                        <TableSection>
+                            <!-- Submit/Cancel Buttons -->
                             <ViewCell>
                                 <Grid>
                                     <Grid.RowDefinitions>
