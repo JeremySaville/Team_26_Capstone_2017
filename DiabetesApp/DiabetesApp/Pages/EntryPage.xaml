@@ -23,26 +23,32 @@
                             <!-- Time of the Entry -->
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="Entry Time: " TextColor="Black" VerticalOptions="Center" Margin="15, 0, 0, 0"/>
+                                    <Label Text="Entry Time: " TextColor="{StaticResource mainTextColour}" VerticalOptions="Center" Margin="15, 0, 0, 0"/>
                                     <TimePicker x:Name="entryTime" VerticalOptions="Center"/>
                                 </StackLayout>
                             </ViewCell>
                         </TableSection>
                         <TableSection Title="Corrections">
                             <!-- QA Correction -->
-                            <EntryCell x:Name="QACorrectEntered" Label="QA Correction: " LabelColor="Black"/>
+                            <EntryCell x:Name="QACorrectEntered" Label="QA Correction: " LabelColor="{StaticResource mainTextColour}"/>
                             <!-- Carb Exchange Correction -->
-                            <EntryCell x:Name="CarbCorrectEntered" Label="Carb Exchange Correction: " LabelColor="Black"/>
+                            <EntryCell x:Name="CarbCorrectEntered" Label="Carb Exchange Correction: " LabelColor="{StaticResource mainTextColour}"/>
                         </TableSection>
                         <TableSection Title="Entry Details">
                             <!-- Carb Exchange -->
-                            <EntryCell x:Name="CarbEntered" Label="Carb Exchange: " LabelColor="Black"/>
+                            <EntryCell x:Name="CarbEntered" Label="Carb Exchange: " LabelColor="{StaticResource mainTextColour}"/>
                             <!-- BG -->
-                            <EntryCell x:Name="BGEntered" Label="Blood Glucose: " LabelColor="Black"/>
+                            <EntryCell x:Name="BGEntered" Label="Blood Glucose: " LabelColor="{StaticResource mainTextColour}"/>
                             <!-- QA -->
-                            <EntryCell x:Name="QAEntered" Label="Quick Acting Insulin: " LabelColor="Black"/>
+                            <EntryCell x:Name="QAEntered" Label="Quick Acting Insulin: " LabelColor="{StaticResource mainTextColour}"/>
                             <!-- BI -->
-                            <EntryCell x:Name="BIEntered" Label="Background Insulin: " LabelColor="Black"/>
+                            <EntryCell x:Name="BIEntered" Label="Background Insulin: " LabelColor="{StaticResource mainTextColour}"/>
+                        </TableSection>
+                        <TableSection Title="Optional Comments">
+                            <!-- Mood -->
+                            <EntryCell x:Name="moodEntry" Label="Current Mood: " LabelColor="{StaticResource mainTextColour}"/>
+                            <!-- Comments -->
+                            <EntryCell x:Name="commentsEntry" Label="Comments: " LabelColor="{StaticResource mainTextColour}"/>
                         </TableSection>
                         <TableSection>
                             <!-- Submit/Cancel Buttons -->
