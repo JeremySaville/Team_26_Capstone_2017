@@ -30,19 +30,43 @@
                         </TableSection>
                         <TableSection Title="Corrections">
                             <!-- QA Correction -->
-                            <EntryCell x:Name="QACorrectEntered" Label="QA Correction: " LabelColor="{StaticResource mainTextColour}"/>
+                            <EntryCell x:Name="QACorrectEntry" Label="QA Correction: " LabelColor="{StaticResource mainTextColour}"/>
+                            <ViewCell>
+                                <StackLayout x:Name="qaCorrectError">
+                                </StackLayout>
+                            </ViewCell>
                             <!-- Carb Exchange Correction -->
-                            <EntryCell x:Name="CarbCorrectEntered" Label="Carb Exchange Correction: " LabelColor="{StaticResource mainTextColour}"/>
+                            <EntryCell x:Name="CarbCorrectEntry" Label="Carb Exchange Correction: " LabelColor="{StaticResource mainTextColour}"/>
+                            <ViewCell>
+                                <StackLayout x:Name="carbCorrectError">
+                                </StackLayout>
+                            </ViewCell>
                         </TableSection>
                         <TableSection Title="Entry Details">
                             <!-- Carb Exchange -->
-                            <EntryCell x:Name="CarbEntered" Label="Carb Exchange: " LabelColor="{StaticResource mainTextColour}"/>
+                            <EntryCell x:Name="CarbEntry" Label="Carb Exchange: " LabelColor="{StaticResource mainTextColour}"/>
+                            <ViewCell>
+                                <StackLayout x:Name="carbEntryError">
+                                </StackLayout>
+                            </ViewCell>
                             <!-- BG -->
-                            <EntryCell x:Name="BGEntered" Label="Blood Glucose: " LabelColor="{StaticResource mainTextColour}"/>
+                            <EntryCell x:Name="BGEntry" Label="Blood Glucose: " LabelColor="{StaticResource mainTextColour}"/>
+                            <ViewCell>
+                                <StackLayout x:Name="BGError">
+                                </StackLayout>
+                            </ViewCell>
                             <!-- QA -->
-                            <EntryCell x:Name="QAEntered" Label="Quick Acting Insulin: " LabelColor="{StaticResource mainTextColour}"/>
+                            <EntryCell x:Name="QAEntry" Label="Quick Acting Insulin: " LabelColor="{StaticResource mainTextColour}"/>
+                            <ViewCell>
+                                <StackLayout x:Name="QAError">
+                                </StackLayout>
+                            </ViewCell>
                             <!-- BI -->
-                            <EntryCell x:Name="BIEntered" Label="Background Insulin: " LabelColor="{StaticResource mainTextColour}"/>
+                            <EntryCell x:Name="BIEntry" Label="Background Insulin: " LabelColor="{StaticResource mainTextColour}"/>
+                            <ViewCell>
+                                <StackLayout x:Name="BIError">
+                                </StackLayout>
+                            </ViewCell>
                         </TableSection>
                         <TableSection Title="Optional Comments">
                             <!-- Mood -->
