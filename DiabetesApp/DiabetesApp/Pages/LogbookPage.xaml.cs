@@ -13,9 +13,18 @@ namespace DiabetesApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LogbookPage : ContentPage
 	{
+        FirebaseAuthLink auth;
+
 		public LogbookPage (FirebaseAuthLink auth)
 		{
 			InitializeComponent ();
+            this.auth = auth;
+            NavigationPage.SetHasNavigationBar(this, false);
 		}
-	}
+
+        void onClick_createEntry(object sender, EventArgs e) {
+            Navigation.PushModalAsync(new Pages.EntryPage(auth));
+        }
+
+    }
 }

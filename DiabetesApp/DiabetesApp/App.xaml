@@ -9,6 +9,7 @@
             <Color x:Key="accentColour">DodgerBlue</Color>
             <Color x:Key="mainTextColour">Black</Color>
             <Color x:Key="accentTextColour">White</Color>
+            <Color x:Key="errorTextColour">DarkRed</Color>
             <Style x:Key="buttonStyle" TargetType="Button">
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="VerticalOptions" Value="Center"/>

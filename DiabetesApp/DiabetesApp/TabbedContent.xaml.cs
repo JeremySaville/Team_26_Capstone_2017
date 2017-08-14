@@ -8,15 +8,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace DiabetesApp
-{
+namespace DiabetesApp {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TabbedContent : TabbedPage
-    {
-        public TabbedContent (FirebaseAuthLink auth)
-        {
+    public partial class TabbedContent : TabbedPage {
+        public TabbedContent(FirebaseAuthLink auth) {
             InitializeComponent();
-            Children.Add(new LogbookPage(auth));
+
+            Children.Add(new NavigationPage(new LogbookPage(auth)) {
+                Icon = "ic_assignment_white.png"});
             Children.Add(new AnalyticsPage(auth));
             Children.Add(new HomePage(auth));
             Children.Add(new ProfilePage(auth));
