@@ -8,6 +8,8 @@ using DiabetesApp.DataTypes;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Firebase.Xamarin.Database;
+using Firebase.Xamarin.Database.Query;
 
 namespace DiabetesApp.Pages
 {
@@ -15,42 +17,41 @@ namespace DiabetesApp.Pages
 	public partial class EntryPage : ContentPage
 	{
         FirebaseAuthLink auth;
+        private const string FirebaseURL = "https://diabetesarp.firebaseio.com/";
 
-		public EntryPage (FirebaseAuthLink auth)
+        public EntryPage (FirebaseAuthLink auth)
 		{
 			InitializeComponent ();
             NavigationPage.SetHasNavigationBar(this, true);
             this.auth = auth;
 		}
 
-        void onClick_submitEntry(object sender, EventArgs e) {
+        async void onClick_submitEntry(object sender, EventArgs e) {
             bool errorFound = false;
             LogbookEntry newLog = new LogbookEntry();
-            Color errorColour = Color.FromHex(Application.Current.Resources["errorTextColour"].ToString());
 
             //----------Error Messages----------
-            Label qaCorrectErrorMessage = new Label() { Text = "Please enter a number for Quick Acting Insulin Correction", TextColor = errorColour };
-            Label carbCorrectErrorMessage = new Label() { Text = "Please enter a number for Carb Exchange Correction", TextColor = errorColour };
-            Label BGErrorMessage = new Label() { Text = "Please enter a number for Blood Glucose", TextColor = errorColour };
-            Label BIErrorMessage = new Label() { Text = "Please enter a number for Background Insulin", TextColor = errorColour };
-            Label carbExErrorMessage = new Label() { Text = "Please enter a whole number for Carb Exchange", TextColor = errorColour };
-            Label QAErrorMessage = new Label() { Text = "Please enter a number for Quick Acting Insulin", TextColor = errorColour };
-
-
+            string qaCorrectErrorMessage = "Please enter a number for Quick Acting Insulin Correction";
+            string carbCorrectErrorMessage = "Please enter a number for Carb Exchange Correction";
+            string BGErrorMessage = "Please enter a number for Blood Glucose";
+            string BIErrorMessage = "Please enter a number for Background Insulin";
+            string carbExErrorMessage = "Please enter a whole number for Carb Exchange";
+            string QAErrorMessage = "Please enter a number for Quick Acting Insulin";
+            
             string entryDateTime = entryDate.Date.ToString("yyyy-MM-dd") + " " + entryTime.Time.ToString();
+            string errors = "\n\n";
 
             //----------Corrections----------
             try {
                 newLog.qaCorrect = float.Parse(QACorrectEntry.Text);
-                qaCorrectError.Children.Remove(qaCorrectErrorMessage);
             } catch {
-                qaCorrectError.Children.Add(qaCorrectErrorMessage);
+                errors += qaCorrectErrorMessage + "\n\n";
                 errorFound = true;
             }
             try {
                 newLog.carbCorrect = float.Parse(CarbCorrectEntry.Text);
             } catch {
-                //Error message goes here
+                errors += carbCorrectErrorMessage + "\n\n";
                 errorFound = true;
             }
 
@@ -58,35 +59,66 @@ namespace DiabetesApp.Pages
             try {
                 newLog.BG = float.Parse(BGEntry.Text);
             } catch {
-                //Error message added in here.
+                errors += BGErrorMessage + "\n\n";
                 errorFound = true;
             }
             try {
                 newLog.BI = float.Parse(BIEntry.Text);
             } catch {
-                //Error message goes here
+                errors += BIErrorMessage + "\n\n";
                 errorFound = true;
             }
             try {
                 newLog.carbEx = int.Parse(CarbEntry.Text);
             } catch {
-                //Error message goes here
+                errors += carbExErrorMessage + "\n\n";
                 errorFound = true;
             }
             try {
                 newLog.QA = float.Parse(QAEntry.Text);
             } catch {
-                //Error message goes here
+                errors += QAErrorMessage + "\n\n";
                 errorFound = true;
             }
-
-            //----------Comments----------
+            
+            //----------Comments and update time----------
             newLog.mood = moodEntry.Text;
             newLog.comments = commentsEntry.Text;
+            newLog.updateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
             //----------Post entry to the Database ----------
             if (!errorFound) {
-                Navigation.PopModalAsync();
+                var firebase = new FirebaseClient(FirebaseURL);
+                //Check that a duplicate entry does not already exist
+                try {
+                    var items = await firebase
+                        .Child("logbooks")
+                        .Child(auth.User.LocalId)
+                        .WithAuth(auth.FirebaseToken)
+                        .OnceAsync<LogbookEntry>();
+                    foreach (var item in items) {
+                        if (item.Key == entryDateTime) {
+                            await DisplayAlert("Error", "Logbook entry for this time already posted", "OK");
+                            return;
+                        }
+                    }
+                } catch {
+                    //Log does not exist, continue
+                }
+
+                //Post the entry to the database
+                await firebase
+                    .Child("logbooks")
+                    .Child(auth.User.LocalId)
+                    .Child(entryDateTime)
+                    .WithAuth(auth.FirebaseToken)
+                    .PutAsync(newLog);
+                await DisplayAlert("Upload complete", "Finished posting log", "OK");
+                await Navigation.PopModalAsync();
+
+            } else {
+                //Unable to post log, error message
+                await DisplayAlert("Unable to create Logbook Entry", errors, "OK");
             }
 
         }
