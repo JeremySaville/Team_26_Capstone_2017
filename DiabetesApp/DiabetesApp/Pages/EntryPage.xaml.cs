@@ -13,18 +13,19 @@ using Firebase.Xamarin.Database.Query;
 
 namespace DiabetesApp.Pages
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class EntryPage : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class EntryPage : ContentPage {
         FirebaseAuthLink auth;
         private const string FirebaseURL = "https://diabetesarp.firebaseio.com/";
 
-        public EntryPage (FirebaseAuthLink auth)
-		{
-			InitializeComponent ();
+        public EntryPage(FirebaseAuthLink auth) {
+            InitializeComponent();
+            //Set default time in the timepicker
+            TimeSpan nowTime = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+            entryTime.Time = nowTime;
             NavigationPage.SetHasNavigationBar(this, true);
             this.auth = auth;
-		}
+        }
 
         async void onClick_submitEntry(object sender, EventArgs e) {
             bool errorFound = false;
@@ -37,7 +38,7 @@ namespace DiabetesApp.Pages
             string BIErrorMessage = "Please enter a number for Background Insulin";
             string carbExErrorMessage = "Please enter a whole number for Carb Exchange";
             string QAErrorMessage = "Please enter a number for Quick Acting Insulin";
-            
+
             string entryDateTime = entryDate.Date.ToString("yyyy-MM-dd") + " " + entryTime.Time.ToString();
             string errors = "\n\n";
 
@@ -84,8 +85,14 @@ namespace DiabetesApp.Pages
             //----------Comments and update time----------
             newLog.mood = moodEntry.Text;
             newLog.comments = commentsEntry.Text;
+            if (moodEntry.Text == "" || moodEntry.Text == null) {
+                newLog.mood = "n/a";
+            }
+            if (commentsEntry.Text == "" || commentsEntry.Text == null) {
+                newLog.comments = "n/a";
+            }
             newLog.updateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-
+            
             //----------Post entry to the Database ----------
             if (!errorFound) {
                 var firebase = new FirebaseClient(FirebaseURL);
@@ -105,7 +112,7 @@ namespace DiabetesApp.Pages
                 } catch {
                     //Log does not exist, continue
                 }
-
+                await DisplayAlert("Hi", "Got here", "OK");
                 //Post the entry to the database
                 await firebase
                     .Child("logbooks")

@@ -17,8 +17,8 @@
                     </Label.FontFamily>
                 </Label>
             </StackLayout>
-            <Label Text="Email:" FontSize="Medium" Margin="20, 20, 0, 0"/>
-            <Entry x:Name="emailEntry" Placeholder="example@example.com" Margin="20, 0" Keyboard="Email"/>
+            <Label Text="Username:" FontSize="Medium" Margin="20, 20, 0, 0"/>
+            <Entry x:Name="usernameEntry" Margin="20, 0"/>
             <Label Text="Date of Birth:" FontSize="Medium" Margin="20, 20, 0, 0"/>
             <DatePicker x:Name="birthdayEntry" Margin="20, 0" Date="{x:Static sys:DateTime.Now}" Format="yyyy-MM-dd" MaximumDate="{x:Static sys:DateTime.Now}">
                 <DatePicker.MinimumDate>

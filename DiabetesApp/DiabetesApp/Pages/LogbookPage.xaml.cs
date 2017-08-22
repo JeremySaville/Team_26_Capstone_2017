@@ -14,16 +14,22 @@ namespace DiabetesApp
 	public partial class LogbookPage : ContentPage
 	{
         FirebaseAuthLink auth;
+        private const string FirebaseURL = "https://diabetesarp.firebaseio.com/";
 
-		public LogbookPage (FirebaseAuthLink auth)
+        public LogbookPage (FirebaseAuthLink auth)
 		{
 			InitializeComponent ();
             this.auth = auth;
             NavigationPage.SetHasNavigationBar(this, false);
+            updateEntries();
 		}
 
         void onClick_createEntry(object sender, EventArgs e) {
             Navigation.PushModalAsync(new Pages.EntryPage(auth));
+        }
+
+        async void updateEntries() {
+            
         }
 
     }
