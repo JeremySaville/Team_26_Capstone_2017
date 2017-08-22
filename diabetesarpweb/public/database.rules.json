@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "logbooks": {
+      "$uid": {
+        ".read": "auth.uid == $uid",
+        ".write": "true"
+      }
+    },
+    "users": {
+      "$uid": {
+        ".read": "auth.uid == $uid",
+        ".write": "auth.uid == $uid"
+      }
+    }
+  }
+}
