@@ -112,7 +112,7 @@ namespace DiabetesApp.Pages
                 } catch {
                     //Log does not exist, continue
                 }
-                await DisplayAlert("Hi", "Got here", "OK");
+                
                 //Post the entry to the database
                 await firebase
                     .Child("logbooks")
