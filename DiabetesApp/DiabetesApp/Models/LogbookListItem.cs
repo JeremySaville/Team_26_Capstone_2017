@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace DiabetesApp.Models {
-    class LogbookListItem {
+    public class LogbookListItem {
         public string title { get; set; }
         public string description { get; set; }
         public int carbEx { get; set; }

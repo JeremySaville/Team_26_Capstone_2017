@@ -41,10 +41,10 @@ namespace DiabetesApp
             if(e.Item == null) {
                 return;
             }
-            var selection = ((ListView)sender).SelectedItem;
-            ((ListView)sender).SelectedItem = null;        
+            LogbookListItem selection = (LogbookListItem)(((ListView)sender).SelectedItem);
+            ((ListView)sender).SelectedItem = null;
 
-            //OPEN VIEW ENTRY PAGE HERE
+            Navigation.PushModalAsync(new Pages.ViewEntryPage(auth, selection));
         }
         
         void onRefresh(object sender, EventArgs e) {
@@ -59,6 +59,7 @@ namespace DiabetesApp
                 var items = await firebase
                     .Child("logbooks")
                     .Child(auth.User.LocalId)
+                    .OrderByKey()
                     .WithAuth(auth.FirebaseToken)
                     .OnceAsync<DataTypes.LogbookEntry>();
 
@@ -66,7 +67,7 @@ namespace DiabetesApp
                 foreach (var item in items) {
                     LogbookListItem l = new LogbookListItem();
                     //Create strings for the listview
-                    l.title = DateTime.Parse(item.Key).ToString("dddd MMMM yyyy, h:mm tt");
+                    l.title = DateTime.Parse(item.Key).ToString("dddd d MMMM yyyy, h:mm tt");
                     l.description = "Blood Glucose: " + item.Object.BG.ToString() + "  Carb Exchange: " + item.Object.carbEx.ToString();
                     //Add in the rest of the log entry information
                     l.BG = item.Object.BG;
@@ -82,6 +83,7 @@ namespace DiabetesApp
                     //add to list
                     logs.Add(l);
                 }
+                reverseLogsList();
                 logsList.ItemsSource = null;
                 logsList.ItemsSource = logs;
             } catch {
@@ -89,5 +91,12 @@ namespace DiabetesApp
             }
         }
 
+        private void reverseLogsList() {
+            ObservableCollection<LogbookListItem> rLogs = new ObservableCollection<LogbookListItem>();
+            for(int i=logs.Count-1; i>=0; i--) {
+                rLogs.Add(logs.ElementAt(i));
+            }
+            logs = rLogs;
+        }
     }
 }
