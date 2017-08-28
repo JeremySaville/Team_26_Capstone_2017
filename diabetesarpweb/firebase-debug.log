@@ -1,0 +1,12 @@
+[debug] [2017-08-28T07:08:28.142Z] ----------------------------------------------------------------------
+[debug] [2017-08-28T07:08:28.144Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jeremy\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-08-28T07:08:28.145Z] CLI Version:   3.9.2
+[debug] [2017-08-28T07:08:28.145Z] Platform:      win32
+[debug] [2017-08-28T07:08:28.145Z] Node Version:  v6.11.2
+[debug] [2017-08-28T07:08:28.145Z] Time:          Mon Aug 28 2017 17:08:28 GMT+1000 (E. Australia Standard Time)
+[debug] [2017-08-28T07:08:28.145Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-08-28T07:08:28.156Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-08-28T07:08:28.156Z] > authorizing via signed-in user
+[debug] [2017-08-28T07:08:28.158Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/diabetesarp  
+ Mon Aug 28 2017 17:08:28 GMT+1000 (E. Australia Standard Time)
