@@ -14,8 +14,8 @@
                         <TableSection>
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal">
-                                    <Button Style="{StaticResource buttonStyle}" Text="Edit" Clicked="onClick_editEntry"/>
-                                    <Button Style="{StaticResource buttonStyle}" Text="Delete" Clicked="onClick_deleteEntry"/>
+                                    <Button x:Name="editButton" Style="{StaticResource buttonStyle}" Text="Edit" Clicked="onClick_editEntry"/>
+                                    <Button x:Name="deleteButton" Style="{StaticResource buttonStyle}" Text="Delete" Clicked="onClick_deleteEntry"/>
                                 </StackLayout>
                             </ViewCell>
                         </TableSection>
@@ -36,7 +36,7 @@
                         <TableSection>
                             <ViewCell>
                                 <StackLayout>
-                                    <Button Style="{StaticResource buttonStyle}" Text="Back" Clicked="onClick_backButton"/>
+                                    <Button x:Name="backButton" Style="{StaticResource buttonStyle}" Text="Back" Clicked="onClick_backButton"/>
                                 </StackLayout>
                             </ViewCell>
                         </TableSection>

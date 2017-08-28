@@ -2,13 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             x:Class="DiabetesApp.Pages.EntryPage"
+             x:Class="DiabetesApp.Pages.EditEntryPage"
              Style="{StaticResource pageStyle}">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
                 <StackLayout BackgroundColor="{StaticResource accentColour}">
-                    <Label Text="New Logbook Entry" TextColor="{StaticResource accentTextColour}" Margin="20" HorizontalOptions="Center" FontSize="Medium"/>
+                    <Label Text="Edit Logbook Entry" TextColor="{StaticResource accentTextColour}" Margin="20" HorizontalOptions="Center" FontSize="Medium"/>
                 </StackLayout>
                 <TableView Intent="Form">
                     <TableRoot>
@@ -61,7 +61,7 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Button x:Name="submitButton" Grid.Column="0" Grid.Row="0" Text="Submit" Clicked="onClick_submitEntry" Style="{StaticResource buttonStyle}"/>
+                                    <Button x:Name="saveButton" Grid.Column="0" Grid.Row="0" Text="Save" Clicked="onClick_saveEntry" Style="{StaticResource buttonStyle}"/>
                                     <Button x:Name="cancelButton" Grid.Column="1" Grid.Row="0" Text="Cancel" Clicked="onClick_cancelEntry" Style="{StaticResource buttonStyle}"/>
                                 </Grid>
                             </ViewCell>

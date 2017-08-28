@@ -1,37 +1,57 @@
-﻿using Firebase.Xamarin.Auth;
+﻿using DiabetesApp.DataTypes;
+using DiabetesApp.Models;
+using Firebase.Xamarin.Auth;
+using Firebase.Xamarin.Database;
+using Firebase.Xamarin.Database.Query;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DiabetesApp.DataTypes;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Firebase.Xamarin.Database;
-using Firebase.Xamarin.Database.Query;
 
-namespace DiabetesApp.Pages
-{
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EntryPage : ContentPage {
-        FirebaseAuthLink auth;
+namespace DiabetesApp.Pages {
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class EditEntryPage : ContentPage {
+        private FirebaseAuthLink auth;
+        private LogbookListItem log;
         private const string FirebaseURL = "https://diabetesarp.firebaseio.com/";
 
-        public EntryPage(FirebaseAuthLink auth) {
-            InitializeComponent();
-            //Set default time in the timepicker
-            TimeSpan nowTime = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
-            entryTime.Time = nowTime;
-            NavigationPage.SetHasNavigationBar(this, true);
+        public EditEntryPage (FirebaseAuthLink auth, LogbookListItem log) {
+            this.log = log;
             this.auth = auth;
-        }
+			InitializeComponent ();
 
-        async void onClick_submitEntry(object sender, EventArgs e) {
+            //// Set all fields to the values already in the entry
+            //Date and time
+            entryDate.Date = log.entryTime;
+            TimeSpan eTime = new TimeSpan(log.entryTime.Hour, log.entryTime.Minute, log.entryTime.Second);
+            entryTime.Time = eTime;
+
+            //Details
+            BGEntry.Text = log.BG.ToString();
+            BIEntry.Text = log.BI.ToString();
+            CarbCorrectEntry.Text = log.carbCorrect.ToString();
+            CarbEntry.Text = log.carbEx.ToString();
+            QACorrectEntry.Text = log.qaCorrect.ToString();
+            QAEntry.Text = log.QA.ToString();
+
+            //Optional comments
+            if (!log.comments.Equals("n/a")) {
+                commentsEntry.Text = log.comments;
+            }
+            if (!log.mood.Equals("n/a")) {
+                moodEntry.Text = log.mood;
+            }
+		}
+
+        async void onClick_saveEntry(object sender, EventArgs e) {
             disableButtons();
             bool errorFound = false;
             LogbookEntry newLog = new LogbookEntry();
-
+            
             //----------Error Messages----------
             string qaCorrectErrorMessage = "Please enter a number for Quick Acting Insulin Correction";
             string carbCorrectErrorMessage = "Please enter a number for Carb Exchange Correction";
@@ -82,7 +102,7 @@ namespace DiabetesApp.Pages
                 errors += QAErrorMessage + "\n\n";
                 errorFound = true;
             }
-            
+
             //----------Comments and update time----------
             newLog.mood = moodEntry.Text;
             newLog.comments = commentsEntry.Text;
@@ -93,8 +113,8 @@ namespace DiabetesApp.Pages
                 newLog.comments = "n/a";
             }
             newLog.updateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            
-            //----------Post entry to the Database ----------
+
+            //----------Post new entry to the Database ----------
             if (!errorFound) {
                 var firebase = new FirebaseClient(FirebaseURL);
                 //Check that a duplicate entry does not already exist
@@ -105,7 +125,7 @@ namespace DiabetesApp.Pages
                         .WithAuth(auth.FirebaseToken)
                         .OnceAsync<LogbookEntry>();
                     foreach (var item in items) {
-                        if (item.Key == entryDateTime) {
+                        if (item.Key == entryDateTime && !entryDateTime.Equals(log.entryTime.ToString("yyyy-MM-dd HH:mm:ss"))) {
                             await DisplayAlert("Error", "Logbook entry for this time already posted", "OK");
                             return;
                         }
@@ -113,7 +133,15 @@ namespace DiabetesApp.Pages
                 } catch {
                     //Log does not exist, continue
                 }
-                
+
+                //Delete old log entry
+                await firebase
+                    .Child("logbooks")
+                    .Child(auth.User.LocalId)
+                    .Child(log.entryTime.ToString("yyyy-MM-dd HH:mm:ss"))
+                    .WithAuth(auth.FirebaseToken)
+                    .DeleteAsync();
+
                 //Post the entry to the database
                 await firebase
                     .Child("logbooks")
@@ -121,7 +149,7 @@ namespace DiabetesApp.Pages
                     .Child(entryDateTime)
                     .WithAuth(auth.FirebaseToken)
                     .PutAsync(newLog);
-                await DisplayAlert("Upload complete", "Finished posting log", "OK");
+                await DisplayAlert("Upload complete", "Finished updating log", "OK");
                 await Navigation.PopModalAsync();
 
             } else {
@@ -134,16 +162,17 @@ namespace DiabetesApp.Pages
         void onClick_cancelEntry(object sender, EventArgs e) {
             disableButtons();
             Navigation.PopModalAsync();
+            Navigation.PushModalAsync(new ViewEntryPage(auth, log));
         }
 
         void disableButtons() {
             cancelButton.IsEnabled = false;
-            submitButton.IsEnabled = false;
+            saveButton.IsEnabled = false;
         }
 
         void enableButtons() {
             cancelButton.IsEnabled = true;
-            submitButton.IsEnabled = true;
+            saveButton.IsEnabled = true;
         }
-    }
+	}
 }

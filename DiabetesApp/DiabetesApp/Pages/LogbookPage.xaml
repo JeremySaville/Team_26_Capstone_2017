@@ -7,7 +7,7 @@
         <ScrollView>
             <StackLayout>
                 <Label Text="Logbook" FontSize="Large" TextColor="{StaticResource mainTextColour}" Margin="10" HorizontalOptions="Center"/>
-                <Button Text="Create Entry" Clicked="onClick_createEntry" Style="{StaticResource buttonStyle}"/>
+                <Button x:Name="createButton" Text="Create Entry" Clicked="onClick_createEntry" Style="{StaticResource buttonStyle}"/>
                 <Label Text="Logbook Entries" TextColor="{StaticResource mainTextColour}" FontSize="Medium" Margin="10"/>
                 <ListView x:Name="logsList" ItemTapped="onClick_logEntryListItem" IsPullToRefreshEnabled="True" Refreshing="onRefresh">
                     <ListView.ItemTemplate>

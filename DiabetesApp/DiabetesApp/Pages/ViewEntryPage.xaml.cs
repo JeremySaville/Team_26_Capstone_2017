@@ -27,10 +27,13 @@ namespace DiabetesApp.Pages {
 		}
 
         void onClick_editEntry(object sender, EventArgs e) {
-            
+            disableButtons();
+            Navigation.PopModalAsync();
+            Navigation.PushModalAsync(new EditEntryPage(auth, log));
         }
 
         async void onClick_deleteEntry(object sender, EventArgs e) {
+            disableButtons();
             try {
                 FirebaseClient firebase = new FirebaseClient(FirebaseURL);
 
@@ -49,11 +52,24 @@ namespace DiabetesApp.Pages {
             } catch {
                 await DisplayAlert("Error", "Unable to delete log entry", "OK");
             }
-
+            enableButtons();
         }
 
         void onClick_backButton(object sender, EventArgs e) {
+            disableButtons();
             Navigation.PopModalAsync();
+        }
+
+        void disableButtons() {
+            backButton.IsEnabled = false;
+            deleteButton.IsEnabled = false;
+            editButton.IsEnabled = false;
+        }
+
+        void enableButtons() {
+            backButton.IsEnabled = true;
+            deleteButton.IsEnabled = true;
+            editButton.IsEnabled = true;
         }
     }
 }

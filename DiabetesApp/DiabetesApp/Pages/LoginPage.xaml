@@ -25,7 +25,7 @@
                     <sys:DateTime x:FactoryMethod="Parse"><x:Arguments><x:String>Jan 1 1900</x:String></x:Arguments></sys:DateTime>
                 </DatePicker.MinimumDate>
             </DatePicker>
-            <Button Style="{StaticResource buttonStyle}" Text="Login" Clicked="onClick_loginButton"/>
+            <Button x:Name="loginButton" Style="{StaticResource buttonStyle}" Text="Login" Clicked="onClick_loginButton"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

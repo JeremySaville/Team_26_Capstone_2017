@@ -28,16 +28,25 @@ namespace DiabetesApp
             this.auth = auth;
             NavigationPage.SetHasNavigationBar(this, false);
             logs = new ObservableCollection<LogbookListItem>();
-            updateEntries();
 		}
+
+        //When the page is navigated back to 
+        protected override async void OnAppearing() {
+            createButton.IsEnabled = true;
+            logsList.IsRefreshing = true;
+            await updateEntries();
+            logsList.IsRefreshing = false;
+        }
 
         //Handle click on create entry button
         void onClick_createEntry(object sender, EventArgs e) {
+            createButton.IsEnabled = false;
             Navigation.PushModalAsync(new Pages.EntryPage(auth));
         }
         
         //Handle click on list item
         void onClick_logEntryListItem(object sender, ItemTappedEventArgs e) {
+            createButton.IsEnabled = false;
             if(e.Item == null) {
                 return;
             }
@@ -47,13 +56,14 @@ namespace DiabetesApp
             Navigation.PushModalAsync(new Pages.ViewEntryPage(auth, selection));
         }
         
-        void onRefresh(object sender, EventArgs e) {
-            updateEntries();
+        //List is pulled down to refresh
+        async void onRefresh(object sender, EventArgs e) {
+            await updateEntries();
             logsList.IsRefreshing = false;
         }
 
         //Method to update the entries list
-        async void updateEntries() {
+        async Task updateEntries() {
             try {
                 var firebase = new FirebaseClient(FirebaseURL);
                 var items = await firebase

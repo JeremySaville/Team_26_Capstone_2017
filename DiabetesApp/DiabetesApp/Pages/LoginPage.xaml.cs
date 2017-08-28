@@ -20,6 +20,8 @@ namespace DiabetesApp
         }
 
         async void onClick_loginButton(object sender, EventArgs e) {
+            loginButton.IsEnabled = false;
+
             string usernameEntered = usernameEntry.Text;
             string birthdayEntered = birthdayEntry.Date.ToString("yyyy-MM-dd");
 
@@ -36,6 +38,8 @@ namespace DiabetesApp
             } catch (Exception ex) {
                 await DisplayAlert("Login Failed", "Unable to login at this time", "OK");
             }
+
+            loginButton.IsEnabled = true;
         }
     }
 }
