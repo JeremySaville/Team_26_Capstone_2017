@@ -20,6 +20,7 @@ namespace DiabetesApp
         FirebaseAuthLink auth;
         private const string FirebaseURL = "https://diabetesarp.firebaseio.com/";
         private ObservableCollection<LogbookListItem> logs;
+        private ObservableCollection<LogbookListItem> displayedLogs;
 
         //Constructor for the logbook entries page
         public LogbookPage (FirebaseAuthLink auth)
@@ -28,11 +29,12 @@ namespace DiabetesApp
             this.auth = auth;
             NavigationPage.SetHasNavigationBar(this, false);
             logs = new ObservableCollection<LogbookListItem>();
+            displayedLogs = new ObservableCollection<LogbookListItem>();
 		}
 
         //When the page is navigated back to 
         protected override async void OnAppearing() {
-            createButton.IsEnabled = true;
+            enableButtons();
             logsList.IsRefreshing = true;
             await updateEntries();
             logsList.IsRefreshing = false;
@@ -40,13 +42,13 @@ namespace DiabetesApp
 
         //Handle click on create entry button
         void onClick_createEntry(object sender, EventArgs e) {
-            createButton.IsEnabled = false;
+            disableButtons();
             Navigation.PushModalAsync(new Pages.EntryPage(auth));
         }
         
         //Handle click on list item
         void onClick_logEntryListItem(object sender, ItemTappedEventArgs e) {
-            createButton.IsEnabled = false;
+            disableButtons();
             if(e.Item == null) {
                 return;
             }
@@ -107,6 +109,35 @@ namespace DiabetesApp
                 rLogs.Add(logs.ElementAt(i));
             }
             logs = rLogs;
+        }
+
+        private void onClick_searchEntries(object sender, EventArgs e) {
+            disableButtons();
+            logsList.IsRefreshing = true;
+            DateTime start = startDate.Date;
+            DateTime end = endDate.Date;
+            displayedLogs.Clear();
+
+            foreach(LogbookListItem l in logs){
+                if (l.entryTime.CompareTo(start) >= 0 && l.entryTime.CompareTo(end) <= 0)
+                    displayedLogs.Add(l);
+            }
+
+            logsList.ItemsSource = null;
+            logsList.ItemsSource = displayedLogs;
+            logsList.IsRefreshing = false;
+            enableButtons();
+        }
+
+        private void enableButtons() {
+            createButton.IsEnabled = true;
+            searchButton.IsEnabled = true;
+            
+        }
+
+        private void disableButtons() {
+            createButton.IsEnabled = false;
+            searchButton.IsEnabled = false;
         }
     }
 }
