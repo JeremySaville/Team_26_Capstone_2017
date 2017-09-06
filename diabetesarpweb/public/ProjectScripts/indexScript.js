@@ -10,9 +10,6 @@ var config = {
 
 firebase.initializeApp(config);
 
-
-
-
 /**
  * Handles the sign in button press.
  */
@@ -89,7 +86,7 @@ function stepForward() {
         document.getElementById('next').disabled = false;
     }
     //firebase.auth().signInWithRedirect("homepage.html");
-    window.location.replace("homepage.html");
+    window.location = "homepage.html";
     //redirect('homepage.html');
 }
 /**
@@ -168,7 +165,7 @@ function initApp() {
             // [START_EXCLUDE]
             document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
             document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-            document.getElementById('quickstart-sign-in').disabled = true;;
+            document.getElementById('quickstart-sign-in').disabled = true;
             document.getElementById('quickstart-account-details').textContent = 'null';
             document.getElementById('next').disabled = true;
             // [END_EXCLUDE]
