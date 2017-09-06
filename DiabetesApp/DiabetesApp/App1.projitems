@@ -14,6 +14,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)DataTypes\Game.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataTypes\Hba1c.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataTypes\LogbookEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\BSLGraph.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\LogbookListItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\AnalyticsPage.xaml.cs">
       <SubType>Code</SubType>
