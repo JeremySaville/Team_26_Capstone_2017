@@ -25,6 +25,7 @@ namespace DiabetesApp {
             InitializeComponent();
             logs = new ObservableCollection<LogbookListItem>();
             this.auth = auth;
+            weekButton.IsEnabled = false;
         }
 
         private void refreshGraph() {
@@ -37,7 +38,19 @@ namespace DiabetesApp {
             DateTime startOfMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             DateTime endOfMonth = startOfMonth.AddMonths(1).AddDays(-1);
 
-            BSLGraph b = new BSLGraph(startOfWeek, endOfWeek, logs);
+            //Get the year
+            DateTime startOfYear = new DateTime(DateTime.Now.Year, 1, 1);
+            DateTime endOfYear = startOfYear.AddYears(1).AddDays(-1);
+
+            BSLGraph b;
+
+            if(weekButton.IsEnabled == false) {
+                b = new BSLGraph(startOfWeek, endOfWeek, logs);
+            } else if(monthButton.IsEnabled == false) {
+                b = new BSLGraph(startOfMonth, endOfMonth, logs);
+            } else {
+                b = new BSLGraph(startOfYear, endOfYear, logs);
+            }
 
             this.BindingContext = b;
         }
@@ -82,6 +95,36 @@ namespace DiabetesApp {
             } catch {
                 await DisplayAlert("Error updating entries", "Unable to update log entries list at this time", "OK");
             }
+        }
+
+        private void onClick_weekButton(object sender, EventArgs e) {
+            enableButtons();
+            weekButton.IsEnabled = false;
+            refreshGraph();
+        }
+
+        private void onClick_monthButton(object sender, EventArgs e) {
+            enableButtons();
+            monthButton.IsEnabled = false;
+            refreshGraph();
+        }
+
+        private void onClick_yearButton(object sender, EventArgs e) {
+            enableButtons();
+            yearButton.IsEnabled = false;
+            refreshGraph();
+        }
+
+        public void disableButtons() {
+            weekButton.IsEnabled = false;
+            monthButton.IsEnabled = false;
+            yearButton.IsEnabled = false;
+        }
+
+        public void enableButtons() {
+            weekButton.IsEnabled = true;
+            monthButton.IsEnabled = true;
+            yearButton.IsEnabled = true;
         }
     }
 }

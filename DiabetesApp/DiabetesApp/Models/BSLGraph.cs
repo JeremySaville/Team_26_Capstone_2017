@@ -18,25 +18,25 @@ namespace DiabetesApp.Models {
         }
 
         private PlotModel CreateBSLChart(DateTime start, DateTime end, ObservableCollection<LogbookListItem> logs) {
-            PlotModel model = new PlotModel { Title = "Blood Glucose Week of " + start.ToString("dddd d MMMM, yyyy") };
+            PlotModel model = new PlotModel { Title = "BG Beginning " + start.ToString("ddd d MMM, yyyy") };
             double earliestDate = DateTimeAxis.ToDouble(start);
             double latestDate = DateTimeAxis.ToDouble(end);
 
             var highBSSeries = new AreaSeries();
-            highBSSeries.Points.Add(new DataPoint(earliestDate, 9));
-            highBSSeries.Points.Add(new DataPoint(latestDate, 9));
+            highBSSeries.Points.Add(new DataPoint(earliestDate, 8));
+            highBSSeries.Points.Add(new DataPoint(latestDate, 8));
             highBSSeries.Points.Add(new DataPoint(latestDate, 15));
             highBSSeries.Points.Add(new DataPoint(earliestDate, 15));
-            highBSSeries.Points.Add(new DataPoint(earliestDate, 9));
-            highBSSeries.Color = OxyColor.FromRgb(255, 128, 128);
+            highBSSeries.Points.Add(new DataPoint(earliestDate, 8));
+            highBSSeries.Color = OxyColor.FromRgb(255, 163, 102);
 
             var lowBSSeries = new AreaSeries();
-            lowBSSeries.Points.Add(new DataPoint(earliestDate, 5));
-            lowBSSeries.Points.Add(new DataPoint(latestDate, 5));
+            lowBSSeries.Points.Add(new DataPoint(earliestDate, 4));
+            lowBSSeries.Points.Add(new DataPoint(latestDate, 4));
             lowBSSeries.Points.Add(new DataPoint(latestDate, -1));
             lowBSSeries.Points.Add(new DataPoint(earliestDate, -1));
-            lowBSSeries.Points.Add(new DataPoint(earliestDate, 5));
-            lowBSSeries.Color = OxyColor.FromRgb(255, 163, 102);
+            lowBSSeries.Points.Add(new DataPoint(earliestDate, 4));
+            lowBSSeries.Color = OxyColor.FromRgb(255, 128, 128);
 
             var lineSeries = new LineSeries();
             foreach(LogbookListItem l in logs) {
@@ -49,8 +49,8 @@ namespace DiabetesApp.Models {
             model.Series.Add(lowBSSeries);
             model.Series.Add(lineSeries);
 
-            model.Axes.Add(new DateTimeAxis { Position = AxisPosition.Bottom, AbsoluteMinimum = earliestDate, AbsoluteMaximum = latestDate, Title = "DateTime" });
-            model.Axes.Add(new LinearAxis { Position = AxisPosition.Left, AbsoluteMinimum = 0, AbsoluteMaximum = 14, Title = "BSL" });
+            model.Axes.Add(new DateTimeAxis { Position = AxisPosition.Bottom, AbsoluteMinimum = earliestDate, AbsoluteMaximum = latestDate, StringFormat = "MMM d" });
+            model.Axes.Add(new LinearAxis { Position = AxisPosition.Left, AbsoluteMinimum = 0, AbsoluteMaximum = 14, Title = "Blood Glucose" });
             model.PlotAreaBackground = OxyColor.FromRgb(255, 255, 255);
             return model;
         }

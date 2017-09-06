@@ -6,7 +6,20 @@
              Icon="ic_insert_chart_white.png">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Analytics" FontSize="Medium" TextColor="{StaticResource mainTextColour}"/>
+            <Label Text="Analytics" FontSize="Large" TextColor="{StaticResource mainTextColour}" Margin="20"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="weekButton" Grid.Column="0" Text="This Week" Clicked="onClick_weekButton" Style="{StaticResource buttonStyle}"/>
+                <Button x:Name="monthButton" Grid.Column="1" Text="This Month" Clicked="onClick_monthButton"  Style="{StaticResource buttonStyle}"/>
+                <Button x:Name="yearButton" Grid.Column="2" Text="This Year" Clicked="onClick_yearButton" Style="{StaticResource buttonStyle}"/>
+            </Grid>
             <oxy:PlotView Model="{Binding BSLModel}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="300"/>
         </StackLayout>
     </ContentPage.Content>
