@@ -97,14 +97,15 @@
                 // [END_EXCLUDE]
             });
             // [END createwithemail]
+            
         }
 
         function stepForward() {
             if (firebase.auth().currentUser) {
                 document.getElementById('next').disabled = false;
             }
-            // window.open("HomePage.html");
-            window.location.href = "homepage.html";
+            //firebase.auth().signInWithRedirect("homepage.html");
+            window.open("homepage.html");
         }
         /**
          * Sends an email verification to the user.

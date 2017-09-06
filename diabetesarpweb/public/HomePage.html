@@ -13,7 +13,8 @@
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase-messaging.js"></script>
-    <script>
+    <script src="diabetesarp.js">
+    <!--<script>
         // Initialize Firebase
         var config = {
             apiKey: "AIzaSyBWvmWgYk6iXjMAUryQDNfXHxiWjQHYrvE",
@@ -29,26 +30,35 @@
 
 
         function userDetails() {
-		
-            //var user = firebase.auth().currentUser;
-           // var displayName = user.displayName;
-           // var email = user.email;
-           // var emailVerified = user.emailVerified;
-           // var photoURL = user.photoURL;
-          // var isAnonymous = user.isAnonymous;
-           // var uid = user.uid;
-           // var providerData = user.providerData;
-            document.getElementsByName('uuidinput')[0].placeholder = firebase.auth().uid;
+            firebase.auth().onAuthStateChanged(function (user) {
+                //window.user = user;
+                //var user = firebase.auth().currentUser;
+                //var name, email, photoUrl, uid, emailVerified;
+                console.log(user);
+                if (user) {
+                    window.location = '/index.html';
+                    var name = user.displayName;
+                    var email = user.email;
+                    var photoUrl = user.photoUrl;
+                    var emailVerified = user.emailVerified;
+                    var uid = user.uid;
+                    document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+                    document.getElementsByName('uuidinput')[0].placeholder = email;
+                } else {
+                    document.getElementsByName('uuidinput')[0].placeholder = "No User Logged In";
+                    document.getElementById('quickstart-account-details').textContent = 'null';
+                }
+            }
         }
 
-        function fillUid() {
+        //function fillUid() {
             
-        }
+        //}
 
         window.onload = function () {
             userDetails();
         };
-    </script>
+    </script>-->
 </head>
 <body>
     <div class="jumbotron">
@@ -93,6 +103,11 @@
 
 
             </form>
+        </div>
+        <div class="quickstart-user-details-container">
+            Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+            <div>Firebase auth <code>currentUser</code> object value:</div>
+            <pre><code id="quickstart-account-details">null</code></pre>
         </div>
     </main>
 
