@@ -3,6 +3,7 @@ using OxyPlot.Axes;
 using OxyPlot.Series;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 
@@ -12,14 +13,14 @@ namespace DiabetesApp.Models {
 
         public PlotModel BSLModel { get; set; }
 
-        public BSLGraph(DateTime start, DateTime end) {
-            BSLModel = CreateBSLChart(start, end);
+        public BSLGraph(DateTime start, DateTime end, ObservableCollection<LogbookListItem> logs) {
+            BSLModel = CreateBSLChart(start, end, logs);
         }
 
-        private PlotModel CreateBSLChart(DateTime start, DateTime end) {
-            PlotModel model = new PlotModel { Title = "BSL Levels 27 May 2017" };
-            double earliestDate = DateTimeAxis.ToDouble(DateTime.Parse("Sat 27 May 2017 08:23:00"));
-            double latestDate = DateTimeAxis.ToDouble(DateTime.Parse("Sat 27 May 2017 19:48:00"));
+        private PlotModel CreateBSLChart(DateTime start, DateTime end, ObservableCollection<LogbookListItem> logs) {
+            PlotModel model = new PlotModel { Title = "Blood Glucose Week of " + start.ToString("dddd d MMMM, yyyy") };
+            double earliestDate = DateTimeAxis.ToDouble(start);
+            double latestDate = DateTimeAxis.ToDouble(end);
 
             var highBSSeries = new AreaSeries();
             highBSSeries.Points.Add(new DataPoint(earliestDate, 9));
@@ -38,11 +39,10 @@ namespace DiabetesApp.Models {
             lowBSSeries.Color = OxyColor.FromRgb(255, 163, 102);
 
             var lineSeries = new LineSeries();
-            lineSeries.Points.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse("Sat 27 May 2017 08:23:00")), 8));
-            lineSeries.Points.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse("Sat 27 May 2017 10:14:00")), 11));
-            lineSeries.Points.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse("Sat 27 May 2017 13:04:00")), 7));
-            lineSeries.Points.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse("Sat 27 May 2017 17:22:00")), 9));
-            lineSeries.Points.Add(new DataPoint(DateTimeAxis.ToDouble(DateTime.Parse("Sat 27 May 2017 19:48:00")), 6));
+            foreach(LogbookListItem l in logs) {
+                if (l.entryTime.CompareTo(start) >= 0 && l.entryTime.CompareTo(end) <= 0)
+                    lineSeries.Points.Add(new DataPoint(DateTimeAxis.ToDouble(l.entryTime), l.BG));
+            }
             lineSeries.Color = OxyColor.FromRgb(0, 61, 153);
 
             model.Series.Add(highBSSeries);

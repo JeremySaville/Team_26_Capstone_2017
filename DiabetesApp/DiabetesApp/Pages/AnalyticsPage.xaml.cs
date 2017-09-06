@@ -24,16 +24,28 @@ namespace DiabetesApp {
         public AnalyticsPage (FirebaseAuthLink auth) {
             InitializeComponent();
             logs = new ObservableCollection<LogbookListItem>();
-            refreshGraph();
+            this.auth = auth;
         }
 
         private void refreshGraph() {
-            
+            //Get the week
+            int days = DateTime.Now.DayOfWeek - DayOfWeek.Monday;
+            DateTime startOfWeek = DateTime.Now.AddDays(-days);
+            DateTime endOfWeek = startOfWeek.AddDays(6);
+
+            //Get the month
+            DateTime startOfMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            DateTime endOfMonth = startOfMonth.AddMonths(1).AddDays(-1);
+
+            BSLGraph b = new BSLGraph(startOfWeek, endOfWeek, logs);
+
+            this.BindingContext = b;
         }
 
         //When the page is navigated back to 
         protected override async void OnAppearing() {
             await updateEntries();
+            refreshGraph();
         }
 
         //Method to update the entries list
