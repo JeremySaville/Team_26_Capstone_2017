@@ -156,22 +156,25 @@ function initApp() {
             document.getElementById('next').disabled = false;
             document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
             document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+            document.getElementById('quickstart-sign-in').disabled = false;
             document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
             if (!emailVerified) {
                 document.getElementById('quickstart-verify-email').disabled = false;
             }
             // [END_EXCLUDE]
+            //window.location = 'homepage.html'
         } else {
             // User is signed out.
             // [START_EXCLUDE]
             document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-            document.getElementById('quickstart-sign-in').textContent = 'Sign in';
+            //document.getElementById('quickstart-sign-in').textContent = 'Sign in';
+            document.getElementById('quickstart-sign-in').disabled = true;;
             document.getElementById('quickstart-account-details').textContent = 'null';
             document.getElementById('next').disabled = true;
             // [END_EXCLUDE]
         }
         // [START_EXCLUDE silent]
-        document.getElementById('quickstart-sign-in').disabled = false;
+        //document.getElementById('quickstart-sign-in').disabled = false;
         // [END_EXCLUDE]
     });
     // [END authstatelistener]
@@ -181,4 +184,8 @@ function initApp() {
     document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
     document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
 }
+
+window.onload = function () {
+    initApp();
+};
 

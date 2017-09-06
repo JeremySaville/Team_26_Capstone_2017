@@ -13,8 +13,8 @@
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase-messaging.js"></script>
-    <!--<script src="diabetesarp.js">-->
-    <script>
+    <script type="text/javascript" src="diabetesarp.js"></script>
+    <!--<script>
         // Initialize Firebase
         var config = {
             apiKey: "AIzaSyBWvmWgYk6iXjMAUryQDNfXHxiWjQHYrvE",
@@ -25,8 +25,8 @@
             messagingSenderId: "411612735580"
         };
         firebase.initializeApp(config);
-    </script>
-    <script type="text/javascript">
+    </script>-->
+    <!--<script type="text/javascript">
 
 
         function userDetails() {
@@ -34,9 +34,9 @@
                 //window.user = user;
                 //var user = firebase.auth().currentUser;
                 //var name, email, photoUrl, uid, emailVerified;
-                console.log(user);
+              
                 if (user) {
-                    window.location = '/index.html';
+                    
                     var name = user.displayName;
                     var email = user.email;
                     var photoUrl = user.photoUrl;
@@ -58,7 +58,7 @@
         window.onload = function () {
             userDetails();
         }
-    </script>
+    </script>-->
 </head>
 <body>
     <div class="jumbotron">
