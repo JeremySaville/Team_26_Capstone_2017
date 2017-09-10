@@ -42,14 +42,20 @@ namespace DiabetesApp {
             DateTime startOfYear = new DateTime(DateTime.Now.Year, 1, 1);
             DateTime endOfYear = startOfYear.AddYears(1).AddDays(-1);
 
+            //Get the date range
+            DateTime startOfRange = DateTime.Parse(startDate.Date.ToString("yyyy-MM-dd") + " 00:00:00");
+            DateTime endOfRange = DateTime.Parse(endDate.Date.ToString("yyyy-MM-dd") + " 23:59:59");
+
             BSLGraph b;
 
             if(weekButton.IsEnabled == false) {
                 b = new BSLGraph(startOfWeek, endOfWeek, logs);
             } else if(monthButton.IsEnabled == false) {
                 b = new BSLGraph(startOfMonth, endOfMonth, logs);
-            } else {
+            } else if(yearButton.IsEnabled == false) {
                 b = new BSLGraph(startOfYear, endOfYear, logs);
+            } else {
+                b = new BSLGraph(startOfRange, endOfRange, logs);
             }
 
             this.BindingContext = b;
@@ -115,16 +121,32 @@ namespace DiabetesApp {
             refreshGraph();
         }
 
+        private async void onClick_dateRangeButton(object sender, EventArgs e) {
+            DateTime start = DateTime.Parse(startDate.Date.ToString("yyyy-MM-dd") + " 00:00:00");
+            DateTime end = DateTime.Parse(endDate.Date.ToString("yyyy-MM-dd") + " 23:59:59");
+
+            if(start.CompareTo(end) > 0) {
+                await DisplayAlert("Error updating graph", "Invalid date range: Start Date must be before End Date", "OK");
+                return;
+            }
+
+            enableButtons();
+            dateRangeButton.IsEnabled = false;
+            refreshGraph();
+        }
+
         public void disableButtons() {
             weekButton.IsEnabled = false;
             monthButton.IsEnabled = false;
             yearButton.IsEnabled = false;
+            dateRangeButton.IsEnabled = false;
         }
 
         public void enableButtons() {
             weekButton.IsEnabled = true;
             monthButton.IsEnabled = true;
             yearButton.IsEnabled = true;
+            dateRangeButton.IsEnabled = true;
         }
     }
 }

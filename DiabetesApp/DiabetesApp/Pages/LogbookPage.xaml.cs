@@ -114,8 +114,8 @@ namespace DiabetesApp
         private void onClick_searchEntries(object sender, EventArgs e) {
             disableButtons();
             logsList.IsRefreshing = true;
-            DateTime start = startDate.Date;
-            DateTime end = endDate.Date;
+            DateTime start = DateTime.Parse(startDate.Date.ToString("yyyy-MM-dd") + " 00:00:00");
+            DateTime end = DateTime.Parse(endDate.Date.ToString("yyyy-MM-dd") + " 23:59:59");
             displayedLogs.Clear();
 
             foreach(LogbookListItem l in logs){
