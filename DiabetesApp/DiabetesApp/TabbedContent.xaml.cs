@@ -20,6 +20,7 @@ namespace DiabetesApp {
             Children.Add(new HomePage(auth));
             Children.Add(new ProfilePage(auth));
             Children.Add(new SettingsPage(auth));
+            Children.Add(new EducationPage(auth));
 
             this.SelectedItem = this.Children[2];
         }
