@@ -85,9 +85,9 @@ function stepForward() {
     if (firebase.auth().currentUser) {
         document.getElementById('next').disabled = false;
     }
-    //firebase.auth().signInWithRedirect("homepage.html");
+    
     window.location = "homepage.html";
-    //redirect('homepage.html');
+    
 }
 /**
  * Sends an email verification to the user.
@@ -102,6 +102,7 @@ function sendEmailVerification() {
     });
     // [END sendemailverification]
 }
+
 function sendPasswordReset() {
     var email = document.getElementById('email').value;
     // [START sendpasswordemail]
@@ -126,11 +127,7 @@ function sendPasswordReset() {
     // [END sendpasswordemail];
 }
 
-/**
- * initApp handles setting up UI event listeners and registering Firebase auth listeners:
- *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
- *    out, and that is where we update the UI.
- */
+
 function initApp() {
     // Listening for auth state changes.
     // [START authstatelistener]

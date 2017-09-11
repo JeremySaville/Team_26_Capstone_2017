@@ -26,6 +26,16 @@ function writeUserData(uid, username, name, phone, dob, hba1c) {
     });
 }
 
+//function stepForwardToggle(){
+	//document.getElementById('next').disabled = false;
+//}
+
+function stepForward() {
+    
+    window.location = "quizpage.html";
+    
+}
+
 function userDetails() {
     // Listening for auth state changes.
     // [START authstatelistener]
@@ -60,6 +70,7 @@ function userDetails() {
     // [END authstatelistener]
     //event listener for submitting data
     document.getElementById('submit').addEventListener('click', writeUserData, false);
+	//document.getElementById('submit').addEventListener('click', stepForward, false);
     
 }
 
