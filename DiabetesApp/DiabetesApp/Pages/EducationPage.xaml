@@ -1,11 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DiabetesApp.EducationPage"
-             Icon="ic_settings_white.png">
+             x:Class="DiabetesApp.EducationPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="The Education Page" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="The Education Page" />
+                <Label
+                    Text= "Hello, and welcome to the learning section! There are 13 lessons to read through, and at the end of each lesson there will be a mini quiz"
+                 />
+                <Label
+                    Text= "Participation in this section will earn you coins. Don't panic if you get a question wrong, you will have endless chances to answer correctly."
+                 />
+                <!--<img></img>-->
+                <!--<Button> Got it!</Button> Begins Lesson 1-->
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

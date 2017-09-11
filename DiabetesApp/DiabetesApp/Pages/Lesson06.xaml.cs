@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace DiabetesApp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class EducationPage : ContentPage
+	public partial class Lesson6 : ContentPage
 	{
-		public EducationPage ()
+		public Lesson6 ()
 		{
 			InitializeComponent ();
 		}

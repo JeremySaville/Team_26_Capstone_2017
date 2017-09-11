@@ -12,7 +12,7 @@ namespace DiabetesApp
 		public App ()
 		{
 			InitializeComponent();
-			MainPage = new DiabetesApp.LoginPage();
+			MainPage = new DiabetesApp.EducationPage();
 		}
 
 		protected override void OnStart ()
