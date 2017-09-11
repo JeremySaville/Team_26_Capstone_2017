@@ -10,6 +10,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
+var database = firebase.database();
+
 function writeUserData(uid, username, name, phone, dob, hba1c) {
     var uid = document.getElementById('uuidinput').value;
     var name = document.getElementById('InputName').value;
