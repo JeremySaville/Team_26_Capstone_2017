@@ -9,3 +9,9 @@ var config = {
     messagingSenderId: "411612735580"
 };
 firebase.initializeApp(config);
+
+document.getElementById('submit').addEventListener('click', writeUserData, false);
+
+function submitQuiz() {
+
+}
