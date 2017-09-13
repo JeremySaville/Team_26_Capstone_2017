@@ -5,13 +5,24 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Label Text="The Education Page" />
-                <Label
-                    Text= "Hello, and welcome to the learning section! There are 13 lessons to read through, and at the end of each lesson there will be a mini quiz"
-                 />
-                <Label
-                    Text= "Participation in this section will earn you coins. Don't panic if you get a question wrong, you will have endless chances to answer correctly."
-                 />
+                <Grid Padding="15" />
+                    <Label
+                        Text="Education Page" FontSize="Large" FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                    />
+                <Grid Padding=".5" />
+                    <Label
+                        Text= "Hello, and welcome to the learning section! There are 13 lessons to read through, and at the end of each lesson there will be a mini quiz" FontSize="Medium" FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                     />
+                <Grid Padding=".5" />
+                    <Label
+                        Text= "Participation in this section will earn you coins. Don't panic if you get a question wrong, you will have endless chances to answer correctly." FontSize="Medium" FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                     />
                 <!--<img></img>-->
                 <!--<Button> Got it!</Button> Begins Lesson 1-->
             </StackLayout>

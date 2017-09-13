@@ -5,7 +5,10 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Label Text="Lesson 7" />
+                <Label Text="Lesson 7" FontSize="Large" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
