@@ -6,11 +6,10 @@
         <ScrollView>
             <StackLayout>
                 <Grid Padding="15"/>
-                <Label Text="Lesson 1" FontSize="Large" FontAttributes="Bold"
+                <Label Text="Lesson 1 - Diabetes The Disease" FontSize="Large" FontAttributes="Bold"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"/>
                 
-                <Grid Padding=".5"/>
                 <Label Text="What is Diabetes?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"/>
@@ -18,7 +17,6 @@
                  HorizontalOptions="Center"
                  VerticalOptions="Center"/>
                 
-                <Grid Padding=".5"/>
                 <Label Text="What is Insulin?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"/>
@@ -27,15 +25,15 @@
                  HorizontalOptions="Center"
                  VerticalOptions="Center"/>
 
-                <Grid Padding=".5"/>
                 <Label Text="What does Blood Sugar Mean?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"/>
-                <Label Text="Sugar, also called Glucose, is absorbed by your body from the food you eat. Glucose is like fuel for the body because the body needs glucose for energy. It gets around the body in the blood, and too much or too little sugar in the blood is unhealthy.
-                  The amount of sugar in your blood is referred to as your blood sugar level."
+                <Label Text="Sugar, also called Glucose, is absorbed by your body from the food you eat. Glucose is like fuel for the body because the body needs glucose for energy. It gets around the body in the blood, and too much or too little sugar in the blood is unhealthy. The amount of sugar in your blood is referred to as your blood sugar level."
                  FontSize="Medium"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"/>
+                
+                <Image Source="anatomy.png" />
 
             </StackLayout>
         </ScrollView>

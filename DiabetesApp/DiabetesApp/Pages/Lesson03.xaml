@@ -1,13 +1,88 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DiabetesApp.LessonThree">
+             x:Class="DiabetesApp.Lesson03">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Label Text="Lesson 3" FontSize="Large" FontAttributes="Bold"
+                <Grid Padding="15"/>
+                <Label Text="Lesson 3 - Monitoring Diabetes" FontSize="Large" FontAttributes="Bold"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
+                />
+                <Label Text="Diabetes is monitored by checking blood sugar levels. This is done both by you at home, and by the doctor when you visit them. The term Blood Glucose Level (or Blood Sugar Level) is often abbreviated to BSL or BGL. These terms all mean the same thing. Recording other factors such as exercise, carbs and insulin also play a role in monitoring." FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                />
+                <Label Text="Why do we check BSL?" FontSize="Medium" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"/>
+                <Label Text="BSLs are checked to... Work out how much insulin you need to take. To detect high and low levels so you can work out how food and exercise affect your BSLs." FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                />
+                <Label Text="How do I check my BSL?" FontSize="Medium" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"/>
+                <Label Text="An electronic device called a Blood Glucose Meter or Glucometer is used to check BSLs by analysing a small drop of blood. This is done by putting a drop of blood from your finger on a test strip that you insert into the Glucometer." FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                />
+                <Label Text="How do I use a Glucometer?" FontSize="Medium" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"/>
+                <Label Text="An electronic device called a Blood Glucose Meter or Glucometer is used to check BSLs by analysing a small drop of blood. This is done by putting a drop of blood from your finger on a test strip that you insert into the Glucometer." FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                />
+                <Label Text="Step 1 - Wash hands with soap and water, and dry them well" FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                />
+                <Label Text="Step 2 - Get the glucometer, strips and finger prick ready" FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                />
+                <Label Text="Step 3 - Prick the side of your finger, and gently squeeze your finger to form a drop of blood to put on the strip" FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                />
+                <Label Text="Step 4 - Use a tissue to dry the blood on your finger" FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                />
+                <Label Text="Step 5 - Record your BSL reading on the glucometer in your diabetes logbook or this app" FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                />
+                <Label Text="Step 5 - Record your BSL reading on the glucometer in your diabetes logbook or this app" FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                />
+                <Label Text="Step 6 - Wash hands with soap and water again" FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                />
+                <Label Text="How often should I check my BSL?" FontSize="Medium" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"/>
+                <Label Text="It is best to measure your BSL 6 times per day. You should do this before meals and before you go to bed. You should perform additional readings after you exercise or if you feel sick. It's a good idea for you to set a goal of how many times a day you want to check your BSL and stick to it!  Other people with diabetes find this really helpful, and reward themselves when they have done their readings. It's a simple trick to staying healthy." FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                />
+                <Label Text="What is a Diabetes Logbook?" FontSize="Medium" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"/>
+                <Label Text="All people with diabetes are recommended to keep a logbook. In here you should record your BSLs, how much insulin you take, how much exercise you do and more! Some people use paper logbooks and some people use electronic logbooks on their mobile phones. This app includes logbook functionality so you don't have to carry a paper one around ever again! You need to keep it so you can see why you BSL goes high or low, and your doctor will be interested in seeing it too." FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                />
+                <Label Text="How does my doctor measure my blood sugar?" FontSize="Medium" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"/>
+                <Label Text="When you go to the doctor they will measure your blood sugar just like you do. However, they will also test for your glycosylated haemoglobin level - hbA1c for short. This tells them what your average blood sugar has been over the last 10 weeks – so you can't cheat on this test!" FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
                 />
             </StackLayout>
         </ScrollView>
