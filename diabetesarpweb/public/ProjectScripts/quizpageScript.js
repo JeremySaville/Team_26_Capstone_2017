@@ -16,12 +16,39 @@ function writeDKTdata() {
     var user = firebase.auth().currentUser;
     var uid = user.uid;
     //var newPostRef = postListRef.push();
-    var a1 = document.getElementsByName('optradio1').value;
-    var a2 = document.getElementsByName('optradio2').value;
-    firebase.database().ref('DKT/' + uid).set({
-        Q1: a1
-    });
+    //var radioResults = 'Answers: ';
+    for (var i = 0; i < form.elements.length; i++) {
+        if (form.elements[i].type == 'radio') {
+            if (form.elementsi[i].checked == true) {
+                var radioResults = form.elements[i].value + ' ';
+                firebase.database().ref('DKT/' + uid).set({
+                    Quiz: radioResults
+                });
+        }
+    }
+    //document.getElementById("radioResults").innerHTML = radioResults;
+    //firebase.database().ref('DKT/' + uid).set({
+    //    Q1: a1,
+    //    Q2: a2
+    //});
 }
+
+//function writeDKTdata() {
+//    var user = firebase.auth().currentUser;
+//    var uid = user.uid;
+//    //var newPostRef = postListRef.push();
+//    var radioResults = 'Answers: ';
+//    for (var i = 0; i < document.getElementsByName('optradio').length; i++) {
+//        if (){
+//            var a1 = document.getElementsByName('optradio1')[i].value;
+//            //var a2 = document.getElementsByName('optradio2')[i].value;
+//        }
+//    }
+//    firebase.database().ref('DKT/' + uid).set({
+//        Q1: a1,
+//        Q2: a2
+//    });
+//}
 
 function userDetails() {
     // Listening for auth state changes.
