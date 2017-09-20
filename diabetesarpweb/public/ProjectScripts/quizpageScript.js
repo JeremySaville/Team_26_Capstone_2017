@@ -12,95 +12,16 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-function writeUserData(uid, username, name, phone, dob, hba1c) {
-    var uid = document.getElementById('uuidinput').value;
-    var name = document.getElementById('InputName').value;
-    var phone = document.getElementById('InputPhone').value;
-    var dob = document.getElementById('InputDOB').value;
-    var hba1c = document.getElementById('InputHBA1C').value;
-    firebase.database().ref('users/' + uid).set({
-        username: name,
-        phone: phone,
-        dob: dob,
-        HBA1C: hba1c
+function writeDKTdata() {
+    var user = firebase.auth().currentUser;
+    var uid = user.uid;
+    //var newPostRef = postListRef.push();
+    var a1 = document.getElementsByName('optradio1').value;
+    var a2 = document.getElementsByName('optradio2').value;
+    firebase.database().ref('DKT/' + uid).set({
+        Q1: a1
     });
 }
-
-function writeUserData(uid, username, name, phone, dob, hba1c) {
-    var uid = document.getElementById('uuidinput').value;
-    var name = document.getElementById('InputName').value;
-    var phone = document.getElementById('InputPhone').value;
-    var dob = document.getElementById('InputDOB').value;
-    var hba1c = document.getElementById('InputHBA1C').value;
-    firebase.database().ref('users/' + uid).set({
-        username: name,
-        phone: phone,
-        dob: dob,
-        HBA1C: hba1c
-    });
-}
-
-//document.getElementById('submit').addEventListener('click', submitQuiz, false);
-
-//function submitQuiz() {
-
-//}
-//var answerArray = new Array();
-//function check() {
-//    var answers = document.forms[0];
-//    var i;
-//    for (i = 0; i < answers.length; i++) {
-//        if (answers[i].checked) {
-//            answerArray.push(answerArray[i].value)
-//        }
-//    }
-//}
-////var numQuestions = 22;
-//var numQuestions = document.getElementById('optradio');
-//var test = new Array();
-//// following two functions only return a single value repeated in the array
-//function getResults(quizForm1) {
-//    var radios = document.getElementById('quizForm1');
-//    for (i = 0; i < radios.length; i++) {
-//        if (radios[i].checked) {
-//            return radios[i].value;
-
-//        }
-//    }
-//    return null;
-//}
-
-//function check() {
-//    for (var i = 0; i <= numQuestions; i++) {
-//        //console.log(i,getCheckedValue('Q'+i));
-//        test[i] = getResults('optradio' + i);
-//    }
-//    //console.log(test);
-//    document.getElementById('quickstart-account-details').textContent = test;
-//}
-
-//var pubNumbers = 23
-//var test = new Array();
-//function getResults() {
-//    var numQuestions = document.getElementsById('optradio').length;
-//    var radios = document.getElementsById('optradio');
-//    for (i = 0; i < numQuestions; i++) {
-//        if (radios[i].checked) {
-//            return radios[i].value;
-
-//        }
-//    }
-//    return null;
-//}
-
-//function check() {
-//    for (var i = 1; i <= pubNumbers; i++) {
-//        //console.log(i,getCheckedValue('Q'+i));
-//        test[i - 1] = getResults('Q' + i);
-//    }
-//    //console.log(test);
-//    document.getElementById('quickstart-account-details').textContent = test;
-//}
 
 function userDetails() {
     // Listening for auth state changes.
@@ -135,7 +56,7 @@ function userDetails() {
     });
     // [END authstatelistener]
     //event listener for submitting data
-    document.getElementById('submit').addEventListener('click', check, false);
+    document.getElementById('submit').addEventListener('click', writeDKTdata, false);
     //document.getElementById('submit').addEventListener('click', stepForward, false);
 
 }
