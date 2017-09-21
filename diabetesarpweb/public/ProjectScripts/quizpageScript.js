@@ -12,26 +12,67 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-function writeDKTdata() {
-    var user = firebase.auth().currentUser;
-    var uid = user.uid;
-    //var newPostRef = postListRef.push();
-    //var radioResults = 'Answers: ';
-    for (var i = 0; i < form.elements.length; i++) {
-        if (form.elements[i].type == 'radio') {
-            if (form.elementsi[i].checked == true) {
-                var radioResults = form.elements[i].value + ' ';
-                firebase.database().ref('DKT/' + uid).set({
-                    Quiz: radioResults
-                });
+var pubNumbers = 23
+var test = new Array();
+function getResults() {
+    var numQuestions = document.getElementsById('optradio').length;
+    var radios = document.getElementsById('optradio');
+    for (i = 0; i < numQuestions; i++) {
+        if (radios[i].checked) {
+            return radios[i].value;
+
         }
     }
-    //document.getElementById("radioResults").innerHTML = radioResults;
-    //firebase.database().ref('DKT/' + uid).set({
-    //    Q1: a1,
-    //    Q2: a2
-    //});
+    return null;
 }
+
+function check() {
+    for (var i = 1; i <= pubNumbers; i++) {
+        //console.log(i,getCheckedValue('Q'+i));
+        test[i - 1] = getResults('Q' + i);
+    }
+    //console.log(test);
+    document.getElementById('quickstart-account-details').textContent = test;
+}
+
+//function getResults(form) {
+//    var answers = 0;
+//    var radios = form.elements["radio"];
+//    for (var r = 0; r < radios.length; r++) {
+//        if (radios[r].checked) {
+//            answers = parseInt(radios[r].value);
+//        }
+//    }
+//    return answers;
+//    document.getElementById('quickstart-account-details').textContent = 'null';
+//}
+
+//function numQuestions(form) {
+//    var radio = getResults(form);
+//    form.elements["total"].value = radio;
+//}
+
+//function writeDKTdata() {
+//    var user = firebase.auth().currentUser;
+//    var uid = user.uid;
+//    //var newPostRef = postListRef.push();
+//    //var radioResults = 'Answers: ';
+//    for (var i = 0; i < form.elements.length; i++) {
+//        if (form.elements[i].type == 'radio') {
+//            if (form.elementsi[i].checked == true) {
+//                var radioResults = form.elements[i].value + ' ';
+//                firebase.database().ref('DKT/' + uid).set({
+//                    Quiz: radioResults
+                    
+//                });
+//        }
+//    }
+//    //document.getElementById("radioResults").innerHTML = radioResults;
+//    //firebase.database().ref('DKT/' + uid).set({
+//    //    Q1: a1,
+//    //    Q2: a2
+//    //});
+//}
 
 //function writeDKTdata() {
 //    var user = firebase.auth().currentUser;
@@ -83,7 +124,8 @@ function userDetails() {
     });
     // [END authstatelistener]
     //event listener for submitting data
-    document.getElementById('submit').addEventListener('click', writeDKTdata, false);
+    //document.getElementById('submit').addEventListener('click', writeDKTdata, false);
+    document.getElementById('submit').addEventListener('click', check, false);
     //document.getElementById('submit').addEventListener('click', stepForward, false);
 
 }
