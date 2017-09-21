@@ -12,28 +12,54 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-var pubNumbers = 23
-var test = new Array();
-function getResults() {
-    var numQuestions = document.getElementsById('optradio').length;
-    var radios = document.getElementsById('optradio');
-    for (i = 0; i < numQuestions; i++) {
-        if (radios[i].checked) {
-            return radios[i].value;
+var radioAnswers = new Array();
 
+$("button#submit").click(function () {
+
+    $('input:radio').each(function () {
+        if ($(this).is(':checked')) {
+            var radio = { name: $(this).attr('name'), value: $(this).val() };
+            radioAnswers.push(radio);
         }
-    }
-    return null;
+    });
+
+    console.log(JSON.stringify(radioAnswers));
+
+});
+
+function writeQuizData(radioAnswers) {
+    var user = firebase.auth().currentUser;
+    var uid = user.uid;
+    firebase.database().ref('users/' + uid).set({
+        username: name,
+        phone: phone,
+        dob: dob,
+        HBA1C: hba1c
+    });
 }
 
-function check() {
-    for (var i = 1; i <= pubNumbers; i++) {
-        //console.log(i,getCheckedValue('Q'+i));
-        test[i - 1] = getResults('Q' + i);
-    }
-    //console.log(test);
-    document.getElementById('quickstart-account-details').textContent = test;
-}
+//var pubNumbers = 23
+//var test = new Array();
+//function getResults() {
+//    var numQuestions = document.getElementsById('optradio').length;
+//    var radios = document.getElementsById('optradio');
+//    for (i = 0; i < numQuestions; i++) {
+//        if (radios[i].checked) {
+//            return radios[i].value;
+
+//        }
+//    }
+//    return null;
+//}
+
+//function check() {
+//    for (var i = 1; i <= pubNumbers; i++) {
+//        //console.log(i,getCheckedValue('Q'+i));
+//        test[i - 1] = getResults('Q' + i);
+//    }
+//    //console.log(test);
+//    document.getElementById('quickstart-account-details').textContent = test;
+//}
 
 //function getResults(form) {
 //    var answers = 0;
