@@ -4,10 +4,11 @@
              xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              x:Class="DiabetesApp.AnalyticsPage"
-             Icon="ic_insert_chart_white.png">
+             Icon="ic_insert_chart_white.png"
+             Style="{StaticResource pageStyle}">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Analytics" FontSize="Large" TextColor="{StaticResource mainTextColour}" Margin="20, 10, 20, 10"/>
+            <Label Text="Analytics" FontSize="Large" HorizontalOptions="Center" TextColor="{StaticResource mainTextColour}" Margin="20, 10, 20, 10"/>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>

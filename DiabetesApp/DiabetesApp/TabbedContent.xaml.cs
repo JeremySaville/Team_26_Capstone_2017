@@ -16,12 +16,11 @@ namespace DiabetesApp {
 
             Children.Add(new NavigationPage(new LogbookPage(auth)) { Icon = "ic_assignment_white.png" });
             Children.Add(new AnalyticsPage(auth));
-            Children.Add(new HomePage(auth));
             Children.Add(new ProfilePage(auth));
             Children.Add(new EducationPage() { Icon = "ic_school_white.png" });
             Children.Add(new SettingsPage(auth));
             
-            this.SelectedItem = this.Children[2];
+            this.SelectedItem = this.Children[1];
         }
     }
 }
