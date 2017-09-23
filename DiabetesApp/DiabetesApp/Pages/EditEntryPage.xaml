@@ -16,8 +16,8 @@
                             <!-- Date of the Entry -->
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="Entry Date: " TextColor="Black" VerticalOptions="Center" Margin="15, 0, 0, 0"/>
-                                    <DatePicker x:Name="entryDate" Date="{x:Static sys:DateTime.Now}" Format="yyyy-MM-dd" MaximumDate="{x:Static sys:DateTime.Now}" VerticalOptions="Center"/>
+                                    <Label Text="Entry Date: " TextColor="Black" VerticalOptions="Center" Margin="15, 0, 0, 0" WidthRequest="150"/>
+                                    <DatePicker x:Name="entryDate" Date="{x:Static sys:DateTime.Now}" Format="MMM d yyyy" MaximumDate="{x:Static sys:DateTime.Now}" VerticalOptions="Center" WidthRequest="200"/>
                                 </StackLayout>
                             </ViewCell>
                             <!-- Time of the Entry -->

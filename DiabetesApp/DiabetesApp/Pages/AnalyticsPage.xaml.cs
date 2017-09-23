@@ -135,6 +135,15 @@ namespace DiabetesApp {
             refreshGraph();
         }
 
+        private async void onClick_updateButton(object sender, EventArgs e) {
+            if(dateRangeButton.IsEnabled == false) {
+                onClick_dateRangeButton(sender, e);
+            } else {
+                await updateEntries();
+                refreshGraph();
+            }
+        }
+
         public void disableButtons() {
             weekButton.IsEnabled = false;
             monthButton.IsEnabled = false;

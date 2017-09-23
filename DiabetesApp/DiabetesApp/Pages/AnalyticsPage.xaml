@@ -7,7 +7,7 @@
              Icon="ic_insert_chart_white.png">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Analytics" FontSize="Large" TextColor="{StaticResource mainTextColour}" Margin="20"/>
+            <Label Text="Analytics" FontSize="Large" TextColor="{StaticResource mainTextColour}" Margin="20, 10, 20, 10"/>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -23,12 +23,12 @@
                 <Button x:Name="monthButton" Grid.Column="1" Text="This Month" Clicked="onClick_monthButton"  Style="{StaticResource buttonStyle}"/>
                 <Button x:Name="yearButton" Grid.Column="2" Text="This Year" Clicked="onClick_yearButton" Style="{StaticResource buttonStyle}"/>
 
-                <Label Grid.Column="0" Grid.Row="1" Text="Start Date:" TextColor="{StaticResource mainTextColour}"/>
-                <DatePicker Grid.Column="0" Grid.Row="2" x:Name="startDate" Date="{x:Static sys:DateTime.Now}" Format="MMM d yyyy" MaximumDate="{x:Static sys:DateTime.Now}"/>
-                <Label Grid.Column="1" Grid.Row="1" Text="End Date:" TextColor="{StaticResource mainTextColour}"/>
-                <DatePicker Grid.Column="1" Grid.Row="2" x:Name="endDate" Date="{x:Static sys:DateTime.Now}" Format="MMM d yyyy" MaximumDate="{x:Static sys:DateTime.Now}"/>
-                <Button x:Name="dateRangeButton" Grid.Column="2" Grid.Row="1" Text="Date Range" Clicked="onClick_dateRangeButton" Style="{StaticResource buttonStyle}"/>
-                <Button x:Name="updateButton" Grid.Column="2" Grid.Row="2" Text="Update" Clicked="onClick_dateRangeButton" Style="{StaticResource buttonStyle}"/>
+                <Button x:Name="dateRangeButton" Grid.Column="0" Grid.Row="1" Text="Date Range" Clicked="onClick_dateRangeButton" Style="{StaticResource buttonStyle}"/>
+                <Button x:Name="updateButton" Grid.Column="0" Grid.Row="2" Text="Update" Clicked="onClick_updateButton" Style="{StaticResource buttonStyle}"/>
+                <Label Grid.Column="1" Grid.Row="1" Text="Start Date:" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource mainTextColour}"/>
+                <DatePicker Grid.Column="1" Grid.Row="2" x:Name="startDate" Date="{x:Static sys:DateTime.Now}" Format="MMM d yyyy" MaximumDate="{x:Static sys:DateTime.Now}"/>
+                <Label Grid.Column="2" Grid.Row="1" Text="End Date:" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource mainTextColour}"/>
+                <DatePicker Grid.Column="2" Grid.Row="2" x:Name="endDate" Date="{x:Static sys:DateTime.Now}" Format="MMM d yyyy" MaximumDate="{x:Static sys:DateTime.Now}"/>
             </Grid>
             <oxy:PlotView Model="{Binding BSLModel}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="300"/>
         </StackLayout>

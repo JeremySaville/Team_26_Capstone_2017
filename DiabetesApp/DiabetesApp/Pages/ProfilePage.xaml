@@ -5,7 +5,17 @@
              Icon="ic_account_circle_white.png">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
+            <Label Text="Profile" FontSize="Medium" Margin="20" TextColor="{StaticResource mainTextColour}"/>
+            <TableView Intent="Data">
+                <TableRoot>
+                    <TableSection Title="Statistics">
+                        <TextCell x:Name="nLogs" Text="Number of Logs Made:"/>
+                    </TableSection>
+                    <TableSection Title="Badges">
+                        <!-- Image cells? -->
+                    </TableSection>
+                </TableRoot>
+            </TableView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
