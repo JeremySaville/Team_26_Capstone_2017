@@ -14,14 +14,13 @@ namespace DiabetesApp {
         public TabbedContent(FirebaseAuthLink auth) {
             InitializeComponent();
 
-            Children.Add(new NavigationPage(new LogbookPage(auth)) {
-                Icon = "ic_assignment_white.png"});
+            Children.Add(new NavigationPage(new LogbookPage(auth)) { Icon = "ic_assignment_white.png" });
             Children.Add(new AnalyticsPage(auth));
             Children.Add(new HomePage(auth));
             Children.Add(new ProfilePage(auth));
+            Children.Add(new EducationPage() { Icon = "ic_school_white.png" });
             Children.Add(new SettingsPage(auth));
-            Children.Add(new EducationPage());
-
+            
             this.SelectedItem = this.Children[2];
         }
     }
