@@ -14,29 +14,50 @@ var database = firebase.database();
 
 var radioAnswers = new Array();
 
-$("button#submit").click(function () {
+//$("button#submit").click(function () {
+$(document).ready(function () {
+    $("button#submit").click(function () {
 
-    $('input:radio').each(function () {
-        if ($(this).is(':checked')) {
-            var radio = { name: $(this).attr('name'), value: $(this).val() };
-            radioAnswers.push(radio);
-        }
+        $('input:radio').each(function () {
+            if ($(this).is(':checked')) {
+                var radio = { name: $(this).attr('name'), value: $(this).val() };
+                radioAnswers.push(radio);
+            }
+        });
+
+        console.log(JSON.stringify(radioAnswers));
+        writeQuizData(radioAnswers);
+
     });
-
-    console.log(JSON.stringify(radioAnswers));
-
 });
 
+ //not working - returns bool TRUE
 function writeQuizData(radioAnswers) {
     var user = firebase.auth().currentUser;
     var uid = user.uid;
-    firebase.database().ref('users/' + uid).set({
-        username: name,
-        phone: phone,
-        dob: dob,
-        HBA1C: hba1c
+    var answers = JSON.stringify(radioAnswers);
+    firebase.database().ref('DKT/' + uid).set({
+        results: answers
+        //answers: answers
+
+        //q1: test
+        //q2: answers[1],
+        //q3: answers[2],
+        //q4: answers[3],
+        //q5: answers[4],
+        //q6: answers[5],
+        //q7: answers[6],
+        //q8: answers[7],
+        //q9: answers[8],
+        //q10: answers[9]
     });
 }
+
+//function writeQuizData(radioAnswers) {
+//    var user = firebase.auth().currentUser;
+//    var uid = user.uid;
+//    firebase.database().ref('DKT/' + uid).set({ JSON.stringify(radioAnswers) });
+//}
 
 //var pubNumbers = 23
 //var test = new Array();
@@ -151,7 +172,7 @@ function userDetails() {
     // [END authstatelistener]
     //event listener for submitting data
     //document.getElementById('submit').addEventListener('click', writeDKTdata, false);
-    document.getElementById('submit').addEventListener('click', check, false);
+    //document.getElementById('submit').addEventListener('click', writeQuizData, false);
     //document.getElementById('submit').addEventListener('click', stepForward, false);
 
 }
