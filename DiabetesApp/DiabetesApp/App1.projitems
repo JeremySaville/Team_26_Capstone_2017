@@ -10,9 +10,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)DataTypes\Educational.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DataTypes\Unlock.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DataTypes\Game.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DataTypes\Hba1c.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataTypes\Badges.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataTypes\GameStats.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataTypes\LogbookEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Lesson13.xaml.cs">
       <DependentUpon>Lesson13.xaml</DependentUpon>

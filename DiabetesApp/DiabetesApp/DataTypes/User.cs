@@ -6,8 +6,8 @@ namespace DiabetesApp.DataTypes{
     public class User{
         public int gamified { get; set; }
         public string username { get; set; }
-        public string birthday { get; set; }
+        public string dob { get; set; }
         public string phone { get; set; }
-        public string email { get; set; }
+        public string HBA1C { get; set; }
     }
 }

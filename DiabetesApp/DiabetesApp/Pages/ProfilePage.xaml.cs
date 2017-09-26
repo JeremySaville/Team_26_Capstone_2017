@@ -13,7 +13,7 @@ namespace DiabetesApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ProfilePage : ContentPage
 	{
-		public ProfilePage (FirebaseAuthLink auth)
+		public ProfilePage (FirebaseAuthLink auth, bool gamified)
 		{
 			InitializeComponent ();
 		}
