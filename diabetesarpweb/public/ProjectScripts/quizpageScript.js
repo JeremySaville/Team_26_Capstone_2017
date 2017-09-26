@@ -35,9 +35,12 @@ $(document).ready(function () {
 function writeQuizData(radioAnswers) {
     var user = firebase.auth().currentUser;
     var uid = user.uid;
-    var answers = JSON.stringify(radioAnswers);
+    //var answers = JSON.stringify(radioAnswers);
     firebase.database().ref('DKT/' + uid).set({
-        results: answers
+        q1: radioAnswers[0],
+        q2: radioAnswers[1]
+        
+
         //answers: answers
 
         //q1: test
