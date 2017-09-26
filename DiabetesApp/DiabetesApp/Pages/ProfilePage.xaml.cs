@@ -81,8 +81,7 @@ namespace DiabetesApp {
 
                 gStats = item;
             } catch {
-                //no gamestats entered for any user
-                initStats();
+                //no gamestats entered for the user, for some reason
             }
             updateGameStatsTable();
         }
@@ -98,24 +97,7 @@ namespace DiabetesApp {
             xpNextLevel.Detail = getExpToNextLevel(gStats.level, gStats.xp).ToString();
         }
         
-        //init stats for current user (new firebase database entry)
-        private async void initStats() {
-            var firebase = new FirebaseClient(FirebaseURL);
-            GameStats newStats = new GameStats();
-            newStats.xp = 0;
-            newStats.level = 1;
-            newStats.coins = 0;
-            newStats.numLogins = 1;
-            newStats.lastLogin = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-
-            gStats = newStats;
-
-            await firebase
-                .Child("gameStats")
-                .Child(auth.User.LocalId)
-                .WithAuth(auth.FirebaseToken)
-                .PutAsync(newStats);
-        }
+        
 
         //Helper method to calculate the experience required for the next level
         private int getExpToNextLevel(int currentLevel, int currentExp) {
