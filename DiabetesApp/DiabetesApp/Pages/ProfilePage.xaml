@@ -8,11 +8,20 @@
         <StackLayout>
             <Label Text="Profile" FontSize="Large" HorizontalOptions="Center" TextColor="{StaticResource mainTextColour}"/>
             <TableView Intent="Data">
-                <TableRoot>
+                <TableRoot x:Name="profileTable">
                     <TableSection Title="Statistics">
                         <TextCell x:Name="nLogs" Text="Number of Logs Made:"/>
+                        <TextCell x:Name="lastLogTime" Text="Last Log Time:"/>
                     </TableSection>
-                    <TableSection Title="Badges">
+                    <TableSection x:Name="gameStats" Title="Game Stats">
+                        <!-- Add in stats for gamified version -->
+                        <TextCell x:Name="level" Text="Level:"/>
+                        <TextCell x:Name="xp" Text="Total Experience:"/>
+                        <TextCell x:Name="xpNextLevel" Text="Experience to Next Level:"/>
+                        <TextCell x:Name="coins" Text="Coins:"/>
+                        <TextCell x:Name="logins" Text="Consecutive Days Logged in:"/>
+                    </TableSection>
+                    <TableSection x:Name="badges" Title="Badges">
                         <!-- Image cells? -->
                     </TableSection>
                 </TableRoot>

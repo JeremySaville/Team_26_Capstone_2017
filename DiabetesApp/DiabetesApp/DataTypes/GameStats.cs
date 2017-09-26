@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DiabetesApp.DataTypes
 {
-    public class Game
+    public class GameStats
     {
         public int xp { get; set; }
         public int level { get; set; }
