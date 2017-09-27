@@ -86,12 +86,11 @@ function stepForward() {
         document.getElementById('next').disabled = false;
     }
     
-    window.location = "homepage.html";
+    window.location = 'LandingPage.html';
     
 }
-/**
- * Sends an email verification to the user.
- */
+
+// unused email verification
 function sendEmailVerification() {
     // [START sendemailverification]
     firebase.auth().currentUser.sendEmailVerification().then(function () {
@@ -103,6 +102,7 @@ function sendEmailVerification() {
     // [END sendemailverification]
 }
 
+// unused password reset
 function sendPasswordReset() {
     var email = document.getElementById('email').value;
     // [START sendpasswordemail]
@@ -152,6 +152,7 @@ function initApp() {
             document.getElementById('quickstart-sign-in').textContent = 'Sign out';
             document.getElementById('quickstart-sign-in').disabled = false;
             document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+            //document.getElementById('quickstart-account-details').textContent = email + ' ' + uid;
             if (!emailVerified) {
                 document.getElementById('quickstart-verify-email').disabled = false;
             }

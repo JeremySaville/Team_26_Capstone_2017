@@ -64,13 +64,14 @@ function userDetails() {
             document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
             document.getElementById('quickstart-account-details').textContent = 'null';
             window.alert("Please Login before entering your details");
-            window.location = 'index.html'
+            window.location = 'index.html';
             
         }
         
     });
     // [END authstatelistener]
     //event listener for submitting data
+    document.getElementById('back').addEventListener('click', function () { window.location = 'LandingPage.html'; });
     document.getElementById('submit').addEventListener('click', writeUserData, false);
 	//document.getElementById('submit').addEventListener('click', stepForward, false);
     

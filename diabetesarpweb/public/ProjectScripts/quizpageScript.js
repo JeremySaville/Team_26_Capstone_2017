@@ -67,122 +67,6 @@ function writeQuizData(radioAnswers) {
     });
 }
 
- // working (but somewhat hardcoded) inputting quiz results from radio buttons
-//function writeQuizData(radioAnswers) {
-//    var user = firebase.auth().currentUser;
-//    var uid = user.uid;
-//    firebase.database().ref('DKT/' + uid).set({
-//        q01: radioAnswers[0],
-//        q02: radioAnswers[1],
-//        q03: radioAnswers[2],
-//        q04: radioAnswers[3],
-//        q05: radioAnswers[4],
-//        q06: radioAnswers[5],
-//        q07: radioAnswers[6],
-//        q08: radioAnswers[7],
-//        q09: radioAnswers[8],
-//        q10: radioAnswers[9],
-//        q11: radioAnswers[10],
-//        q12: radioAnswers[11],
-//        q13: radioAnswers[12],
-//        q14: radioAnswers[13],
-//        q15: radioAnswers[14],
-//        q16: radioAnswers[15],
-//        q17: radioAnswers[16],
-//        q18: radioAnswers[17],
-//        q19: radioAnswers[18],
-//        q20: radioAnswers[19],
-//        q21: radioAnswers[20],
-//        q22: radioAnswers[21],
-//        q23: radioAnswers[22]
-
-//    });
-//}
-
-//function writeQuizData(radioAnswers) {
-//    var user = firebase.auth().currentUser;
-//    var uid = user.uid;
-//    firebase.database().ref('DKT/' + uid).set({ JSON.stringify(radioAnswers) });
-//}
-
-//var pubNumbers = 23
-//var test = new Array();
-//function getResults() {
-//    var numQuestions = document.getElementsById('optradio').length;
-//    var radios = document.getElementsById('optradio');
-//    for (i = 0; i < numQuestions; i++) {
-//        if (radios[i].checked) {
-//            return radios[i].value;
-
-//        }
-//    }
-//    return null;
-//}
-
-//function check() {
-//    for (var i = 1; i <= pubNumbers; i++) {
-//        //console.log(i,getCheckedValue('Q'+i));
-//        test[i - 1] = getResults('Q' + i);
-//    }
-//    //console.log(test);
-//    document.getElementById('quickstart-account-details').textContent = test;
-//}
-
-//function getResults(form) {
-//    var answers = 0;
-//    var radios = form.elements["radio"];
-//    for (var r = 0; r < radios.length; r++) {
-//        if (radios[r].checked) {
-//            answers = parseInt(radios[r].value);
-//        }
-//    }
-//    return answers;
-//    document.getElementById('quickstart-account-details').textContent = 'null';
-//}
-
-//function numQuestions(form) {
-//    var radio = getResults(form);
-//    form.elements["total"].value = radio;
-//}
-
-//function writeDKTdata() {
-//    var user = firebase.auth().currentUser;
-//    var uid = user.uid;
-//    //var newPostRef = postListRef.push();
-//    //var radioResults = 'Answers: ';
-//    for (var i = 0; i < form.elements.length; i++) {
-//        if (form.elements[i].type == 'radio') {
-//            if (form.elementsi[i].checked == true) {
-//                var radioResults = form.elements[i].value + ' ';
-//                firebase.database().ref('DKT/' + uid).set({
-//                    Quiz: radioResults
-                    
-//                });
-//        }
-//    }
-//    //document.getElementById("radioResults").innerHTML = radioResults;
-//    //firebase.database().ref('DKT/' + uid).set({
-//    //    Q1: a1,
-//    //    Q2: a2
-//    //});
-//}
-
-//function writeDKTdata() {
-//    var user = firebase.auth().currentUser;
-//    var uid = user.uid;
-//    //var newPostRef = postListRef.push();
-//    var radioResults = 'Answers: ';
-//    for (var i = 0; i < document.getElementsByName('optradio').length; i++) {
-//        if (){
-//            var a1 = document.getElementsByName('optradio1')[i].value;
-//            //var a2 = document.getElementsByName('optradio2')[i].value;
-//        }
-//    }
-//    firebase.database().ref('DKT/' + uid).set({
-//        Q1: a1,
-//        Q2: a2
-//    });
-//}
 
 function userDetails() {
     // Listening for auth state changes.
@@ -210,14 +94,14 @@ function userDetails() {
             document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
             document.getElementById('quickstart-account-details').textContent = 'null';
             window.alert("Please Login before completing your quiz");
-            window.location = 'index.html'
+            window.location = 'index.html';
 
         }
 
     });
     // [END authstatelistener]
     //event listener for submitting data
-    //document.getElementById('submit').addEventListener('click', writeDKTdata, false);
+    document.getElementById('back').addEventListener('click', function () { window.location = 'LandingPage.html'; });
     //document.getElementById('submit').addEventListener('click', writeQuizData, false);
     //document.getElementById('submit').addEventListener('click', stepForward, false);
 
