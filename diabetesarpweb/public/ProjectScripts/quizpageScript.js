@@ -16,7 +16,7 @@ var postTime = new Date();
 
 var radioAnswers = new Array();
 
-//$("button#submit").click(function () {
+
 $(document).ready(function () {
     $("button#submit").click(function () {
 

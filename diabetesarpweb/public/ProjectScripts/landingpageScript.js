@@ -29,7 +29,7 @@ function userDetails() {
             var providerData = username.providerData;
             // [Fill textarea and input field from user details]
             
-            document.getElementById('uuidinput').defaultValue = uid;
+            //document.getElementById('uuidinput').defaultValue = uid;
             document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
             //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
             document.getElementById('quickstart-account-details').textContent = email + ' ' + uid;
@@ -39,8 +39,8 @@ function userDetails() {
             // User is signed out.
             document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
             document.getElementById('quickstart-account-details').textContent = 'null';
-            //window.alert("Please Login before entering your details");
-           // window.location = 'index.html';
+            window.alert("Please Login before entering your details");
+            window.location = 'index.html';
             
         }
         
