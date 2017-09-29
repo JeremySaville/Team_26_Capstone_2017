@@ -4,77 +4,74 @@
              x:Class="DiabetesApp.Lesson05">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+            <StackLayout Padding="20,30,20,30">
                 <Label Text="Lesson 5 - Insulin Part 2" FontSize="Large" FontAttributes="Bold"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
+                 Margin="20"
                 />
                 <Label Text="Do I need to measure my blood sugar before I give insulin?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
                 <Label Text="Yes, always. Otherwise you won't know how much to use. You should have the following targets in mind when measuring..." FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
                 <Label Text="BSLs need to be measured at least four times per day Before meals your BSL should be between 4-7mmol/L or a correction will be needed." FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
                 <Label Text="Before bed your BSL should be between 6-7mmol/L or a correction might be needed" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
                 <Label Text="Do I need record how much insulin I give?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
                 <Label Text="Yes, always write this in your log book" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
                 <Label Text="Where do I inject insulin?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
                 <Label Text="Insulin is injected into the fat layer just under your skin. You can inject insulin into your abdomen, buttocks and upper thigh. If insulin is injected anywhere else, it gets absorbed too fast. It is important you use a different spot each time you inject insulin so your skin doesn't get lumpy or scarred." FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
                 <Label Text="How do I inject insulin?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
                 <Label Text="Most people inject insulin using a pen or syringe. If you use a pen, you should follow these instructions..." FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
                 <Label Text="Step 1 - Wash your hands" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
                 <Label Text="Step 2 - Measure your blood glucose" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
                 <Label Text="Step 3 - Check there is insulin in your pen and it is working properly" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
                 <Label Text="Step 4 - Remove the protective cap" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
                 <Label Text="Step 5 - Dial up the number of insulin units you need to take" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
                 <Label Text="Step 6 - Gently pinch up the skin around where you will give the shot and hold firmly" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
                 <Label Text="Step 7 - Insert the needle using your other hand at a 45-90 degree angle" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
                 <Label Text="Step 8 - While the needle is in your skin press the button all the way returning to zero, and keep pressing for six seconds" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
                 <Label Text="Step 9 - Wipe any blood away with a tissue, and replace the needle cap" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
                 <Label Text="Step 10 - Wash your hands" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
                 <Label Text="Step 10 - Wash your hands" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
                 <Label Text="The best way to inject insulin is the way your diabetes educator showed you!" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                />
+                <Button Text="START QUIZ"
+                 BackgroundColor="Blue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

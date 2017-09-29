@@ -4,10 +4,87 @@
              x:Class="DiabetesApp.Lesson13">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Label Text="Lesson 13" FontSize="Large" FontAttributes="Bold"
+            <StackLayout Padding="20,30,20,30">
+                <Label Text="Lesson 13 - Everyday Life" FontSize="Large" FontAttributes="Bold"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
+                />
+                <Label Text="Managing diabetes can make everyday tasks more challenging. Some good examples and strategies to manage them are discussed here." FontSize="Medium"
+                />
+                <Label Text="Work" FontSize="Medium" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                />
+                <Label Text="Because many young people with diabetes work with few or no restrictions, their employers don't even know that they have diabetes." FontSize="Medium"
+                />
+                <Label Text="It is probably wise to give workmates a simple explanation about diabetes so that they learn more about diabetes and understand what is happening to you if you suddenly need to eat or get insulin. " FontSize="Medium"
+                />
+                <Label Text="It would be wise to make sure one or two key people know what to do in the event of you having a hypo. This however is your personal choice." FontSize="Medium"
+                />
+                <Label Text="School" FontSize="Medium" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                />
+                <Label Text="Young people with diabetes can participate fully in school life." FontSize="Medium"
+                />
+                <Label Text="However, there are aspects of school life that can affect diabetes, for example sports, break times, school camps and exams. Because of this, it's important that your school knows you have diabetes. " FontSize="Medium"
+                />
+                <Label Text="Everyone has individual issues they must work through at school. For example, finding a private place where you feel comfortable injecting insulin, or where to put your needles after use. Speak to your diabetes educator about this and they can give you some useful strategies. " FontSize="Medium"
+                />
+                <Label Text="Uni" FontSize="Medium" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                />
+                <Label Text="The challenges in managing diabetes at uni are different to those at school." FontSize="Medium"
+                />
+                <Label Text="You need an appropriate place to store insulin, and make sure you don't have too many classes in a row so you have a break to eat and take your insulin. " FontSize="Medium"
+                />
+                <Label Text="Most unis in Queensland provide help through student services for people with diabetes. This can include arranging a place for you to store insulin, as well as allowing you extra time during an exam so you can take a break to eat." FontSize="Medium"
+                />
+                <Label Text="Driving" FontSize="Medium" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                />
+                <Label Text="If you have diabetes you can drive if your diabetes is well managed. The main concern is the possibility of having a hypo while driving." FontSize="Medium"
+                />
+                <Label Text="Hypoglycaemia can impair your ability to drive safely. Ensure that you always have a carbohydrate snack available in your car." FontSize="Medium"
+                />
+                <Label Text="If you feel like your BSL is low, pull over immediately and stop your car. Do not restart the car until you have treated your hypo and feel absolutely normal." FontSize="Medium"
+                />
+                <Label Text="If you have diabetes you must tell Queensland Transport and your insurer, even if you were diagnosed after you got your licence. If not, there may be difficulties if you are in a crash." FontSize="Medium"
+                />
+                <Label Text="Alcohol" FontSize="Medium" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                />
+                <Label Text="Drinking alcohol can be a problem for young people with Type 1 diabetes as it increases the risk of having a hypo." FontSize="Medium"
+                />
+                <Label Text="When you are out drinking with friends it is often easy to forget to eat as well. This is another risk for having a hypo." FontSize="Medium"
+                />
+                <Label Text="There are some important things to remember about drinking..." FontSize="Medium"
+                />
+                <Label Text="If you have diabetes you must tell Queensland Transport and your insurer, even if you were diagnosed after you got your licence. If not, there may be difficulties if you are in a crash." FontSize="Medium"
+                />
+                <Label Text="• People under 18 shouldn't drink" FontSize="Medium"
+                />
+                <Label Text="• If you do drink it's best you tell your doctor at your next appointment so you can work out a plan of how to manage your sugars when you do" FontSize="Medium"
+                />
+                <Label Text="• Have some carbs before drinking alcohol and every couple of hours while you are, and then again before bed." FontSize="Medium"
+                />
+                <Label Text="• Test your BSLs, especially before bed, and continue to monitor the next day to detect a hypo early." FontSize="Medium"
+                />
+                <Label Text="• For each alcoholic drink you have, have a glass of water" FontSize="Medium"
+                />
+                <Label Text="• Tell a friend who is with you what to do in an emergency" FontSize="Medium"
+                />
+                <Label Text="• Wear a medic alert bracelet when you do drink so people know you are diabetic in an emergency." FontSize="Medium"
+                />
+
+                <Button Text="START QUIZ"
+                 BackgroundColor="Blue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
                 />
             </StackLayout>
         </ScrollView>

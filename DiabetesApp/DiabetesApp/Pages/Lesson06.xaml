@@ -4,181 +4,122 @@
              x:Class="DiabetesApp.Lesson06">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Grid Padding="15"/>
+            <StackLayout Padding="20,30,20,30">
                 <Label Text="Lesson 6 - Avoiding Hypoglycaemia" FontSize="Large" FontAttributes="Bold"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
+                 Margin="20"
                 />
                 <Label Text="Hypoglycaemia – also called a hypo – is the medical word for low blood glucose levels. BSLs below 4mmol/L are considered low." FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
-                
+                />
                 <Label Text="Why are hypos bad?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
-                <Label Text="A hypo means there is not enough glucose in your blood. This means your brain and other organs can't get energy when needed. This can be very dangerous." FontSize="Medium"
-                 HorizontalOptions="Center"
                  VerticalOptions="Center"
+                 Margin="20"
+                />
+                <Label Text="A hypo means there is not enough glucose in your blood. This means your brain and other organs can't get energy when needed. This can be very dangerous." FontSize="Medium"
                 />
                 <Label Text="What does a hypo feel like?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
                 <Label Text="Everyone feels different when having a hypo. Some common signs include feeling..." FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
                 />
-                <Label Text="Sweaty" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Sweaty" FontSize="Medium"
                 />
-                <Label Text="Shaky" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Shaky" FontSize="Medium"
                 />
-                <Label Text="Sleepy" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Sleepy" FontSize="Medium"
                 />
-                <Label Text="Cross" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Cross" FontSize="Medium"
                 />
-                <Label Text="Weak" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Weak" FontSize="Medium"
                 />
-                <Label Text="Like it's hard to concentrate" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Like it's hard to concentrate" FontSize="Medium"
                 />
-                <Label Text="Have a headache" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Have a headache" FontSize="Medium"
                 />
-                <Label Text="Emotional" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Emotional" FontSize="Medium"
                 />
                 <Label Text="What can cause a hypo?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
+                 Margin="20"
                 />
-                <Label Text="Too much insulin" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Too much insulin" FontSize="Medium"
                 />
-                <Label Text="Not eating enough carbohydrates" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Not eating enough carbohydrates" FontSize="Medium"
                 />
-                <Label Text="Skipping Meals" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Skipping Meals" FontSize="Medium"
                 />
-                <Label Text="Exercise or sport" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Exercise or sport" FontSize="Medium"
                 />
-                <Label Text="Stress or anxiety" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Stress or anxiety" FontSize="Medium"
                 />
-                <Label Text="Sometimes you can have a hypo for no reason at all!" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Sometimes you can have a hypo for no reason at all!" FontSize="Medium"
                 />
                 <Label Text="Common times for hypos are just before lunch and during and after sport. They can also happen during the night if your blood sugar is too low before you go to bed." FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
                 />
                 <Label Text="What should I do if I think I'm having a hypo?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
+                 Margin="20"
                 />
                 <Label Text="If you feel like you are having a hypo, the first thing you should do is always eat or drink something sweet. Appropriate sweet foods are fast acting carbohydrates, such as..." FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
                 />
-                <Label Text="Half a glass of fruit juice, cordial or soft drink" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Half a glass of fruit juice, cordial or soft drink" FontSize="Medium"
                 />
-                <Label Text="Four large, or seven small jelly beans" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Four large, or seven small jelly beans" FontSize="Medium"
                 />
-                <Label Text="Three teaspoons of honey or sugar" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Three teaspoons of honey or sugar" FontSize="Medium"
                 />
                 <Label Text="The second thing you need to do is check your BSL. If you are having a hypo it will be below 4. After 15 minutes, you should have a long-acting carbohydrate to stop the hypo from coming back, like..." FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
                 />
-                <Label Text="The second thing you need to do is check your BSL. If you are having a hypo it will be below 4. After 15 minutes, you should have a long-acting carbohydrate to stop the hypo from coming back, like..." FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• A piece of fruit" FontSize="Medium"
                 />
-                <Label Text="A piece of fruit" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• A slice of bread" FontSize="Medium"
                 />
-                <Label Text="A slice of bread" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Two biscuits" FontSize="Medium"
                 />
-                <Label Text="Two biscuits" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                />
-                <Label Text="Or a glass of milk" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="• Or a glass of milk" FontSize="Medium"
                 />
                 <Label Text="Finally, it is important to check your BSL a second time 15-30mins later. It should be improving. If hypoglycaemia is left untreated or does not improve you may fall asleep or have a fit." FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
                 />
                 <Label Text="I don't feel like I'm having hypo but my BSL is below 4, am I having a hypo?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
+                 Margin="20"
                 />
                 <Label Text="Yes, and you need to treat it like you are." FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
                 />
                 <Label Text="If I test my blood sugar before I eat, like I normally do, and my sugar is below 4, what do I do?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
+                 Margin="20"
                 />
                 <Label Text="You are having a hypo. In this case you need to eat or drink something sweet then eat your meal 15mins later. You shouldn't take short acting insulin with your meal." FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
                 />
                 <Label Text="What are some tips for avoiding hypos?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
+                 Margin="20"
                 />
-                <Label Text="Test your BSL before you eat and before bed.
-                       Watch out for hypos when exercising, it's a good idea to have a snack beforehand.
-                       Calculate the insulin required with each meal carefully.
-                       Record your insulin doses and BSLs in your diabetes logbook so you can see patterns in your sugars.
-                       Many young adults find this helps them." FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="Test your BSL before you eat and before bed. Watch out for hypos when exercising, it's a good idea to have a snack beforehand. Calculate the insulin required with each meal carefully. Record your insulin doses and BSLs in your diabetes logbook so you can see patterns in your sugars. Many young adults find this helps them." FontSize="Medium"
                 />
                 <Label Text="What are some tips for when I do have a hypo?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
+                 Margin="20"
                 />
-                <Label Text="If you are worried, eat something sweet
-                       Tell somebody in case it doesn't improve
-                       Write down what happened in your logbook
-                       Don't forget to always carry hypo foods with you" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
+                <Label Text="If you are worried, eat something sweet. Tell somebody in case it doesn't improve. Write down what happened in your logbook. And don't forget to always carry hypo foods with you" FontSize="Medium"
                 />
+                <Button Text="START QUIZ"
+                 BackgroundColor="Blue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="OnButtonClicked"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

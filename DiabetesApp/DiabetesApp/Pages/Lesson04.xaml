@@ -4,63 +4,60 @@
              x:Class="DiabetesApp.Lesson04">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Grid Padding="15"/>
+            <StackLayout Padding="20,30,20,30">
                 <Label Text="Lesson 4 - Insulin Part 1" FontSize="Large" FontAttributes="Bold"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
+                 Margin="20"
                 />
                 <Label Text="If you have Type 1 Diabetes, you need to use insulin every day. Insulin is given as an injection – which means inserting a needle just under the skin." FontSize="Medium"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
                 />
                 <Label Text="What types of insulin are there?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
                 <Label Text="There are two main types of insulin: quick acting (QA), and long acting insulin. Quick acting insulin is absorbed quickly into the body. It is taken just before or just after a meal so that your body can absorb glucose. It can also be taken when blood sugar is too high. Novorapid is the name used for rapid acting insulin, but yours might have a different name on the box." FontSize="Medium"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
                 />
                 <Label Text="Long acting insulin is absorbed slower. This insulin is used to ensure there is always a small amount of insulin in your system so glucose can be absorbed by your cells. Long acting insulin is also called background insulin (BI)." FontSize="Medium"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
                 />
                 <Label Text="When do I use Insulin?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
                 <Label Text="Your doctor will tell you how much insulin to use, what type to use and when to use it. Generally, young adults will need multiple injections of insulin every day. These injections are normally given just before or just after a meal." FontSize="Medium"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
                 />
                 <Label Text="How do I know how much insulin to give?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
                 <Label Text="Each person has different insulin needs. You will learn to calculate your own requirements with help from your doctor and diabetes educator." FontSize="Medium"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
                 />
                 <Label Text="Long acting insulin is easy because it's taken at set times every day." FontSize="Medium"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
                 />
                 <Label Text="Quick acting insulin is taken with meals, or to correct a blood sugar that is too high or too low. You can work out how much to take with a meal by... Counting how much carbohydrate is in the meal. Measuring your current blood sugar. You may need to adjust how much insulin is given if it is too high or low." FontSize="Medium"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
                 />
                 <Label Text="Counting how much carbohydrate is in the meal and measuring your current blood sugar. You may need to adjust how much insulin is given if it is too high or low." FontSize="Medium"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
                 />
                 <Label Text="How many carbohydrates are in what I eat?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
                 <Label Text="Carbohydrate is the name given to all the sugar in the food we eat. When carbohydrates are eaten they are broken down into glucose (a.k.a. sugar) by the digestive system. The glucose is then absorbed into the bloodstream and this increases blood sugar levels. Many foods contain carbs. The amount of carbs can be found by looking at the back of the box you bought the food in. If there is no information on the back of the box, you could look it up on the internet! 15 grams (15g) of carbohydrates is referred to as 1 carbohydrate exchange." FontSize="Medium"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
                 />
                 <Label Text="15 grams (15g) of carbohydrates is referred to as 1 carbohydrate exchange." FontSize="Medium"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
+                Margin="20"
+                />
+                <Button Text="START QUIZ"
+                 BackgroundColor="Blue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
                 />
             </StackLayout>
         </ScrollView>

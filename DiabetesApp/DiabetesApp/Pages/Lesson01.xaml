@@ -4,36 +4,41 @@
              x:Class="DiabetesApp.Lesson01">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Grid Padding="15"/>
+            <StackLayout Padding="20,30,20,30">
                 <Label Text="Lesson 1 - Diabetes The Disease" FontSize="Large" FontAttributes="Bold"
                  HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
-                
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
                 <Label Text="What is Diabetes?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
                 <Label Text="Diabetes is when your body cannot maange the levels of sugar (also known as Glucose) in your blood" FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
-                
+                />
                 <Label Text="What is Insulin?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
                 <Label Text="Insulin is made by the pancreas. Then insulin helps sugar get from your blood into your cells. Your cells than use the sugar for energy that your body needs. Ultimately, this helps lower your blood sugar"
                  FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
-
+                />
                 <Label Text="What does Blood Sugar Mean?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
+                 VerticalOptions="Center"
+                Margin="20"
+                />
                 <Label Text="Sugar, also called Glucose, is absorbed by your body from the food you eat. Glucose is like fuel for the body because the body needs glucose for energy. It gets around the body in the blood, and too much or too little sugar in the blood is unhealthy. The amount of sugar in your blood is referred to as your blood sugar level."
                  FontSize="Medium"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"/>
-                
-                <Image Source="anatomy.png" />
+                />
+                <Button Text="START QUIZ"
+                 BackgroundColor="Blue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                />
 
             </StackLayout>
         </ScrollView>
