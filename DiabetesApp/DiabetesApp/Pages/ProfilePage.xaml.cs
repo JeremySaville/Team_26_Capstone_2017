@@ -5,6 +5,7 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DiabetesApp.DataTypes;
+using DiabetesApp.Models;
 
 namespace DiabetesApp {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -14,9 +15,7 @@ namespace DiabetesApp {
         bool gamified;
         FirebaseAuthLink auth;
         GameStats gStats;
-        int[] xpForLevel = new int[] { 200, 300, 500, 700, 900, 1100, 1300, 1400, 1500 };
-        int xpForLaterLevels = 1500;
-
+        
         //Constructor
 		public ProfilePage (FirebaseAuthLink auth, bool gamified) {
 			InitializeComponent ();
@@ -94,32 +93,7 @@ namespace DiabetesApp {
             logins.Detail = gStats.numLogins.ToString();
 
             //Calculate the experience required for the next level
-            xpNextLevel.Detail = getExpToNextLevel(gStats.level, gStats.xp).ToString();
+            xpNextLevel.Detail = GamificationTools.getExpToNextLevel(gStats.level, gStats.xp).ToString();
         }
-        
-        
-
-        //Helper method to calculate the experience required for the next level
-        private int getExpToNextLevel(int currentLevel, int currentExp) {
-            int totalRequired = 0;
-            if(currentLevel > xpForLevel.Length) {
-                totalRequired = SumArray(xpForLevel) + (currentLevel - xpForLevel.Length) * xpForLaterLevels;
-            } else {
-                for(int i=0; i<currentLevel; i++) {
-                    totalRequired += xpForLevel[i];
-                }
-            }
-            return totalRequired - currentExp;
-        }
-
-        //Helper method to add all the elements of a numeric array
-        private int SumArray(int[] array) {
-            int sum = 0;
-            foreach(int i in array) {
-                sum += i;
-            }
-            return sum;
-        }
-
 	}
 }

@@ -11,5 +11,10 @@ namespace DiabetesApp.DataTypes
         public int coins { get; set; }
         public int numLogins { get; set; }
         public string lastLogin { get; set; }
+        public int entriesToday { get; set; }
+        public string lastEntry { get; set; }
+        public int numFullDayEntries { get; set; }
+        public string lastFullDayEntry { get; set; }
+        public bool dailyBonusReceived { get; set; }
     }
 }

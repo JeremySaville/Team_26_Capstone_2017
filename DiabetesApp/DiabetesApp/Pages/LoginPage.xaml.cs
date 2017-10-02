@@ -6,6 +6,7 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DiabetesApp.DataTypes;
+using DiabetesApp.Models;
 
 namespace DiabetesApp
 {
@@ -14,8 +15,6 @@ namespace DiabetesApp
 
         private const string FirebaseURL = "https://diabetesarp.firebaseio.com/";
         GameStats gStats;
-        int loginXP = 10;
-        int loginBonusXP = 50;
 
         //Constructor
         public LoginPage() {
@@ -73,7 +72,7 @@ namespace DiabetesApp
                         .OnceSingleAsync<GameStats>();
                     gStats = item;
                 } catch {
-                    initStats(auth);
+                    gStats = GamificationTools.initStats(auth);
                 }
                 DateTime loginTime = DateTime.Now;
                 DateTime lastLogin = DateTime.Parse(gStats.lastLogin);
@@ -84,20 +83,20 @@ namespace DiabetesApp
                     gStats.lastLogin = loginTime.ToString("yyyy-MM-dd HH:mm:ss");
                     if(gStats.numLogins % 7 == 0) {
                         //Seven consecutive logins, bonus XP
-                        gStats.xp += loginBonusXP;
-                        updateGStatsDB(auth);
+                        gStats.xp += GamificationTools.loginBonusXp;
+                        GamificationTools.updateGStatsDB(auth, gStats);
                         await DisplayAlert("Login Bonus", "Received 50xp for seven consecutive logins", "OK");
                     } else {
                         //Normal XP
-                        gStats.xp += loginXP;
-                        updateGStatsDB(auth);
+                        gStats.xp += GamificationTools.loginXP;
+                        GamificationTools.updateGStatsDB(auth, gStats);
                         await DisplayAlert("Login Reward", "Received 10xp for logging in", "OK");
                     }
                 } else {
                     gStats.numLogins = 1;
                     gStats.lastLogin = loginTime.ToString("yyyy-MM-dd HH:mm:ss");
-                    gStats.xp += loginXP;
-                    updateGStatsDB(auth);
+                    gStats.xp += GamificationTools.loginXP;
+                    GamificationTools.updateGStatsDB(auth, gStats);
                     await DisplayAlert("Login Reward", "Received 10xp for logging in", "OK");
                 }
             }
@@ -105,28 +104,6 @@ namespace DiabetesApp
             Application.Current.MainPage = new TabbedContent(auth, gamified);
         }
 
-        //update the database with the new value of gStats
-        private async void updateGStatsDB(FirebaseAuthLink auth) {
-            var firebase = new FirebaseClient(FirebaseURL);
-            await firebase
-                .Child("gameStats")
-                .Child(auth.User.LocalId)
-                .WithAuth(auth.FirebaseToken)
-                .PutAsync(gStats);
-        }
-
-        //init stats for current user (new firebase database entry)
-        private void initStats(FirebaseAuthLink auth) {
-            var firebase = new FirebaseClient(FirebaseURL);
-            GameStats newStats = new GameStats();
-            newStats.xp = 0;
-            newStats.level = 1;
-            newStats.coins = 0;
-            newStats.numLogins = 1;
-            newStats.lastLogin = DateTime.MinValue.ToString("yyyy-MM-dd HH:mm:ss");
-
-            gStats = newStats;
-            updateGStatsDB(auth);
-        }
+        
     }
 }
