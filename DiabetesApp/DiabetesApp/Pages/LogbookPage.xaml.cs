@@ -12,21 +12,20 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Collections.ObjectModel;
 
-namespace DiabetesApp
-{
+namespace DiabetesApp {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LogbookPage : ContentPage
-	{
+	public partial class LogbookPage : ContentPage {
         FirebaseAuthLink auth;
         private const string FirebaseURL = "https://diabetesarp.firebaseio.com/";
         private ObservableCollection<LogbookListItem> logs;
         private ObservableCollection<LogbookListItem> displayedLogs;
+        bool gamified;
 
         //Constructor for the logbook entries page
-        public LogbookPage (FirebaseAuthLink auth)
-		{
+        public LogbookPage (FirebaseAuthLink auth, bool gamified) {
 			InitializeComponent ();
             this.auth = auth;
+            this.gamified = gamified;
             NavigationPage.SetHasNavigationBar(this, false);
             logs = new ObservableCollection<LogbookListItem>();
             displayedLogs = new ObservableCollection<LogbookListItem>();
@@ -43,7 +42,7 @@ namespace DiabetesApp
         //Handle click on create entry button
         void onClick_createEntry(object sender, EventArgs e) {
             disableButtons();
-            Navigation.PushModalAsync(new Pages.EntryPage(auth));
+            Navigation.PushModalAsync(new Pages.EntryPage(auth, gamified));
         }
         
         //Handle click on list item

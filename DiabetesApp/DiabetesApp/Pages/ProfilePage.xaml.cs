@@ -32,8 +32,15 @@ namespace DiabetesApp {
             }
 		}
 
-        //update the table with number of logs made, etc.
-        private async void updateStats() {
+        //When the page is navigated back to 
+        protected override void OnAppearing() {
+            updateStats();
+            if(gamified)
+                updateGamifiedStats();
+        }
+
+            //update the table with number of logs made, etc.
+            private async void updateStats() {
             DateTime latest = DateTime.MinValue;
             int count = 0;
 

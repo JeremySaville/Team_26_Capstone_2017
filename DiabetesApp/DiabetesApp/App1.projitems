@@ -13,6 +13,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)DataTypes\Badges.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataTypes\GameStats.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataTypes\LogbookEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\GamificationTools.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Lesson13.xaml.cs">
       <DependentUpon>Lesson13.xaml</DependentUpon>
       <SubType>Code</SubType>

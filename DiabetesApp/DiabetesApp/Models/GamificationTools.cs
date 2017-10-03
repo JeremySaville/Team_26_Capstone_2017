@@ -5,6 +5,7 @@ using Firebase.Xamarin.Database.Query;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DiabetesApp.Models {
     class GamificationTools {
@@ -20,7 +21,7 @@ namespace DiabetesApp.Models {
         public const int xpForLaterLevels = 1500;
 
         //Add stats for a new log entry
-        public static GameStats addLogEntryStats(GameStats gStats, DateTime entryTime) {
+        public static void addLogEntryStats(ref GameStats gStats, DateTime entryTime) {
             DateTime today = DateTime.Now;
             DateTime yesterday = today.AddDays(-1);
             DateTime prevEntry = DateTime.Parse(gStats.lastEntry);
@@ -51,8 +52,6 @@ namespace DiabetesApp.Models {
                     gStats.numFullDayEntries = 0;
                 }
             }
-
-            return gStats;
         }
         
         //return whether a bonus should be received by the user
@@ -82,9 +81,16 @@ namespace DiabetesApp.Models {
             return bonus;
         }
 
-        //Check whether the user should level up
-        public static bool levelUp(int level, int currentXP, int newXP) {
-            return newXP > getExpToNextLevel(level, currentXP);
+        //Check whether the user should level up and if so add a level
+        //Also adds on any new xp gained, regardless of level up
+        public static bool levelUp(ref GameStats gStats, int newXP) {
+            bool levelled = false;
+            if (newXP > getExpToNextLevel(gStats.level, gStats.xp)) {
+                gStats.level += 1;
+                levelled = true;
+            }
+            gStats.xp += newXP;
+            return levelled;
         }
 
         //update the database with the new value of gStats
@@ -137,6 +143,22 @@ namespace DiabetesApp.Models {
                 sum += i;
             }
             return sum;
+        }
+
+        public static async Task<GameStats> getGStats(FirebaseAuthLink auth) {
+            GameStats gStats = null;
+            var firebase = new FirebaseClient(FirebaseURL);
+            try {
+                var item = await firebase
+                    .Child("gameStats")
+                    .Child(auth.User.LocalId)
+                    .WithAuth(auth.FirebaseToken)
+                    .OnceSingleAsync<GameStats>();
+                gStats = item;
+            } catch {
+                gStats = initStats(auth);
+            }
+            return gStats;
         }
     }
 }

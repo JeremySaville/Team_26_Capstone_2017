@@ -14,7 +14,7 @@ namespace DiabetesApp {
         public TabbedContent(FirebaseAuthLink auth, bool gamified) {
             InitializeComponent();
 
-            Children.Add(new NavigationPage(new LogbookPage(auth)) { Icon = "ic_assignment_white.png" });
+            Children.Add(new NavigationPage(new LogbookPage(auth, gamified)) { Icon = "ic_assignment_white.png" });
             Children.Add(new AnalyticsPage(auth));
             Children.Add(new ProfilePage(auth, gamified));
             Children.Add(new EducationPage() { Icon = "ic_school_white.png" });

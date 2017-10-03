@@ -10,21 +10,24 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Firebase.Xamarin.Database;
 using Firebase.Xamarin.Database.Query;
+using DiabetesApp.Models;
 
 namespace DiabetesApp.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EntryPage : ContentPage {
         FirebaseAuthLink auth;
+        bool gamified;
         private const string FirebaseURL = "https://diabetesarp.firebaseio.com/";
 
-        public EntryPage(FirebaseAuthLink auth) {
+        public EntryPage(FirebaseAuthLink auth, bool gamified) {
             InitializeComponent();
             //Set default time in the timepicker
             TimeSpan nowTime = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
             entryTime.Time = nowTime;
             NavigationPage.SetHasNavigationBar(this, true);
             this.auth = auth;
+            this.gamified = gamified;
         }
 
         async void onClick_submitEntry(object sender, EventArgs e) {
@@ -122,8 +125,40 @@ namespace DiabetesApp.Pages
                     .WithAuth(auth.FirebaseToken)
                     .PutAsync(newLog);
                 await DisplayAlert("Upload complete", "Finished posting log", "OK");
-                await Navigation.PopModalAsync();
 
+                if (gamified) {
+                    bool levelUp = false;
+                    GameStats gStats = await GamificationTools.getGStats(auth);
+                    GamificationTools.addLogEntryStats(ref gStats, DateTime.Parse(entryDateTime));
+                    string bonus = GamificationTools.getEntryBonus(gStats);
+                    if (bonus.Equals("none")) {
+                        levelUp = GamificationTools.levelUp(ref gStats, GamificationTools.logEntryXP);
+                        GamificationTools.updateGStatsDB(auth, gStats);
+                        await DisplayAlert("Log Entry Reward", "Received " + GamificationTools.logEntryXP + "xp for making a log entry", "OK");
+                    } else if (bonus.Equals("daily")) {
+                        levelUp = GamificationTools.levelUp(ref gStats, GamificationTools.logEntryDailyBonusXP);
+                        gStats.dailyBonusReceived = true;
+                        GamificationTools.updateGStatsDB(auth, gStats);
+                        await DisplayAlert("Log Entry Daily Bonus!", "Received " + GamificationTools.logEntryDailyBonusXP + "xp bonus for more than three log entries in a day", "OK");
+                    } else if (bonus.Equals("weekly")) {
+                        levelUp = GamificationTools.levelUp(ref gStats, GamificationTools.logEntryWeeklyBonusXP);
+                        GamificationTools.updateGStatsDB(auth, gStats);
+                        await DisplayAlert("Log Entry Weekly Bonus!", 
+                            "Received " + GamificationTools.logEntryWeeklyBonusXP + "xp bonus for more than three log entries for more than three days in a row", "OK");
+                    } else if (bonus.Equals("both")) {
+                        levelUp = GamificationTools.levelUp(ref gStats, GamificationTools.logEntryWeeklyBonusXP + GamificationTools.logEntryDailyBonusXP);
+                        GamificationTools.updateGStatsDB(auth, gStats);
+                        await DisplayAlert("Log Entry Daily and Weekly Bonuses!",
+                            "Received " + GamificationTools.logEntryDailyBonusXP + "xp bonus for more than three log entries in a day\n"+
+                            "Received " + GamificationTools.logEntryWeeklyBonusXP + "xp bonus for more than three log entries for more than three days in a row", "OK");
+                    }
+                    if (levelUp) {
+                        await DisplayAlert("Levelled Up!",
+                            "Advanced to Level " + gStats.level.ToString() + "\n" + GamificationTools.getExpToNextLevel(gStats.level, gStats.xp).ToString() + " Experience to the next level",
+                            "OK");
+                    }
+                }
+                await Navigation.PopModalAsync();
             } else {
                 //Unable to post log, error message
                 await DisplayAlert("Unable to create Logbook Entry", errors, "OK");
