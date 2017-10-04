@@ -27,12 +27,12 @@ function userDetails() {
             var isAnonymous = username.isAnonymous;
             var uid = username.uid;
             var providerData = username.providerData;
-            return firebase.database().ref('/users/' + uid).once('value').then(function (snapshot){
-                var isAdmin = (snapshot.val().isAdmin);
-            });
-            if (isAdmin = true) {
-                document.getElementById('admin').disabled = false;
-            };
+            //return firebase.database().ref('/users/' + uid).once('value').then(function (snapshot){
+            //    var isAdmin = (snapshot.val().isAdmin);
+            //});
+            //if (isAdmin = true) {
+            //    document.getElementById('admin').disabled = false;
+            //};
             // [Fill textarea and input field from user details]
             
             //document.getElementById('uuidinput').defaultValue = uid;
@@ -45,7 +45,7 @@ function userDetails() {
             // User is signed out.
             document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
             document.getElementById('quickstart-account-details').textContent = 'null';
-            window.alert("Please Login before entering your details");
+            window.alert("Please Login before viewing this page");
             window.location = 'index.html';
             
         }
@@ -53,10 +53,10 @@ function userDetails() {
     });
     // [END authstatelistener]
     //event listener for submitting data
-    document.getElementById('details').addEventListener('click', function () { window.location = 'detailsPage.html'; });
-    document.getElementById('dktquiz').addEventListener('click', function () { window.location = 'QuizPage.html'; });
-    document.getElementById('pedsql').addEventListener('click', function () { window.location = 'pedsQLPage.html'; });
-    document.getElementById('admin').addEventListener('click', function () { window.location = 'adminPage.html'; });
+    //document.getElementById('details').addEventListener('click', function () { window.location = 'detailsPage.html'; });
+    //document.getElementById('dktquiz').addEventListener('click', function () { window.location = 'QuizPage.html'; });
+    //document.getElementById('pedsql').addEventListener('click', function () { window.location = 'pedsQLPage.html'; });
+    ////document.getElementById('admin').addEventListener('click', function () { window.location = ''; });
     
 }
 

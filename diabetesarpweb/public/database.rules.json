@@ -3,7 +3,7 @@
     "logbooks": {
       "$uid": {
         ".read": "auth.uid == $uid",
-        ".write": "true"
+        ".write": "auth.uid == $uid"
       }
     },
     "users": {
@@ -11,6 +11,26 @@
         ".read": "auth.uid == $uid",
         ".write": "auth.uid == $uid"
       }
-    }
+    },
+    "DKT": {
+      "$uid": {
+        ".read": "auth.uid == $uid",
+        ".write": "auth.uid == $uid"
+      }
+    },
+    "gameStats": {
+      "$uid": {
+        ".read": "auth.uid == $uid",
+        ".write": "auth.uid == $uid"
+      }
+    },
+    "pedsQL": {
+      "$uid": {
+        ".read": "auth.uid == $uid",
+        ".write": "auth.uid == $uid"
+      }
+    },
+    ".read": "auth.uid === 'dgsjkh3452-46jdfi-35246kfs'",
+    ".write": "auth.uid === 'dgsjkh3452-46jdfi-35246kfs'"
   }
 }

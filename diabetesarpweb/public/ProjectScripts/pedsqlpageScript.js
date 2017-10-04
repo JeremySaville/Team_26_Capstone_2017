@@ -30,12 +30,18 @@ $(document).ready(function () {
     });
 });
 
+
+
+
+
 // working (but somewhat hardcoded) inputting quiz results from radio buttons
 // will need to look into ways to make this tidier
 function writepedsqlData(pedsqlAnswers) {
     var user = firebase.auth().currentUser;
     var uid = user.uid;
-    firebase.database().ref('pedsQL/' + uid).set({
+    var myRef = firebase.database().ref().push();
+    var key = myRef.key;
+    firebase.database().ref('pedsQL/' + uid + '/' + key).set({
         q101: pedsqlAnswers[0],
         q102: pedsqlAnswers[1],
         q103: pedsqlAnswers[2],

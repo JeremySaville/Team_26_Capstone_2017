@@ -34,38 +34,73 @@ $(document).ready(function () {
 });
 
 
-// working (but somewhat hardcoded) inputting quiz results from radio buttons
-// will need to look into ways to make this tidier
 function writeQuizData(radioAnswers) {
     var user = firebase.auth().currentUser;
     var uid = user.uid;
-    firebase.database().ref('DKT/' + uid).set({
-        q01: radioAnswers[0],
-        q02: radioAnswers[1],
-        q03: radioAnswers[2],
-        q04: radioAnswers[3],
-        q05: radioAnswers[4],
-        q06: radioAnswers[5],
-        q07: radioAnswers[6],
-        q08: radioAnswers[7],
-        q09: radioAnswers[8],
-        q10: radioAnswers[9],
-        q11: radioAnswers[10],
-        q12: radioAnswers[11],
-        q13: radioAnswers[12],
-        q14: radioAnswers[13],
-        q15: radioAnswers[14],
-        q16: radioAnswers[15],
-        q17: radioAnswers[16],
-        q18: radioAnswers[17],
-        q19: radioAnswers[18],
-        q20: radioAnswers[19],
-        q21: radioAnswers[20],
-        q22: radioAnswers[21],
-        q23: radioAnswers[22]
+    var myRef = firebase.database().ref().push();
+    var key = myRef.key;
+        firebase.database().ref('DKT/' + uid + '/' + key).set({
+            q01: radioAnswers[0],
+            q02: radioAnswers[1],
+            q03: radioAnswers[2],
+            q04: radioAnswers[3],
+            q05: radioAnswers[4],
+            q06: radioAnswers[5],
+            q07: radioAnswers[6],
+            q08: radioAnswers[7],
+            q09: radioAnswers[8],
+            q10: radioAnswers[9],
+            q11: radioAnswers[10],
+            q12: radioAnswers[11],
+            q13: radioAnswers[12],
+            q14: radioAnswers[13],
+            q15: radioAnswers[14],
+            q16: radioAnswers[15],
+            q17: radioAnswers[16],
+            q18: radioAnswers[17],
+            q19: radioAnswers[18],
+            q20: radioAnswers[19],
+            q21: radioAnswers[20],
+            q22: radioAnswers[21],
+            q23: radioAnswers[22]
 
     });
+        console.log(key);
 }
+
+
+// working (but somewhat hardcoded) inputting quiz results from radio buttons
+// will need to look into ways to make this tidier
+//function writeQuizData(radioAnswers) {
+//    var user = firebase.auth().currentUser;
+//    var uid = user.uid;
+//    firebase.database().ref('DKT/' + uid).set({
+//        q01: radioAnswers[0],
+//        q02: radioAnswers[1],
+//        q03: radioAnswers[2],
+//        q04: radioAnswers[3],
+//        q05: radioAnswers[4],
+//        q06: radioAnswers[5],
+//        q07: radioAnswers[6],
+//        q08: radioAnswers[7],
+//        q09: radioAnswers[8],
+//        q10: radioAnswers[9],
+//        q11: radioAnswers[10],
+//        q12: radioAnswers[11],
+//        q13: radioAnswers[12],
+//        q14: radioAnswers[13],
+//        q15: radioAnswers[14],
+//        q16: radioAnswers[15],
+//        q17: radioAnswers[16],
+//        q18: radioAnswers[17],
+//        q19: radioAnswers[18],
+//        q20: radioAnswers[19],
+//        q21: radioAnswers[20],
+//        q22: radioAnswers[21],
+//        q23: radioAnswers[22]
+
+//    });
+//}
 
 
 function userDetails() {
