@@ -41,7 +41,9 @@ function writepedsqlData(pedsqlAnswers) {
     var uid = user.uid;
     var myRef = firebase.database().ref().push();
     var key = myRef.key;
+    var myDate = new Date();
     firebase.database().ref('pedsQL/' + uid + '/' + key).set({
+        created: firebase.database.ServerValue.TIMESTAMP,
         q101: pedsqlAnswers[0],
         q102: pedsqlAnswers[1],
         q103: pedsqlAnswers[2],

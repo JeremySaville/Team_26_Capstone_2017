@@ -12,6 +12,10 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+function SignOut() {
+    firebase.auth().signOut();
+}
+
 function userDetails() {
     // Listening for auth state changes.
     // [START authstatelistener]
@@ -27,12 +31,7 @@ function userDetails() {
             var isAnonymous = username.isAnonymous;
             var uid = username.uid;
             var providerData = username.providerData;
-            return firebase.database().ref('/users/' + uid).once('value').then(function (snapshot){
-                var isAdmin = (snapshot.val().isAdmin);
-            });
-            if (isAdmin = true) {
-                document.getElementById('admin').disabled = false;
-            };
+            
             // [Fill textarea and input field from user details]
             
             //document.getElementById('uuidinput').defaultValue = uid;
@@ -56,7 +55,7 @@ function userDetails() {
     document.getElementById('details').addEventListener('click', function () { window.location = 'detailsPage.html'; });
     document.getElementById('dktquiz').addEventListener('click', function () { window.location = 'QuizPage.html'; });
     document.getElementById('pedsql').addEventListener('click', function () { window.location = 'pedsQLPage.html'; });
-    document.getElementById('admin').addEventListener('click', function () { window.location = 'adminPage.html'; });
+    document.getElementById('signout').addEventListener('click', SignOut, false);
     
 }
 

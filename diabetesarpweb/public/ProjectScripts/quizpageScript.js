@@ -39,7 +39,8 @@ function writeQuizData(radioAnswers) {
     var uid = user.uid;
     var myRef = firebase.database().ref().push();
     var key = myRef.key;
-        firebase.database().ref('DKT/' + uid + '/' + key).set({
+    firebase.database().ref('DKT/' + uid + '/' + key).set({
+            created: firebase.database.ServerValue.TIMESTAMP,
             q01: radioAnswers[0],
             q02: radioAnswers[1],
             q03: radioAnswers[2],
