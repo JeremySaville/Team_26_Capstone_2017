@@ -5,22 +5,22 @@
              x:Class="DiabetesApp.LogbookPage"
              Style="{StaticResource pageStyle}">
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout>
-                <Label Text="Logbook" FontSize="Large" TextColor="{StaticResource mainTextColour}" Margin="10" HorizontalOptions="Center"/>
-                <Button x:Name="createButton" Text="Create Entry" Clicked="onClick_createEntry" Style="{StaticResource buttonStyle}"/>
-                <Label Text="Logbook Entries" TextColor="{StaticResource mainTextColour}" FontSize="Medium" Margin="10"/>
-                <StackLayout Orientation="Horizontal">
-                    <StackLayout Orientation="Vertical">
-                        <Label Text="Start Date:" Margin="10, 10, 10, 0" TextColor="{StaticResource mainTextColour}"/>
-                        <DatePicker x:Name="startDate" Date="{x:Static sys:DateTime.Now}" Format="yyyy-MM-dd" MaximumDate="{x:Static sys:DateTime.Now}" VerticalOptions="Center" Margin="10, 0, 10, 10"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical">
-                        <Label Text="End Date:" Margin="10, 10, 10, 0" TextColor="{StaticResource mainTextColour}"/>
-                        <DatePicker x:Name="endDate" Date="{x:Static sys:DateTime.Now}" Format="yyyy-MM-dd" MaximumDate="{x:Static sys:DateTime.Now}" VerticalOptions="Center" Margin="10, 0, 10, 10"/>
-                    </StackLayout>
-                    <Button x:Name="searchButton" Clicked="onClick_searchEntries" Text="Search" Style="{StaticResource buttonStyle}"/>
+        <StackLayout>
+            <Label Text="Logbook" FontSize="Large" TextColor="{StaticResource mainTextColour}" Margin="10" HorizontalOptions="Center"/>
+            <Button x:Name="createButton" Text="Create Entry" Clicked="onClick_createEntry" Style="{StaticResource buttonStyle}"/>
+            <Label Text="Logbook Entries" TextColor="{StaticResource mainTextColour}" FontSize="Medium" Margin="10"/>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Start Date:" Margin="10, 10, 10, 0" TextColor="{StaticResource mainTextColour}"/>
+                    <DatePicker x:Name="startDate" Date="{x:Static sys:DateTime.Now}" Format="MMM d yyyy" MaximumDate="{x:Static sys:DateTime.Now}" VerticalOptions="Center" Margin="10, 0, 10, 10"/>
                 </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="End Date:" Margin="10, 10, 10, 0" TextColor="{StaticResource mainTextColour}"/>
+                    <DatePicker x:Name="endDate" Date="{x:Static sys:DateTime.Now}" Format="MMM d yyyy" MaximumDate="{x:Static sys:DateTime.Now}" VerticalOptions="Center" Margin="10, 0, 10, 10"/>
+                </StackLayout>
+                <Button x:Name="searchButton" Clicked="onClick_searchEntries" Text="Search" Style="{StaticResource buttonStyle}"/>
+            </StackLayout>
+            <ScrollView>
                 <ListView x:Name="logsList" ItemTapped="onClick_logEntryListItem" IsPullToRefreshEnabled="True" Refreshing="onRefresh">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -28,7 +28,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-            </StackLayout>
-        </ScrollView>
+            </ScrollView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

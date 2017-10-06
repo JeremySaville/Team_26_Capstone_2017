@@ -1,0 +1,64 @@
+﻿
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyBWvmWgYk6iXjMAUryQDNfXHxiWjQHYrvE",
+    authDomain: "diabetesarp.firebaseapp.com",
+    databaseURL: "https://diabetesarp.firebaseio.com",
+    projectId: "diabetesarp",
+    storageBucket: "diabetesarp.appspot.com",
+    messagingSenderId: "411612735580"
+};
+firebase.initializeApp(config);
+
+var database = firebase.database();
+
+function SignOut() {
+    firebase.auth().signOut();
+}
+
+function userDetails() {
+    // Listening for auth state changes.
+    // [START authstatelistener]
+    firebase.auth().onAuthStateChanged(function (username) {
+
+        if (username) {
+            // User is signed in.
+            //user = username;
+            var displayName = username.displayName;
+            var email = username.email;
+            var emailVerified = username.emailVerified;
+            var photoURL = username.photoURL;
+            var isAnonymous = username.isAnonymous;
+            var uid = username.uid;
+            var providerData = username.providerData;
+            
+            // [Fill textarea and input field from user details]
+            
+            //document.getElementById('uuidinput').defaultValue = uid;
+            document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
+            //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+            document.getElementById('quickstart-account-details').textContent = email + ' ' + uid;
+            
+            
+        } else {
+            // User is signed out.
+            document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+            document.getElementById('quickstart-account-details').textContent = 'null';
+            window.alert("Please Login before entering your details");
+            window.location = 'index.html';
+            
+        }
+        
+    });
+    // [END authstatelistener]
+    //event listener for submitting data
+    document.getElementById('details').addEventListener('click', function () { window.location = 'detailsPage.html'; });
+    document.getElementById('dktquiz').addEventListener('click', function () { window.location = 'QuizPage.html'; });
+    document.getElementById('pedsql').addEventListener('click', function () { window.location = 'pedsQLPage.html'; });
+    document.getElementById('signout').addEventListener('click', SignOut, false);
+    
+}
+
+window.onload = function () {
+    userDetails();
+}

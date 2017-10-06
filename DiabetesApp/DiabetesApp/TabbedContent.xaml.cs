@@ -11,18 +11,19 @@ using Xamarin.Forms.Xaml;
 namespace DiabetesApp {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TabbedContent : TabbedPage {
-        public TabbedContent(FirebaseAuthLink auth) {
+        public TabbedContent(FirebaseAuthLink auth, bool gamified) {
             InitializeComponent();
 
-            Children.Add(new NavigationPage(new LogbookPage(auth)) {
-                Icon = "ic_assignment_white.png"});
+            Children.Add(new NavigationPage(new LogbookPage(auth, gamified)) { Icon = "ic_assignment_white.png" });
             Children.Add(new AnalyticsPage(auth));
-            Children.Add(new HomePage(auth));
-            Children.Add(new ProfilePage(auth));
+            Children.Add(new ProfilePage(auth, gamified));
+            Children.Add(new EducationPage() { Icon = "ic_school_white.png" });
             Children.Add(new SettingsPage(auth));
-            Children.Add(new EducationPage());
 
-            this.SelectedItem = this.Children[2];
+            if (gamified)
+                SelectedItem = Children[2];
+            else
+                SelectedItem = Children[1];
         }
     }
 }

@@ -20,7 +20,7 @@
             <Label Text="Username:" FontSize="Medium" Margin="20, 20, 0, 0"/>
             <Entry x:Name="usernameEntry" Margin="20, 0"/>
             <Label Text="Date of Birth:" FontSize="Medium" Margin="20, 20, 0, 0"/>
-            <DatePicker x:Name="birthdayEntry" Margin="20, 0" Date="{x:Static sys:DateTime.Now}" Format="yyyy-MM-dd" MaximumDate="{x:Static sys:DateTime.Now}">
+            <DatePicker x:Name="birthdayEntry" Margin="20, 0" Date="{x:Static sys:DateTime.Now}" Format="MMM d yyyy" MaximumDate="{x:Static sys:DateTime.Now}">
                 <DatePicker.MinimumDate>
                     <sys:DateTime x:FactoryMethod="Parse"><x:Arguments><x:String>Jan 1 1900</x:String></x:Arguments></sys:DateTime>
                 </DatePicker.MinimumDate>

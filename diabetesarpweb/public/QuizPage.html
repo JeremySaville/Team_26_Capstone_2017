@@ -1,0 +1,462 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <title>Diabetes App User Details Entry</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Content/bootstrap.min.css" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Content/bootstrap-theme.min.css" />
+    <!-- firebase header -->
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase-messaging.js"></script>
+    <script type="text/javascript" src="ProjectScripts/quizpageScript.js"></script>
+ 
+
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>Diabetes App Research Project</h1>
+        <p>Please Complete The Quiz</p>
+    </div>
+    <main class="form-horizontal">
+        <div class="container-fluid">
+
+            <form data-toggle="validator" role="form">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>1. Having type one diabetes means:</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question1" id="optradio" value="a. Your doesn’t make enough insulin" required />a. Your body doesn’t make enough insulin</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question1" id="optradio" value="b. You eat too many carbohydrates" />b. You eat too many carbohydrates</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question1" id="optradio" value="c. Drink too much water" />c. Drink too much water</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question1" id="optradio" value="d. Will not be able to have normal job" />d. Will not be able to have a normal job</label>
+                        </div>
+                        <br />
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <h3>2. Which of the following is usually not associated with diabetes?</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question2" id="optradio" value="a. Vision problems" required />a. Vision problems</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question2" id="optradio" value="b. Kidney problems" />b. Kidney problems</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question2" id="optradio" value="c. Nerve problems" />c. Nerve problems</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question2" id="optradio" value="d. Lung problems" />d. Lung problems</label>
+                        </div>
+                        <br />
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <h3>3. Glycosylated hemoglobin (haemoglobin A1c) is a test that is a measure of your average blood glucose level for the past:</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question3" id="optradio" value="a. Day" required />a. Day</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question3" id="optradio" value="b. Week" />b. Week</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question3" id="optradio" value="c. 10 weeks" />c. 10 weeks</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question3" id="optradio" value="d. 6 months" />d. 6 months</label>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>4. Which of the following is not a reason why you should check blood sugars multiple times per day?</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question4" id="optradio" value="a. To help determine the right insulin dose" required />a. To help determine the right insulin dose</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question4" id="optradio" value="b. To detect high and low levels so you can take action" />b. To detect high and low levels so you can take action</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question4" id="optradio" value="c. understand how exercise effects your BSL" />c. To understand how exercise effects your BSL</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question4" id="optradio" value="d. work out if you have been drinking too much water" />d. To work out if you have been drinking too much water</label>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>5. What information should be recorded in your diabetes diary?</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question5" id="optradio" value="a. Results of blood sugar checks" required />a. Results of blood sugar checks</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question5" id="optradio" value="b. Adjustment insulin doses" />b. Adjustment insulin doses</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question5" id="optradio" value="c. Time spent exercising" />c. Time spent exercising</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question5" id="optradio" value="d. All of these" />d. All of these</label>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>6. Which is the best method for testing blood glucose?</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question6" id="optradio" value="a. Testing a drop of urine" required />a. Testing a drop of urine</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question6" id="optradio" value="b. Testing a drop of blood" />b. Testing a drop of blood</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question6" id="optradio" value="c. Both are equally good" />c. Both are equally good</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question6" id="optradio" value="d" disabled />d. </label>
+                        </div>
+
+                        <br />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>7. What range should your blood glucose be in before a meal?</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question7" id="optradio" value="a. 1-3mmol/L" required />a. 1-3mmol/L</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question7" id="optradio" value="b. 4-7mmol/L" />b. 4-7mmol/L</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question7" id="optradio" value="c. 7-10mmol/L" />c. 7-10mmol/L</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question7" id="optradio" value="d. 3-8mmol/L" />d. 3-8mmol/L</label>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>8. You realize just before lunch time that you forgot to take your insulin before breakfast. What should you do now?</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question8" id="optradio" value="a. Skip lunch to lower your blood glucose" required />a. Skip lunch to lower your blood glucose</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question8" id="optradio" value="b. insulin usually take at breakfast" />b. Take the insulin that you usually take at breakfast</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question8" id="optradio" value="c. twice as much insulin as you usually take at breakfast" />c. Take twice as much insulin as you usually take at breakfast</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question8" id="optradio" value="d. Check your BSL to decide how much insulin to take" />d. Check your blood glucose level to decide how much insulin to take</label>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>9. If you take your morning insulin but skip breakfast your blood glucose level will usually:</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question9" id="optradio" value="a. Increase" required />a. Increase</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question9" id="optradio" value="b. Decrease" />b. Decrease</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question9" id="optradio" value="c. Stay the same" />c. Stay the same</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question9" id="optradio" value="d" disabled />d. </label>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>10. If you have taken short-acting insulin, you are most likely to have a hypo in:</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question10" id="optradio" value="a. 1-3 h" required />a. 1-3 h</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question10" id="optradio" value="b. 6-12 h" />b. 6-12 h</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question10" id="optradio" value="c. 12-15 h" />c. 12-15 h</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question10" id="optradio" value="d. more than 15 h" />d. more than 15 h</label>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>11. If you are beginning to have a hypo you should:</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question11" id="optradio" value="a. Exercise" required />a. Exercise</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question11" id="optradio" value="b. Lie down and rest" />b. Lie down and rest</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question11" id="optradio" value="c. Drink some juice" />c. Drink some juice</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question11" id="optradio" value="d. Take regular insulin" />d. Take regular insulin</label>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>12. Low blood glucose may be caused by:</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question12" id="optradio" value="a. Too much insulin" required />a. Too much insulin</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question12" id="optradio" value="b. Too little insulin" />b. Too little insulin</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question12" id="optradio" value="c. Too much food" />c. Too much food</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question12" id="optradio" value="d. Too little exercise" />d. Too little exercise</label>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>13. Which one of the following will most likely cause low blood sugar:</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question13" id="optradio" value="a" required />a. Lots of exercise</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question13" id="optradio" value="b. Infection" />b. Infection</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question13" id="optradio" value="c. Overeating" />c. Overeating</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question13" id="optradio" value="d. Not taking your insulin" />d. Not taking your insulin</label>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>14. High blood glucose may be caused by:</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question14" id="optradio" value="a. Not enough insulin" required />a. Not enough insulin</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question14" id="optradio" value="b. Skipping meals" />b. Skipping meals</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question14" id="optradio" value="c. Not eating snacks" />c. Not eating snacks</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question14" id="optradio" value="d. Large ketones in your urine" />d. Large ketones in your urine</label>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>15. Which should not be used to treat low blood glucose?</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question15" id="optradio" value="a. 3 lollies" required />a. 3 lollies</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question15" id="optradio" value="b. 1/2 cup orange juice" />b. 1/2 cup orange juice</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question15" id="optradio" value="c. Water" />c. Water</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question15" id="optradio" value="d" disabled />d. </label>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>16. If you are sick with the flu, which of the following changes should you make?</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question16" id="optradio" value="a. Take less insulin" required />a. Take less insulin</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question16" id="optradio" value="b. Drink less liquids" />b. Drink less liquids</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question16" id="optradio" value="c. Eat more proteins" />c. Eat more proteins</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question16" id="optradio" value="d. Test for glucose and ketones more often" />d. Test for glucose and ketones more often</label>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>17. Vomiting and diarrhoea are likely to cause:</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question17" id="optradio" value="a. an increase in blood glucose" required />a. an increase in blood glucose</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question17" id="optradio" value="b. a decrease in blood glucose" />b. a decrease in blood glucose</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question17" id="optradio" value="c. no change in blood glucose" />c. no change in blood glucose</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question17" id="optradio" value="d" disabled />d. </label>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>18. Signs of ketoacidosis (DKA) include:</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question18" id="optradio" value="a. Shakiness" required />a. Shakiness</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question18" id="optradio" value="b. Sweating" />b. Sweating</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question18" id="optradio" value="c. Vomiting" />c. Vomiting</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question18" id="optradio" value="d. Low blood glucose" />d. Low blood glucose</label>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>19. The diabetes diet is:</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question19" id="optradio" value="a. The way most Australian people eat" required />a. The way most Australian people eat</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question19" id="optradio" value="b. A healthy diet for most people" />b. A healthy diet for most people</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question19" id="optradio" value="c. Too high in carbohydrate for most people" />c. Too high in carbohydrate for most people</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question19" id="optradio" value="d. Too high in protein for most people" />d. Too high in protein for most people</label>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>20. Which of the following is the highest in carbohydrate?</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question20" id="optradio" value="a. Roast Chicken" required />a. Roast Chicken</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question20" id="optradio" value="b. Cheese" />b. Cheese</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question20" id="optradio" value="c. Baked Potatoes" />c. Baked Potatoes</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question20" id="optradio" value=">d. Peanut Butter" />d. Peanut Butter</label>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>21. What effect does fruit juice have on blood glucose?</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question21" id="optradio" value="a. Lowers it" required />a. Lowers it</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question21" id="optradio" value="b. Raises it" />b. Raises it</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question21" id="optradio" value="c. Has no effect" />c. Has no effect</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question21" id="optradio" value="d" disabled />d. </label>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>22. If you are playing a long game of sport (e.g. a rugby or netball game) what should you do?</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question22" id="optradio" value="a. Have extra carbohydrate drinks/snacks during the game" required />a. Have extra carbohydrate drinks/snacks during the game</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question22" id="optradio" value="b. Limit the amount of water you drink" />b. Limit the amount of water you drink</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question22" id="optradio" value="c. Take extra insulin before the game" />c. Take extra insulin before the game</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question22" id="optradio" value="d. Give insulin right before the game starts" />d. Give insulin right before the game starts</label>
+                        </div>
+                        <br />
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>23. For a person in good control, what effect does exercise have on blood glucose?</h3>
+                        <div class="radio">
+                            <label><input type="radio" name="question23" id="optradio" value="a. Lowers it" required />a. Lowers it</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question23" id="optradio" value="b. Raises it" />b. Raises it</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question23" id="optradio" value="c. Has no effect" />c. Has no effect</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="question23" id="optradio" value="d" disabled/>d. </label>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+
+                <!-- buttons -->
+                <div class="form-group">
+                    <div class="col-xs-4">
+                        <button type="button" id="back" class="btn btn-default">Back</button>
+                        <button type="reset" id="clear" class="btn btn-default">Clear</button>
+                        <button type="submit" name="submit" id="submit" class="btn btn-default">Submit</button>
+                    </div>
+                </div>
+                <br /><br />
+
+            </form>
+            <!--User details container -->
+            <div class="quickstart-user-details-container">
+                Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+                <div>Firebase auth <code>currentUser</code> object value:</div>
+                <pre><code id="quickstart-account-details">null</code></pre>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

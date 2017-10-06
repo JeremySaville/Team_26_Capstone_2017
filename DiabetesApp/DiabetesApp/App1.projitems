@@ -10,10 +10,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)DataTypes\Educational.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DataTypes\Unlock.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DataTypes\Game.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DataTypes\Hba1c.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataTypes\Badges.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataTypes\GameStats.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataTypes\LogbookEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\GamificationTools.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Lesson13.xaml.cs">
       <DependentUpon>Lesson13.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -85,9 +85,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\EntryPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\HomePage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Pages\LogbookPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -103,42 +100,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)TabbedContent.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Test Pages\GraphViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\LoginPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Test Pages\HomeTestPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Test Pages\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Test Pages\MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Test Pages\HomeTestPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Test Pages\" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\LoginPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
