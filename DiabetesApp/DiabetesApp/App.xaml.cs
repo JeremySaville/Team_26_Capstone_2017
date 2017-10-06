@@ -9,11 +9,7 @@ namespace DiabetesApp {
 	public partial class App : Application {
 		public App () {
 			InitializeComponent();
-<<<<<<< HEAD
-			MainPage = new DiabetesApp.Lesson06();
-=======
 			MainPage = new DiabetesApp.LoginPage();
->>>>>>> a9d2d912ccf63094de7cffcf1202394a7805ef9e
 		}
 
 		protected override void OnStart () {
