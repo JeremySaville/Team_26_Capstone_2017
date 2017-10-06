@@ -31,7 +31,7 @@
                 <Label Grid.Column="2" Grid.Row="1" Text="End Date:" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Center" TextColor="{StaticResource mainTextColour}"/>
                 <DatePicker Grid.Column="2" Grid.Row="2" x:Name="endDate" Date="{x:Static sys:DateTime.Now}" Format="MMM d yyyy" MaximumDate="{x:Static sys:DateTime.Now}"/>
             </Grid>
-            <oxy:PlotView Model="{Binding BSLModel}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="300"/>
+            <oxy:PlotView Model="{Binding BSLModel}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="300" WidthRequest="800"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
