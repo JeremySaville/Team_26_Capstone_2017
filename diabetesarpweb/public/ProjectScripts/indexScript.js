@@ -151,8 +151,8 @@ function initApp() {
             document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
             document.getElementById('quickstart-sign-in').textContent = 'Sign out';
             document.getElementById('quickstart-sign-in').disabled = false;
-            document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
-            //document.getElementById('quickstart-account-details').textContent = email + ' ' + uid;
+            //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+            document.getElementById('quickstart-account-details').textContent = email + ' ' + uid;
             if (!emailVerified) {
                 document.getElementById('quickstart-verify-email').disabled = false;
             }
