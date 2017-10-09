@@ -8,102 +8,46 @@ var config = {
     storageBucket: "diabetesarp.appspot.com",
     messagingSenderId: "411612735580"
 };
+
 firebase.initializeApp(config);
 
+// initialise DB
 var database = firebase.database();
+
+// references for randomisationtotals child entries
 var Paper0 = firebase.database().ref('RandomisationTotals/Paper0');
 var AppNormal1 = firebase.database().ref('RandomisationTotals/AppNormal1');
 var AppGamified2 = firebase.database().ref('RandomisationTotals/AppGamified2');
+
+// global variables for RandomisationTotals counts
 var Paper0Count;
 var AppNormal1Count;
 var AppGamified2Count;
 
+// fills count variables 
 function getData() {
     Paper0.on('value', function (snapshot) {
-        //console.log(snapshot.val());
+        
         Paper0Count = snapshot.val();
         console.log('Randomisation totals for Paper0 = ' + Paper0Count);
         return Paper0Count;
     });
 
     AppNormal1.on('value', function (snapshot) {
-        //console.log(snapshot.val());
+        
         AppNormal1Count = snapshot.val();
         console.log('Randomisation totals for AppNormal1 = ' + AppNormal1Count);
         return AppNormal1Count;
     });
 
     AppGamified2.on('value', function (snapshot) {
-        //console.log(snapshot.val());
+        
         AppGamified2Count = snapshot.val();
         console.log('Randomisation totals for AppGamified2 = ' + AppGamified2Count);
         return AppGamified2Count;
     });
 }
 
-//function getData(randGroup) {
-//    //var Paper = firebase.database().ref('RandomisationTotals/0Paper');
-//    if (randGroup == 0) {
-//        Paper0.on('value', function (snapshot) {
-//            console.log(snapshot.val());
-//            var Paper0 = snapshot.val();
-//            return Paper0;
-//        });
-//    } else if (randGroup == 1){
-//        AppNormal1.on('value', function (snapshot) {
-//            console.log(snapshot.val());
-//            var AppNormal1 = snapshot.val();
-//            return AppNormal1;
-//        });
-//    } else if (randGroup == 2) {
-//        AppGamified2.on('value', function (snapshot) {
-//            console.log(snapshot.val());
-//            var AppGamified2 = snapshot.val();
-//            return AppGamified2;
-//        });
-//    }
-//    return 1;
-//}
-
-//function getData(randGroup) {
-    
-//    var Paper0 = firebase.database().ref('RandomisationTotals/Paper0');
-//    var AppNormal1 = firebase.database().ref('RandomisationTotals/AppNormal1');
-//    var AppGamified2 = firebase.database().ref('RandomisationTotals/AppGamified2');
-//    var groupCount;
-//    if (randGroup == 0) {
-//        //console.log('Paper');
-//        Paper0.once('value').then(function (snapshot) {
-//            console.log('First result ' + snapshot.val());
-//            groupCount = (snapshot.val() && snapshot.val().Paper0);
-//            console.log('Final Group Count ' + groupCount);
-//            return groupCount;
-//        });
-//        //console.log('Final Group Count ' + groupCount);
-//    } else if (randGroup == 1) {
-//        //console.log('AppNormal');
-//        AppNormal1.once('value').then(function (snapshot) {
-//            console.log('Second Result ' + snapshot.val());
-//            groupCount = (snapshot.val() && snapshot.val().AppNormal1);
-//            console.log('Final Group Count ' + groupCount);
-//            return groupCount;
-//        });
-//        //console.log('Final Group Count ' + groupCount);
-
-//    } else if (randGroup == 2) {
-//        //console.log('AppGamified');
-//        AppGamified2.once('value').then(function (snapshot) {
-//            console.log('Third Result ' + snapshot.val());
-//            groupCount = (snapshot.val() && snapshot.val().AppGamified2);
-//            console.log('Final Group Count ' + groupCount);
-//            return groupCount;
-//        });
-//        //console.log('Final Group Count ' + groupCount);
-//    }
-//    //return groupCount;
-//    //console.log('Final Group Count ' + groupCount);
-//    //return 5;
-//}
 
 function updateDataPaper0(groupNum) {
     firebase.database().ref('RandomisationTotals/').update({
@@ -112,6 +56,7 @@ function updateDataPaper0(groupNum) {
     
 }
 
+// updates AppNormal1
 function updateDataAppNormal1(groupNum) {
     firebase.database().ref('RandomisationTotals/').update({
         AppNormal1: groupNum + 1
@@ -119,6 +64,7 @@ function updateDataAppNormal1(groupNum) {
 
 }
 
+// updates AppGamified2
 function updateDataAppGamified2(groupNum) {
     firebase.database().ref('RandomisationTotals/').update({
         AppGamified2: groupNum + 1
@@ -126,6 +72,10 @@ function updateDataAppGamified2(groupNum) {
 
 }
 
+
+// Finds a random number between 0 and 2 and checks the relevant count variable
+// updates the relevant child in the RandomisationTotals and returns the selected
+// random value to writeUserData()
 function getGroup() {
 
     var validGroup = 0;
@@ -145,40 +95,19 @@ function getGroup() {
             validGroup = 1;
             return randGroup;
         } else if (Paper0Count >= 30 && AppNormal1Count >= 30 && AppGamified2Count >= 30) {
-            //validGroup = 1;
+            validGroup = 1;
             window.alert('All Test Groups have been filled. Please manually adjust the Firebase Database as necessary.');
             return randGroup = null;
             //break;
         }
     };
 
-    //return randGroup;
-
 }
 
-//function getGroup() {
 
-//    var validGroup = 0;
-//    while (validGroup == 0) {
-//        var randGroup = Math.floor(Math.random() * 3);
-//        console.log(randGroup);
-//        if (getData(randGroup) <= 30) {
-            
-//            if (randGroup == 0) {
-//                updateDataPaper0(getData(randGroup));
-//            } else if (randGroup == 1) {
-//                updateDataAppNormal1(getData(randGroup));
-//            } else if (randGroup == 2) {
-//                updateDataAppGamified2(getData(randGroup));
-//            }
-//            validGroup = 1;
-//        }
-//    };
 
-//    return randGroup;
-
-//}
-
+// Gets user inputs from html fields, calls randomisation function and submits to DB
+// overwrites previous inputs
 function writeUserData() {
     var user = firebase.auth().currentUser;
     var uid = user.uid;
@@ -197,15 +126,6 @@ function writeUserData() {
 
 }
 
-//function stepForwardToggle(){
-	//document.getElementById('next').disabled = false;
-//}
-
-//function stepForward() {
-    
-//    window.location = "quizpage.html";
-    
-//}
 
 function userDetails() {
     // Listening for auth state changes.
@@ -214,7 +134,7 @@ function userDetails() {
         
         if (username) {
             // User is signed in.
-            //user = username;
+            
             var displayName = username.displayName;
             var email = username.email;
             var emailVerified = username.emailVerified;
@@ -243,22 +163,17 @@ function userDetails() {
     //event listener for submitting data
     document.getElementById('back').addEventListener('click', function () { window.location = 'LandingPage.html'; });
     document.getElementById('submit').addEventListener('click', writeUserData, false);
-	//document.getElementById('submit').addEventListener('click', stepForward, false);
+	
     
 }
 
 
-//function fillUid() {
 
-//}
 
 window.onload = function () {
+    // fill firebase.auth() details
     userDetails();
-    //getGroup();
-    //console.log('Getting Data');
+    //get values in firebase db diabetesarp/RandomisationTotals
     getData();
-    //console.log('updating Data');
-    //updateData();
-    //console.log('Getting Data');
-    //getData();
+    
 }
