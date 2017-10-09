@@ -3,7 +3,7 @@
     "logbooks": {
       "$uid": {
         ".read": "auth.uid == $uid",
-        ".write": "auth.uid == $uid"
+        ".write": "true"
       }
     },
     "users": {
@@ -30,7 +30,15 @@
         ".write": "auth.uid == $uid"
       }
     },
-    ".read": "auth.uid === 'dgsjkh3452-46jdfi-35246kfs'",
-    ".write": "auth.uid === 'dgsjkh3452-46jdfi-35246kfs'"
+    "badges": {
+      "$uid": {
+        ".read": "auth.uid == $uid",
+        ".write": "auth.uid == $uid"
+      }
+    },
+    "RandomisationTotals": {
+      ".read": "true",
+      ".write": "true"
+    }
   }
 }

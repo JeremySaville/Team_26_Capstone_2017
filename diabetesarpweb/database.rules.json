@@ -11,6 +11,34 @@
         ".read": "auth.uid == $uid",
         ".write": "auth.uid == $uid"
       }
+    },
+    "DKT": {
+      "$uid": {
+        ".read": "auth.uid == $uid",
+        ".write": "auth.uid == $uid"
+      }
+    },
+    "gameStats": {
+      "$uid": {
+        ".read": "auth.uid == $uid",
+        ".write": "auth.uid == $uid"
+      }
+    },
+    "pedsQL": {
+      "$uid": {
+        ".read": "auth.uid == $uid",
+        ".write": "auth.uid == $uid"
+      }
+    },
+    "badges": {
+      "$uid": {
+        ".read": "auth.uid == $uid",
+        ".write": "auth.uid == $uid"
+      }
+    },
+    "RandomisationTotals": {
+      ".read": "true",
+      ".write": "true"
     }
   }
 }

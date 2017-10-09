@@ -20,6 +20,8 @@ var radioAnswers = new Array();
 $(document).ready(function () {
     $("button#submit").click(function () {
 
+        radioAnswers.length = 0;
+
         $('input:radio').each(function () {
             if ($(this).is(':checked')) {
                 var radio = { name: $(this).attr('name'), value: $(this).val() };
@@ -29,7 +31,7 @@ $(document).ready(function () {
 
         console.log(JSON.stringify(radioAnswers));
         writeQuizData(radioAnswers);
-
+        
     });
 });
 
@@ -111,4 +113,5 @@ function userDetails() {
 
 window.onload = function () {
     userDetails();
+    console.log('Current array contents ' + radioAnswers);
 }
