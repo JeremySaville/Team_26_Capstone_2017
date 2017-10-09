@@ -11,9 +11,35 @@ var config = {
 firebase.initializeApp(config);
 
 var database = firebase.database();
-//var Paper0 = firebase.database().ref('RandomisationTotals/Paper0');
-//var AppNormal1 = firebase.database().ref('RandomisationTotals/AppNormal1');
-//var AppGamified2 = firebase.database().ref('RandomisationTotals/AppGamified2');
+var Paper0 = firebase.database().ref('RandomisationTotals/Paper0');
+var AppNormal1 = firebase.database().ref('RandomisationTotals/AppNormal1');
+var AppGamified2 = firebase.database().ref('RandomisationTotals/AppGamified2');
+var Paper0Count;
+var AppNormal1Count;
+var AppGamified2Count;
+
+function getData() {
+    Paper0.on('value', function (snapshot) {
+        //console.log(snapshot.val());
+        Paper0Count = snapshot.val();
+        console.log('Randomisation totals for Paper0 = ' + Paper0Count);
+        return Paper0Count;
+    });
+
+    AppNormal1.on('value', function (snapshot) {
+        //console.log(snapshot.val());
+        AppNormal1Count = snapshot.val();
+        console.log('Randomisation totals for AppNormal1 = ' + AppNormal1Count);
+        return AppNormal1Count;
+    });
+
+    AppGamified2.on('value', function (snapshot) {
+        //console.log(snapshot.val());
+        AppGamified2Count = snapshot.val();
+        console.log('Randomisation totals for AppGamified2 = ' + AppGamified2Count);
+        return AppGamified2Count;
+    });
+}
 
 //function getData(randGroup) {
 //    //var Paper = firebase.database().ref('RandomisationTotals/0Paper');
@@ -36,44 +62,48 @@ var database = firebase.database();
 //            return AppGamified2;
 //        });
 //    }
+//    return 1;
 //}
 
-function getData(randGroup) {
+//function getData(randGroup) {
     
-    var Paper0 = firebase.database().ref('RandomisationTotals/Paper0');
-    var AppNormal1 = firebase.database().ref('RandomisationTotals/AppNormal1');
-    var AppGamified2 = firebase.database().ref('RandomisationTotals/AppGamified2');
-    var groupCount;
-    if (randGroup == 0) {
-        //console.log('Paper');
-        Paper0.once('value').then(function (snapshot) {
-            console.log('First result ' + snapshot.val());
-            groupCount = (snapshot.val() && snapshot.val().Paper0);
-            console.log('Final Group Count ' + groupCount);
-        });
-        //console.log('Final Group Count ' + groupCount);
-    } else if (randGroup == 1) {
-        //console.log('AppNormal');
-        AppNormal1.once('value').then(function (snapshot) {
-            console.log('Second Result ' + snapshot.val());
-            groupCount = (snapshot.val() && snapshot.val().AppNormal1);
-            console.log('Final Group Count ' + groupCount);
-        });
-        //console.log('Final Group Count ' + groupCount);
+//    var Paper0 = firebase.database().ref('RandomisationTotals/Paper0');
+//    var AppNormal1 = firebase.database().ref('RandomisationTotals/AppNormal1');
+//    var AppGamified2 = firebase.database().ref('RandomisationTotals/AppGamified2');
+//    var groupCount;
+//    if (randGroup == 0) {
+//        //console.log('Paper');
+//        Paper0.once('value').then(function (snapshot) {
+//            console.log('First result ' + snapshot.val());
+//            groupCount = (snapshot.val() && snapshot.val().Paper0);
+//            console.log('Final Group Count ' + groupCount);
+//            return groupCount;
+//        });
+//        //console.log('Final Group Count ' + groupCount);
+//    } else if (randGroup == 1) {
+//        //console.log('AppNormal');
+//        AppNormal1.once('value').then(function (snapshot) {
+//            console.log('Second Result ' + snapshot.val());
+//            groupCount = (snapshot.val() && snapshot.val().AppNormal1);
+//            console.log('Final Group Count ' + groupCount);
+//            return groupCount;
+//        });
+//        //console.log('Final Group Count ' + groupCount);
 
-    } else if (randGroup == 2) {
-        //console.log('AppGamified');
-        AppGamified2.once('value').then(function (snapshot) {
-            console.log('Third Result ' + snapshot.val());
-            groupCount = (snapshot.val() && snapshot.val().AppGamified2);
-            console.log('Final Group Count ' + groupCount);
-        });
-        //console.log('Final Group Count ' + groupCount);
-    }
-    //return groupCount;
-    //console.log('Final Group Count ' + groupCount);
-    return 5;
-}
+//    } else if (randGroup == 2) {
+//        //console.log('AppGamified');
+//        AppGamified2.once('value').then(function (snapshot) {
+//            console.log('Third Result ' + snapshot.val());
+//            groupCount = (snapshot.val() && snapshot.val().AppGamified2);
+//            console.log('Final Group Count ' + groupCount);
+//            return groupCount;
+//        });
+//        //console.log('Final Group Count ' + groupCount);
+//    }
+//    //return groupCount;
+//    //console.log('Final Group Count ' + groupCount);
+//    //return 5;
+//}
 
 function updateDataPaper0(groupNum) {
     firebase.database().ref('RandomisationTotals/').update({
@@ -96,33 +126,58 @@ function updateDataAppGamified2(groupNum) {
 
 }
 
-//var starCountRef = firebase.database().ref('posts/' + postId + '/starCount');
-//starCountRef.on('value', function (snapshot) {
-//    updateStarCount(postElement, snapshot.val());
-//});
-
 function getGroup() {
 
     var validGroup = 0;
     while (validGroup == 0) {
         var randGroup = Math.floor(Math.random() * 3);
         console.log(randGroup);
-        if (getData(randGroup) <= 30) {
-            
-            if (randGroup == 0) {
-                updateDataPaper0(getData(randGroup));
-            } else if (randGroup == 1) {
-                updateDataAppNormal1(getData(randGroup));
-            } else if (randGroup == 2) {
-                updateDataAppGamified2(getData(randGroup));
-            }
+        if (randGroup == 0 && Paper0Count <= 29) {
+            updateDataPaper0(Paper0Count);
             validGroup = 1;
+            return randGroup;
+        } else if (randGroup == 1 && AppNormal1Count <= 29) {
+            updateDataAppNormal1(AppNormal1Count);
+            validGroup = 1;
+            return randGroup;
+        } else if (randGroup == 2 && AppGamified2Count <= 29) {
+            updateDataAppGamified2(AppGamified2Count);
+            validGroup = 1;
+            return randGroup;
+        } else if (Paper0Count >= 30 && AppNormal1Count >= 30 && AppGamified2Count >= 30) {
+            //validGroup = 1;
+            window.alert('All Test Groups have been filled. Please manually adjust the Firebase Database as necessary.');
+            return randGroup = null;
+            //break;
         }
     };
 
-    return randGroup;
+    //return randGroup;
 
 }
+
+//function getGroup() {
+
+//    var validGroup = 0;
+//    while (validGroup == 0) {
+//        var randGroup = Math.floor(Math.random() * 3);
+//        console.log(randGroup);
+//        if (getData(randGroup) <= 30) {
+            
+//            if (randGroup == 0) {
+//                updateDataPaper0(getData(randGroup));
+//            } else if (randGroup == 1) {
+//                updateDataAppNormal1(getData(randGroup));
+//            } else if (randGroup == 2) {
+//                updateDataAppGamified2(getData(randGroup));
+//            }
+//            validGroup = 1;
+//        }
+//    };
+
+//    return randGroup;
+
+//}
 
 function writeUserData() {
     var user = firebase.auth().currentUser;
@@ -137,7 +192,7 @@ function writeUserData() {
         phone: phone,
         dob: dob,
         HBA1C: hba1c,
-        AppGroup: group
+        gamified: group
     });
 
 }
@@ -146,11 +201,11 @@ function writeUserData() {
 	//document.getElementById('next').disabled = false;
 //}
 
-function stepForward() {
+//function stepForward() {
     
-    window.location = "quizpage.html";
+//    window.location = "quizpage.html";
     
-}
+//}
 
 function userDetails() {
     // Listening for auth state changes.
@@ -201,7 +256,7 @@ window.onload = function () {
     userDetails();
     //getGroup();
     //console.log('Getting Data');
-    //getData();
+    getData();
     //console.log('updating Data');
     //updateData();
     //console.log('Getting Data');
