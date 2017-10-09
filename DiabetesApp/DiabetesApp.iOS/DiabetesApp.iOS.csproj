@@ -241,6 +241,27 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_school_white_3x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b1_starting_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b2_ramping_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b3_getting_there.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b4_skilled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b5_rugged.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b6_hardened.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b7_experienced.png" />
+  </ItemGroup>
   <Import Project="..\DiabetesApp\DiabetesApp.projitems" Label="Shared" Condition="Exists('..\DiabetesApp\DiabetesApp.projitems')" />
   <Import Project="..\DiabetesApp\App1.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

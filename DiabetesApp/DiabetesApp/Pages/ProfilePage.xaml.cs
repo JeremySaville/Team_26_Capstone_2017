@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DiabetesApp.DataTypes;
 using DiabetesApp.Models;
+using System.Collections;
 
 namespace DiabetesApp {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -22,25 +23,23 @@ namespace DiabetesApp {
             this.gamified = gamified;
             this.auth = auth;
 
-            updateStats();
-
             if (!gamified) {
                 profileTable.Remove(gameStats);
                 profileTable.Remove(badges);
-            } else {
-                updateGamifiedStats();
             }
 		}
 
         //When the page is navigated back to 
         protected override void OnAppearing() {
             updateStats();
-            if(gamified)
+            if (gamified) {
                 updateGamifiedStats();
+                updateBadges();
+            }
         }
 
-            //update the table with number of logs made, etc.
-            private async void updateStats() {
+        //update the table with number of logs made, etc.
+        private async void updateStats() {
             DateTime latest = DateTime.MinValue;
             int count = 0;
 
@@ -77,18 +76,7 @@ namespace DiabetesApp {
 
         //update the bits relevant to gamified users
         private async void updateGamifiedStats() {
-            var firebase = new FirebaseClient(FirebaseURL);
-            try {
-                var item = await firebase
-                    .Child("gameStats")
-                    .Child(auth.User.LocalId)
-                    .WithAuth(auth.FirebaseToken)
-                    .OnceSingleAsync<GameStats>();
-
-                gStats = item;
-            } catch {
-                //no gamestats entered for the user, for some reason
-            }
+            gStats = await GamificationTools.getGStats(auth);
             updateGameStatsTable();
         }
 
@@ -101,6 +89,19 @@ namespace DiabetesApp {
 
             //Calculate the experience required for the next level
             xpNextLevel.Detail = GamificationTools.getExpToNextLevel(gStats.level, gStats.xp).ToString();
+        }
+
+        //Update the badges in the 
+        private async void updateBadges() {
+            badges.Clear();
+            ArrayList badgeList = await GamificationTools.getBadges(auth);
+            foreach(string badge in badgeList) {
+                badges.Add(new ImageCell() {
+                    ImageSource = BadgeList.getBadgeLink(badge),
+                    Text = BadgeList.getBadgeName(badge)
+                });
+            }
+            if (badges.Count > badgeList.Count) updateBadges();
         }
 	}
 }

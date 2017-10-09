@@ -3,6 +3,7 @@ using Firebase.Xamarin.Auth;
 using Firebase.Xamarin.Database;
 using Firebase.Xamarin.Database.Query;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -145,6 +146,7 @@ namespace DiabetesApp.Models {
             return sum;
         }
 
+        //Return the game stats of the specified user
         public static async Task<GameStats> getGStats(FirebaseAuthLink auth) {
             GameStats gStats = null;
             var firebase = new FirebaseClient(FirebaseURL);
@@ -159,6 +161,55 @@ namespace DiabetesApp.Models {
                 gStats = initStats(auth);
             }
             return gStats;
+        }
+
+        //Return a list of badges for the specified user
+        public static async Task<ArrayList> getBadges(FirebaseAuthLink auth) {
+            var firebase = new FirebaseClient(FirebaseURL);
+            Badges allBadges;
+            ArrayList badgeCodes = new ArrayList();
+            try {
+                allBadges = await firebase
+                    .Child("badges")
+                    .Child(auth.User.LocalId)
+                    .WithAuth(auth.FirebaseToken)
+                    .OnceSingleAsync<Badges>();
+            } catch {
+                allBadges = await newBadgeList(auth);
+            }
+            if (allBadges.b1_starting_out) badgeCodes.Add("b1_starting_out");
+            if (allBadges.b2_ramping_up) badgeCodes.Add("b2_ramping_up");
+            if (allBadges.b3_getting_there) badgeCodes.Add("b3_getting_there");
+            if (allBadges.b4_skilled) badgeCodes.Add("b4_skilled");
+            if (allBadges.b5_rugged) badgeCodes.Add("b5_rugged");
+            if (allBadges.b6_hardened) badgeCodes.Add("b6_hardened");
+            if (allBadges.b7_experienced) badgeCodes.Add("b7_experienced");
+
+            return badgeCodes;
+        }
+
+        //Add a new list of badges for a user to the DB and return it
+        public static async Task<Badges> newBadgeList(FirebaseAuthLink auth) {
+            Badges newBadges = new Badges();
+            newBadges.b1_starting_out = false;
+            newBadges.b2_ramping_up = false;
+            newBadges.b3_getting_there = false;
+            newBadges.b4_skilled = false;
+            newBadges.b5_rugged = false;
+            newBadges.b6_hardened = false;
+            newBadges.b7_experienced = false;
+
+            try {
+                var firebase = new FirebaseClient(FirebaseURL);
+                await firebase
+                    .Child("badges")
+                    .Child(auth.User.LocalId)
+                    .WithAuth(auth.FirebaseToken)
+                    .PutAsync(newBadges);
+            } catch {
+
+            }
+            return newBadges;
         }
     }
 }
