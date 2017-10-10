@@ -48,7 +48,7 @@ function getData() {
     });
 }
 
-
+//updates Paper0
 function updateDataPaper0(groupNum) {
     firebase.database().ref('RandomisationTotals/').update({
         Paper0: groupNum + 1
@@ -82,22 +82,22 @@ function getGroup() {
     while (validGroup == 0) {
         var randGroup = Math.floor(Math.random() * 3);
         console.log(randGroup);
-        if (randGroup == 0 && Paper0Count <= 29) {
+        if (randGroup == 0 && Paper0Count < 30) {
             updateDataPaper0(Paper0Count);
             validGroup = 1;
             return randGroup;
-        } else if (randGroup == 1 && AppNormal1Count <= 29) {
+        } else if (randGroup == 1 && AppNormal1Count < 30) {
             updateDataAppNormal1(AppNormal1Count);
             validGroup = 1;
             return randGroup;
-        } else if (randGroup == 2 && AppGamified2Count <= 29) {
+        } else if (randGroup == 2 && AppGamified2Count < 30) {
             updateDataAppGamified2(AppGamified2Count);
             validGroup = 1;
             return randGroup;
         } else if (Paper0Count >= 30 && AppNormal1Count >= 30 && AppGamified2Count >= 30) {
             validGroup = 1;
-            window.alert('All Test Groups have been filled. Please manually adjust the Firebase Database as necessary.');
-            return randGroup = null;
+            window.alert('All Test Groups have been filled. User has been randomlyy assigned to a group regardless');
+            return randGroup;
             //break;
         }
     };

@@ -17,6 +17,8 @@ var pedsqlAnswers = new Array();
 $(document).ready(function () {
     $("button#submit").click(function () {
 
+        pedsqlAnswers.length = 0;
+
         $('input:radio').each(function () {
             if ($(this).is(':checked')) {
                 var radio = { name: $(this).attr('name'), value: $(this).val() };
