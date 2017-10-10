@@ -2,6 +2,7 @@
 using Firebase.Xamarin.Auth;
 using Firebase.Xamarin.Database;
 using Firebase.Xamarin.Database.Query;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -53,6 +54,9 @@ namespace DiabetesApp.Models {
                     gStats.numFullDayEntries = 0;
                 }
             }
+            if (gStats.entriesToday == 1) {
+                gStats.dailyBonusReceived = false;
+            }
         }
         
         //return whether a bonus should be received by the user
@@ -86,7 +90,7 @@ namespace DiabetesApp.Models {
         //Also adds on any new xp gained, regardless of level up
         public static bool levelUp(ref GameStats gStats, int newXP) {
             bool levelled = false;
-            if (newXP > getExpToNextLevel(gStats.level, gStats.xp)) {
+            if (newXP >= getExpToNextLevel(gStats.level, gStats.xp)) {
                 gStats.level += 1;
                 levelled = true;
             }
@@ -177,13 +181,31 @@ namespace DiabetesApp.Models {
             } catch {
                 allBadges = await newBadgeList(auth);
             }
-            if (allBadges.b1_starting_out) badgeCodes.Add("b1_starting_out");
-            if (allBadges.b2_ramping_up) badgeCodes.Add("b2_ramping_up");
-            if (allBadges.b3_getting_there) badgeCodes.Add("b3_getting_there");
-            if (allBadges.b4_skilled) badgeCodes.Add("b4_skilled");
-            if (allBadges.b5_rugged) badgeCodes.Add("b5_rugged");
-            if (allBadges.b6_hardened) badgeCodes.Add("b6_hardened");
-            if (allBadges.b7_experienced) badgeCodes.Add("b7_experienced");
+            if (allBadges.b01_starting_out) badgeCodes.Add("b01_starting_out");
+            if (allBadges.b02_ramping_up) badgeCodes.Add("b02_ramping_up");
+            if (allBadges.b03_getting_there) badgeCodes.Add("b03_getting_there");
+            if (allBadges.b04_skilled) badgeCodes.Add("b04_skilled");
+            if (allBadges.b05_rugged) badgeCodes.Add("b05_rugged");
+            if (allBadges.b06_hardened) badgeCodes.Add("b06_hardened");
+            if (allBadges.b07_experienced) badgeCodes.Add("b07_experienced");
+            if (allBadges.b08_pen_and_paper) badgeCodes.Add("b08_pen_and_paper");
+            if (allBadges.b09_scribe) badgeCodes.Add("b09_scribe");
+            if (allBadges.b10_research_assistant) badgeCodes.Add("b10_research_assistant");
+            if (allBadges.b11_researcher_intern) badgeCodes.Add("b11_researcher_intern");
+            if (allBadges.b12_novice_researcher) badgeCodes.Add("b12_novice_researcher");
+            if (allBadges.b13_apprentice_researcher) badgeCodes.Add("b13_apprentice_researcher");
+            if (allBadges.b14_adept_researcher) badgeCodes.Add("b14_adept_researcher");
+            if (allBadges.b15_professional_researcher) badgeCodes.Add("b15_professional_researcher");
+            if (allBadges.b16_habitual) badgeCodes.Add("b16_habitual");
+            if (allBadges.b17_enthusiastic) badgeCodes.Add("b17_enthusiastic");
+            if (allBadges.b18_committed) badgeCodes.Add("b18_committed");
+            if (allBadges.b19_dedicated) badgeCodes.Add("b19_dedicated");
+            if (allBadges.b20_entrepreneur) badgeCodes.Add("b20_entrepreneur");
+            if (allBadges.b21_money_man) badgeCodes.Add("b21_money_man");
+            if (allBadges.b22_investor) badgeCodes.Add("b22_investor");
+            if (allBadges.b23_banker) badgeCodes.Add("b23_banker");
+            if (allBadges.b24_ceo) badgeCodes.Add("b24_ceo");
+
 
             return badgeCodes;
         }
@@ -191,13 +213,30 @@ namespace DiabetesApp.Models {
         //Add a new list of badges for a user to the DB and return it
         public static async Task<Badges> newBadgeList(FirebaseAuthLink auth) {
             Badges newBadges = new Badges();
-            newBadges.b1_starting_out = false;
-            newBadges.b2_ramping_up = false;
-            newBadges.b3_getting_there = false;
-            newBadges.b4_skilled = false;
-            newBadges.b5_rugged = false;
-            newBadges.b6_hardened = false;
-            newBadges.b7_experienced = false;
+            newBadges.b01_starting_out = false;
+            newBadges.b02_ramping_up = false;
+            newBadges.b03_getting_there = false;
+            newBadges.b04_skilled = false;
+            newBadges.b05_rugged = false;
+            newBadges.b06_hardened = false;
+            newBadges.b07_experienced = false;
+            newBadges.b08_pen_and_paper = false;
+            newBadges.b09_scribe = false;
+            newBadges.b10_research_assistant = false;
+            newBadges.b11_researcher_intern = false;
+            newBadges.b12_novice_researcher = false;
+            newBadges.b13_apprentice_researcher = false;
+            newBadges.b14_adept_researcher = false;
+            newBadges.b15_professional_researcher = false;
+            newBadges.b16_habitual = false;
+            newBadges.b17_enthusiastic = false;
+            newBadges.b18_committed = false;
+            newBadges.b19_dedicated = false;
+            newBadges.b20_entrepreneur = false;
+            newBadges.b21_money_man = false;
+            newBadges.b22_investor = false;
+            newBadges.b23_banker = false;
+            newBadges.b24_ceo = false;
 
             try {
                 var firebase = new FirebaseClient(FirebaseURL);
@@ -210,6 +249,94 @@ namespace DiabetesApp.Models {
 
             }
             return newBadges;
+        }
+
+        //Add the badge specified to the users database
+        public async static Task addBadge(string badgeKey, FirebaseAuthLink auth) {
+            var firebase = new FirebaseClient(FirebaseURL);
+            Badges allBadges;
+            try {
+                allBadges = await firebase
+                    .Child("badges")
+                    .Child(auth.User.LocalId)
+                    .WithAuth(auth.FirebaseToken)
+                    .OnceSingleAsync<Badges>();
+            } catch {
+                allBadges = await newBadgeList(auth);
+            }
+
+            if (badgeKey.Equals("b01_starting_out")) allBadges.b01_starting_out = true;
+            if (badgeKey.Equals("b02_ramping_up")) allBadges.b02_ramping_up = true;
+            if (badgeKey.Equals("b03_getting_there")) allBadges.b03_getting_there = true;
+            if (badgeKey.Equals("b04_skilled")) allBadges.b04_skilled = true;
+            if (badgeKey.Equals("b05_rugged")) allBadges.b05_rugged = true;
+            if (badgeKey.Equals("b06_hardened")) allBadges.b06_hardened = true;
+            if (badgeKey.Equals("b07_experienced")) allBadges.b07_experienced = true;
+            if (badgeKey.Equals("b08_pen_and_paper")) allBadges.b08_pen_and_paper = true;
+            if (badgeKey.Equals("b09_scribe")) allBadges.b09_scribe = true;
+            if (badgeKey.Equals("b10_research_assistant")) allBadges.b10_research_assistant = true;
+            if (badgeKey.Equals("b11_researcher_intern")) allBadges.b11_researcher_intern = true;
+            if (badgeKey.Equals("b12_novice_researcher")) allBadges.b12_novice_researcher = true;
+            if (badgeKey.Equals("b13_apprentice_researcher")) allBadges.b13_apprentice_researcher = true;
+            if (badgeKey.Equals("b14_adept_researcher")) allBadges.b14_adept_researcher = true;
+            if (badgeKey.Equals("b15_professional_researcher")) allBadges.b15_professional_researcher = true;
+            if (badgeKey.Equals("b16_habitual")) allBadges.b16_habitual = true;
+            if (badgeKey.Equals("b17_enthusiastic")) allBadges.b17_enthusiastic = true;
+            if (badgeKey.Equals("b18_committed")) allBadges.b18_committed = true;
+            if (badgeKey.Equals("b19_dedicated")) allBadges.b19_dedicated = true;
+            if (badgeKey.Equals("b20_entrepreneur")) allBadges.b20_entrepreneur = true;
+            if (badgeKey.Equals("b21_money_man")) allBadges.b21_money_man = true;
+            if (badgeKey.Equals("b22_investor")) allBadges.b22_investor = true;
+            if (badgeKey.Equals("b23_banker")) allBadges.b23_banker = true;
+            if (badgeKey.Equals("b24_ceo")) allBadges.b24_ceo = true;
+
+            try {
+                await firebase
+                    .Child("badges")
+                    .Child(auth.User.LocalId)
+                    .WithAuth(auth.FirebaseToken)
+                    .PutAsync(allBadges);
+            } catch {
+
+            }
+        }
+
+        //Add the coins that should be added from the badge received
+        public async static Task<GameStats> addCoinsFromBadge(GameStats gStats, string badgeKey, FirebaseAuthLink auth) {
+            int coinsToAdd = BadgeList.getCoins(badgeKey);
+            if(coinsToAdd >= BadgeList.coinsToNextBadge(gStats.coins) && BadgeList.coinsToNextBadge(gStats.coins) != -1) {
+                string coinBadge = BadgeList.GetCoinBadge(gStats.coins);
+                gStats.coins += coinsToAdd + BadgeList.getCoins(coinBadge);
+                await addBadge(coinBadge, auth);
+                await PopupNavigation.PushAsync(new Popups.BadgePopup(coinBadge));
+            }
+            gStats.coins += coinsToAdd;
+            updateGStatsDB(auth, gStats);
+            return gStats;
+        }
+
+        //Return whether the login badge should be received
+        public async static Task<string> getLoginBadge(FirebaseAuthLink auth, GameStats gStats) {
+            if(gStats.numLogins != 5 && gStats.numLogins != 10 && gStats.numLogins != 20 && gStats.numLogins != 30) {
+                return "";
+            }
+            var firebase = new FirebaseClient(FirebaseURL);
+            Badges allBadges;
+            try {
+                allBadges = await firebase
+                    .Child("badges")
+                    .Child(auth.User.LocalId)
+                    .WithAuth(auth.FirebaseToken)
+                    .OnceSingleAsync<Badges>();
+            } catch {
+                allBadges = await newBadgeList(auth);
+            }
+            if (gStats.numLogins == 5 && !allBadges.b16_habitual) return "b16_habitual";
+            if (gStats.numLogins == 10 && !allBadges.b17_enthusiastic) return "b17_enthusiastic";
+            if (gStats.numLogins == 20 && !allBadges.b18_committed) return "b18_committed";
+            if (gStats.numLogins == 30 && !allBadges.b19_dedicated) return "b19_dedicated";
+
+            return "";
         }
     }
 }

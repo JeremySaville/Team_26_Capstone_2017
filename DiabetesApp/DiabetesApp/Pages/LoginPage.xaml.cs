@@ -7,6 +7,9 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using DiabetesApp.DataTypes;
 using DiabetesApp.Models;
+using Rg.Plugins.Popup.Extensions;
+using Rg.Plugins.Popup.Services;
+using Rg.Plugins.Popup.Pages;
 
 namespace DiabetesApp
 {
@@ -91,10 +94,27 @@ namespace DiabetesApp
                     GamificationTools.updateGStatsDB(auth, gStats);
                     await DisplayAlert("Login Reward", "Received " + GamificationTools.loginXP + "xp for logging in", "OK");
                 }
+
+                //Check whether a badge should be gained for logging in
+                string loginBadge = await GamificationTools.getLoginBadge(auth, gStats);
+                if (!loginBadge.Equals("")) {
+                    await GamificationTools.addBadge(loginBadge, auth);
+                    await Navigation.PushPopupAsync(new Popups.BadgePopup(loginBadge));
+                    gStats = await GamificationTools.addCoinsFromBadge(gStats, loginBadge, auth);
+                }
+
+                //Level up and gain any associated badges
                 if (levelUp) {
                     await DisplayAlert("Levelled Up!",
                         "Advanced to Level " + gStats.level + "\n" + GamificationTools.getExpToNextLevel(gStats.level, gStats.xp) + " Experience to the next level", 
                         "OK");
+                    string levelBadge = BadgeList.gotLevelBadge(gStats.level);
+
+                    if (!levelBadge.Equals("")) {
+                        await GamificationTools.addBadge(levelBadge, auth);
+                        await Navigation.PushPopupAsync(new Popups.BadgePopup(levelBadge));
+                        gStats = await GamificationTools.addCoinsFromBadge(gStats, levelBadge, auth);
+                    }
                 }
             }
             Application.Current.MainPage = new TabbedContent(auth, gamified);

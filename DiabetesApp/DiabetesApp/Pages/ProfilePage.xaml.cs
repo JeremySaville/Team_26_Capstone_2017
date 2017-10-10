@@ -98,7 +98,8 @@ namespace DiabetesApp {
             foreach(string badge in badgeList) {
                 badges.Add(new ImageCell() {
                     ImageSource = BadgeList.getBadgeLink(badge),
-                    Text = BadgeList.getBadgeName(badge)
+                    Text = BadgeList.getBadgeName(badge),
+                    Detail = BadgeList.getBadgeDescription(badge)
                 });
             }
             if (badges.Count > badgeList.Count) updateBadges();

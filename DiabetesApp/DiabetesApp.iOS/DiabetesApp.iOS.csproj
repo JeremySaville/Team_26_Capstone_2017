@@ -158,6 +158,15 @@
     <Reference Include="OxyPlot.Xamarin.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\OxyPlot.Xamarin.iOS.1.0.0\lib\Xamarin.iOS10\OxyPlot.Xamarin.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="Rg.Plugins.Popup, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rg.Plugins.Popup.1.0.4\lib\Xamarin.IOS\Rg.Plugins.Popup.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup.IOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rg.Plugins.Popup.1.0.4\lib\Xamarin.IOS\Rg.Plugins.Popup.IOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rg.Plugins.Popup.1.0.4\lib\Xamarin.IOS\Rg.Plugins.Popup.Platform.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Firebase.Xamarin.0.3.6\lib\System.Reactive.Core.dll</HintPath>
@@ -242,25 +251,76 @@
     <BundleResource Include="Resources\ic_school_white_3x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\b1_starting_out.png" />
+    <BundleResource Include="Resources\b01_starting_out.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\b2_ramping_up.png" />
+    <BundleResource Include="Resources\b02_ramping_up.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\b3_getting_there.png" />
+    <BundleResource Include="Resources\b03_getting_there.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\b4_skilled.png" />
+    <BundleResource Include="Resources\b04_skilled.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\b5_rugged.png" />
+    <BundleResource Include="Resources\b05_rugged.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\b6_hardened.png" />
+    <BundleResource Include="Resources\b06_hardened.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\b7_experienced.png" />
+    <BundleResource Include="Resources\b07_experienced.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b08_pen_and_paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b09_scribe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b10_research_assistant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b11_researcher_intern.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b12_novice_researcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b13_apprentice_researcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b14_adept_researcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b15_professional_researcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b16_habitual.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b17_enthusiastic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b18_committed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b19_dedicated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b20_entrepreneur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b21_money_man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b22_investor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b23_banker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b24_ceo.png" />
   </ItemGroup>
   <Import Project="..\DiabetesApp\DiabetesApp.projitems" Label="Shared" Condition="Exists('..\DiabetesApp\DiabetesApp.projitems')" />
   <Import Project="..\DiabetesApp\App1.projitems" Label="Shared" />
