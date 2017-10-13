@@ -322,6 +322,39 @@
   <ItemGroup>
     <BundleResource Include="Resources\b24_ceo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\p01_default_profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\p02_knight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\p03_princess.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\p04_ninja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\p05_wizard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\p06_ranger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\p07_monk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\p08_heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\p09_cat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\p10_dog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\p11_cookie.png" />
+  </ItemGroup>
   <Import Project="..\DiabetesApp\DiabetesApp.projitems" Label="Shared" Condition="Exists('..\DiabetesApp\DiabetesApp.projitems')" />
   <Import Project="..\DiabetesApp\App1.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

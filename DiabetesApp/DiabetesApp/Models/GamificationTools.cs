@@ -145,6 +145,15 @@ namespace DiabetesApp.Models {
             return totalRequired - currentExp;
         }
 
+        //Return the experience in the current level
+        public static int getLevelExp(int currentLevel) {
+            if (currentLevel > xpForLevel.Length) {
+                return xpForLaterLevels;
+            } else {
+                return xpForLevel[currentLevel - 1];
+            }
+        }
+
         //Helper method to add all the elements of a numeric array
         private static int SumArray(int[] array) {
             int sum = 0;

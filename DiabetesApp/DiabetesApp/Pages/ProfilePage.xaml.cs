@@ -79,15 +79,13 @@ namespace DiabetesApp {
         private async void updateGamifiedStats() {
             gStats = await GamificationTools.getGStats(auth);
             updateGameStatsTable();
+            updateProfileSection();
         }
 
         //Update the view with the relevant information gained
         private void updateGameStatsTable() {
             xp.Detail = gStats.xp.ToString();
             logins.Detail = gStats.numLogins.ToString();
-
-            //Calculate the experience required for the next level
-            //xpNextLevel.Detail = GamificationTools.getExpToNextLevel(gStats.level, gStats.xp).ToString();
         }
 
         //Update the badges in the 
@@ -103,5 +101,16 @@ namespace DiabetesApp {
             }
             if (badges.Count > badgeList.Count) updateBadges();
         }
-	}
+
+        //Update the profile section with the relevant image and stats
+        private void updateProfileSection() {
+            int xpToLevel = GamificationTools.getLevelExp(gStats.level);
+            int xpGainedInLevel = xpToLevel - GamificationTools.getExpToNextLevel(gStats.level, gStats.xp);
+            level.Text = "Level " + gStats.level;
+            coins.Text = "Coins: " + gStats.coins;
+            profileImage.Source = "p01_default_profile.png";
+            profileXP.Text = "XP: " + xpGainedInLevel + "/" + xpToLevel;
+            progress.Progress = (double)xpGainedInLevel / xpToLevel;
+        }
+    }
 }
