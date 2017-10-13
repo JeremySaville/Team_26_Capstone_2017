@@ -11,6 +11,7 @@ using Xamarin.Forms.Xaml;
 using Firebase.Xamarin.Database;
 using Firebase.Xamarin.Database.Query;
 using DiabetesApp.Models;
+using Rg.Plugins.Popup.Extensions;
 
 namespace DiabetesApp.Pages
 {
@@ -126,37 +127,52 @@ namespace DiabetesApp.Pages
                     .PutAsync(newLog);
                 await DisplayAlert("Upload complete", "Finished posting log", "OK");
 
+                //For the gamified version, give rewards
                 if (gamified) {
                     bool levelUp = false;
                     GameStats gStats = await GamificationTools.getGStats(auth);
                     GamificationTools.addLogEntryStats(ref gStats, DateTime.Parse(entryDateTime));
+                    gStats.logEntriesMade += 1;
                     string bonus = GamificationTools.getEntryBonus(gStats);
                     if (bonus.Equals("none")) {
-                        levelUp = GamificationTools.levelUp(ref gStats, GamificationTools.logEntryXP);
-                        GamificationTools.updateGStatsDB(auth, gStats);
+                        levelUp = GamificationTools.levelUp(ref gStats, GamificationTools.logEntryXP); 
                         await DisplayAlert("Log Entry Reward", "Received " + GamificationTools.logEntryXP + "xp for making a log entry", "OK");
                     } else if (bonus.Equals("daily")) {
                         levelUp = GamificationTools.levelUp(ref gStats, GamificationTools.logEntryDailyBonusXP);
                         gStats.dailyBonusReceived = true;
-                        GamificationTools.updateGStatsDB(auth, gStats);
                         await DisplayAlert("Log Entry Daily Bonus!", "Received " + GamificationTools.logEntryDailyBonusXP + "xp bonus for more than three log entries in a day", "OK");
                     } else if (bonus.Equals("weekly")) {
                         levelUp = GamificationTools.levelUp(ref gStats, GamificationTools.logEntryWeeklyBonusXP);
-                        GamificationTools.updateGStatsDB(auth, gStats);
                         await DisplayAlert("Log Entry Weekly Bonus!", 
                             "Received " + GamificationTools.logEntryWeeklyBonusXP + "xp bonus for more than three log entries for more than three days in a row", "OK");
                     } else if (bonus.Equals("both")) {
                         levelUp = GamificationTools.levelUp(ref gStats, GamificationTools.logEntryWeeklyBonusXP + GamificationTools.logEntryDailyBonusXP);
-                        GamificationTools.updateGStatsDB(auth, gStats);
                         await DisplayAlert("Log Entry Daily and Weekly Bonuses!",
                             "Received " + GamificationTools.logEntryDailyBonusXP + "xp bonus for more than three log entries in a day\n"+
                             "Received " + GamificationTools.logEntryWeeklyBonusXP + "xp bonus for more than three log entries for more than three days in a row", "OK");
                     }
+                    //Check whether a badge should be received for making log entries
+                    string entryBadge = BadgeList.gotEntryBadge(gStats.logEntriesMade);
+                    if (!entryBadge.Equals("")) {
+                        await GamificationTools.addBadge(entryBadge, auth);
+                        await Navigation.PushPopupAsync(new Popups.BadgePopup(entryBadge));
+                        gStats = await GamificationTools.addCoinsFromBadge(gStats, entryBadge, auth);
+                    }
+
+                    //Handle any levels gained
                     if (levelUp) {
                         await DisplayAlert("Levelled Up!",
                             "Advanced to Level " + gStats.level.ToString() + "\n" + GamificationTools.getExpToNextLevel(gStats.level, gStats.xp).ToString() + " Experience to the next level",
                             "OK");
+                        string levelBadge = BadgeList.gotLevelBadge(gStats.level);
+
+                        if (!levelBadge.Equals("")) {
+                            await GamificationTools.addBadge(levelBadge, auth);
+                            await Navigation.PushPopupAsync(new Popups.BadgePopup(levelBadge));
+                            gStats = await GamificationTools.addCoinsFromBadge(gStats, levelBadge, auth);
+                        }
                     }
+                    GamificationTools.updateGStatsDB(auth, gStats);
                 }
                 await Navigation.PopModalAsync();
             } else {

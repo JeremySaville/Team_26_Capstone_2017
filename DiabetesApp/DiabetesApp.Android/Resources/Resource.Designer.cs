@@ -2918,17 +2918,50 @@ namespace DiabetesApp.Droid
 			// aapt resource value: 0x7f020138
 			public const int notification_icon_background = 2130837816;
 			
-			// aapt resource value: 0x7f02013b
-			public const int notification_template_icon_bg = 2130837819;
+			// aapt resource value: 0x7f020146
+			public const int notification_template_icon_bg = 2130837830;
 			
-			// aapt resource value: 0x7f02013c
-			public const int notification_template_icon_low_bg = 2130837820;
+			// aapt resource value: 0x7f020147
+			public const int notification_template_icon_low_bg = 2130837831;
 			
 			// aapt resource value: 0x7f020139
 			public const int notification_tile_bg = 2130837817;
 			
 			// aapt resource value: 0x7f02013a
 			public const int notify_panel_notification_icon_bg = 2130837818;
+			
+			// aapt resource value: 0x7f02013b
+			public const int p01_default_profile = 2130837819;
+			
+			// aapt resource value: 0x7f02013c
+			public const int p02_knight = 2130837820;
+			
+			// aapt resource value: 0x7f02013d
+			public const int p03_princess = 2130837821;
+			
+			// aapt resource value: 0x7f02013e
+			public const int p04_ninja = 2130837822;
+			
+			// aapt resource value: 0x7f02013f
+			public const int p05_wizard = 2130837823;
+			
+			// aapt resource value: 0x7f020140
+			public const int p06_ranger = 2130837824;
+			
+			// aapt resource value: 0x7f020141
+			public const int p07_monk = 2130837825;
+			
+			// aapt resource value: 0x7f020142
+			public const int p08_heart = 2130837826;
+			
+			// aapt resource value: 0x7f020143
+			public const int p09_cat = 2130837827;
+			
+			// aapt resource value: 0x7f020144
+			public const int p10_dog = 2130837828;
+			
+			// aapt resource value: 0x7f020145
+			public const int p11_cookie = 2130837829;
 			
 			static Drawable()
 			{

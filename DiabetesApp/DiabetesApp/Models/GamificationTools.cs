@@ -22,6 +22,9 @@ namespace DiabetesApp.Models {
         public static readonly int[] xpForLevel = new int[] { 200, 300, 500, 700, 900, 1100, 1300, 1400, 1500 };
         public const int xpForLaterLevels = 1500;
 
+        public static readonly string[] profileImageList = new string[] { "p01_default_profile", "p02_knight", "p03_princess", "p04_ninja", "p05_wizard",
+                                                            "p06_ranger", "p07_monk", "p08_heart", "p09_cat", "p10_dog", "p11_cookie" };
+
         //Add stats for a new log entry
         public static void addLogEntryStats(ref GameStats gStats, DateTime entryTime) {
             DateTime today = DateTime.Now;
@@ -123,6 +126,7 @@ namespace DiabetesApp.Models {
             newStats.numFullDayEntries = 0;
             newStats.lastFullDayEntry = minDate;
             newStats.dailyBonusReceived = false;
+            newStats.logEntriesMade = 0;
 
             updateGStatsDB(auth, newStats);
             return newStats;

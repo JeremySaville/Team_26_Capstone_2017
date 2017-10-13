@@ -26,6 +26,7 @@ namespace DiabetesApp {
             if (!gamified) {
                 profileTable.Remove(gameStats);
                 profileTable.Remove(badges);
+                profileGrid.Children.Clear();
             }
 		}
 
@@ -82,13 +83,11 @@ namespace DiabetesApp {
 
         //Update the view with the relevant information gained
         private void updateGameStatsTable() {
-            level.Detail = gStats.level.ToString();
             xp.Detail = gStats.xp.ToString();
-            coins.Detail = gStats.coins.ToString();
             logins.Detail = gStats.numLogins.ToString();
 
             //Calculate the experience required for the next level
-            xpNextLevel.Detail = GamificationTools.getExpToNextLevel(gStats.level, gStats.xp).ToString();
+            //xpNextLevel.Detail = GamificationTools.getExpToNextLevel(gStats.level, gStats.xp).ToString();
         }
 
         //Update the badges in the 

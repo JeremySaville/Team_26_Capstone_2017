@@ -11,6 +11,7 @@ namespace DiabetesApp.Models {
                                                 "Collected 5,000 Coins", "Collected 10,000 Coins"};
         private static int[] bCoins = { 20, 50, 100, 200, 200, 200, 300, 10, 20, 50, 75, 100, 100, 150, 200, 10, 20, 30, 50, 10, 50, 100, 150, 200 };
         private static int[] coinsForBadge = { 500, 1000, 2000, 5000, 10000 };
+        private static int[] entriesForBadge = { 1, 10, 20, 50, 100, 200, 500, 1000 };
 
         //Convert the string for the badge name to 
         public static String getBadgeName(String badgeKey) {
@@ -59,13 +60,26 @@ namespace DiabetesApp.Models {
             return -1;
         }
 
-        //Return the key of the coin badge that has been gained
+        //Return the key of the next coin badge that can be gained based on current coins
         public static string GetCoinBadge(int coins) {
             if (coins < coinsForBadge[0]) return "b20_entrepreneur";
             if (coins < coinsForBadge[1]) return "b21_money_man";
             if (coins < coinsForBadge[2]) return "b22_investor";
             if (coins < coinsForBadge[3]) return "b23_banker";
             if (coins < coinsForBadge[4]) return "b24_ceo";
+            return "";
+        }
+
+        //Check whether a badge should be received for a certain amount of log entries
+        public static string gotEntryBadge(int entries) {
+            if (entries == entriesForBadge[0]) return "b08_pen_and_paper";
+            if (entries == entriesForBadge[1]) return "b09_scribe";
+            if (entries == entriesForBadge[2]) return "b10_research_assistant";
+            if (entries == entriesForBadge[3]) return "b11_researcher_intern";
+            if (entries == entriesForBadge[5]) return "b12_novice_researcher";
+            if (entries == entriesForBadge[6]) return "b13_apprentice_researcher";
+            if (entries == entriesForBadge[7]) return "b14_adept_researcher";
+            if (entries == entriesForBadge[8]) return "b15_professional_researcher";
             return "";
         }
     }

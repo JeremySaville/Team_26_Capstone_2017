@@ -8,6 +8,19 @@
         <ScrollView>
             <StackLayout>
                 <Label Text="Profile" FontSize="Large" HorizontalOptions="Center" TextColor="{StaticResource mainTextColour}"/>
+                <Grid x:Name="profileGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    
+                </Grid>
                 <TableView Intent="Data" Margin="10, 0, 10, 20">
                     <TableRoot x:Name="profileTable">
                         <TableSection Title="Statistics">
@@ -16,10 +29,7 @@
                         </TableSection>
                         <TableSection x:Name="gameStats" Title="Game Stats">
                             <!-- Add in stats for gamified version -->
-                            <TextCell x:Name="level" Text="Level:" TextColor="{StaticResource mainTextColour}"/>
                             <TextCell x:Name="xp" Text="Total Experience:" TextColor="{StaticResource mainTextColour}"/>
-                            <TextCell x:Name="xpNextLevel" Text="Experience to Next Level:" TextColor="{StaticResource mainTextColour}"/>
-                            <TextCell x:Name="coins" Text="Coins:" TextColor="{StaticResource mainTextColour}"/>
                             <TextCell x:Name="logins" Text="Consecutive Days Logged in:" TextColor="{StaticResource mainTextColour}"/>
                         </TableSection>
                         <TableSection x:Name="badges" Title="Badges">
