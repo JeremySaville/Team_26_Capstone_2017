@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiabetesApp.Pages.Quiz06">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Which of the following actions might cause you to have a hypo?" FontSize="Large" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
+            <Label Text="Which of the following is an example of someone having a hypo?" FontSize="Large" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
+            <Label Text="What should you do first when you think you are having a hypo?" FontSize="Large" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

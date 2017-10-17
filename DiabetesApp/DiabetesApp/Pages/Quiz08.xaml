@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiabetesApp.Pages.Quiz08">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="You realise just before dinner time that you forgot to take your insulin before lunch. What should you do now?" FontSize="Large" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
+            <Label Text="Which of the following will most likely cause low blood sugar?" FontSize="Large" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
+            <Label Text="What information should be recorded in your diabetes diary?" FontSize="Large" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

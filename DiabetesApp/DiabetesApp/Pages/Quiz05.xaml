@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiabetesApp.Pages.Quiz05">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Which is the following is a place where you can inject insulin?" FontSize="Large" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
+            <Label Text="What range should your blood glucose be before a meal?" FontSize="Large" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
+            <Label Text="What should you do before you inject insulin?" FontSize="Large" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

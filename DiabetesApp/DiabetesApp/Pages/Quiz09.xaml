@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiabetesApp.Pages.Quiz09">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Carbohydrates are found in which foods?" FontSize="Large" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
+            <Label Text="Which of the following is true?" FontSize="Large" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiabetesApp.Pages.Quiz03">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="How do you measure your blood sugar?" FontSize="Large" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
+            <Label Text="When should you measure your blood sugar?" FontSize="Large" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
+            <Label Text="What test tells the doctor how well you have been managing your diabetes over the last ten weeks?" FontSize="Large" FontAttributes="Bold"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 Margin="20"
+                />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
