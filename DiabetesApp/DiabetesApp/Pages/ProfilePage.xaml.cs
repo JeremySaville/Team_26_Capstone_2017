@@ -16,6 +16,7 @@ namespace DiabetesApp {
         bool gamified;
         FirebaseAuthLink auth;
         GameStats gStats;
+        bool editButtonTapped;
         
         //Constructor
 		public ProfilePage (FirebaseAuthLink auth, bool gamified) {
@@ -37,6 +38,7 @@ namespace DiabetesApp {
                 updateGamifiedStats();
                 updateBadges();
             }
+            editButtonTapped = false;
         }
 
         //update the table with number of logs made, etc.
@@ -108,9 +110,18 @@ namespace DiabetesApp {
             int xpGainedInLevel = xpToLevel - GamificationTools.getExpToNextLevel(gStats.level, gStats.xp);
             level.Text = "Level " + gStats.level;
             coins.Text = "Coins: " + gStats.coins;
-            profileImage.Source = "p01_default_profile.png";
+            profileImage.Source = gStats.currentProfilePic;
             profileXP.Text = "XP: " + xpGainedInLevel + "/" + xpToLevel;
             progress.Progress = (double)xpGainedInLevel / xpToLevel;
         }
+        
+        //Handle a click of the edit button
+        public void onClick_editButton(object sender, EventArgs e) {
+            if (!editButtonTapped) {
+                editButtonTapped = true;
+                Navigation.PushModalAsync(new Pages.ChangeProfilePicturePage(auth, gStats));
+            }
+        }
+
     }
 }

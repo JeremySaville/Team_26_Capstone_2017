@@ -127,6 +127,8 @@ namespace DiabetesApp.Models {
             newStats.lastFullDayEntry = minDate;
             newStats.dailyBonusReceived = false;
             newStats.logEntriesMade = 0;
+            newStats.currentProfilePic = "p01_default_profile";
+            newStats.profilePictures = "p01_default_profile";
 
             updateGStatsDB(auth, newStats);
             return newStats;

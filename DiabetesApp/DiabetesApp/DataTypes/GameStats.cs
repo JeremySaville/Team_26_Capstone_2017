@@ -17,5 +17,7 @@ namespace DiabetesApp.DataTypes
         public string lastFullDayEntry { get; set; }
         public bool dailyBonusReceived { get; set; }
         public int logEntriesMade { get; set; }
+        public string currentProfilePic { get; set; }
+        public string profilePictures { get; set; }
     }
 }
