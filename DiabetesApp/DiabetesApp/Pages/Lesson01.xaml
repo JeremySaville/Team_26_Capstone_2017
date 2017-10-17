@@ -34,10 +34,11 @@
                  FontSize="Medium"
                 />
                 <Button Text="START QUIZ"
-                 BackgroundColor="Blue"
+                 BackgroundColor="Azure"
                  TextColor="White"
                  FontAttributes="Bold"
                  Font="Medium"
+                 Clicked="onClick_Quiz01"       
                 />
 
             </StackLayout>

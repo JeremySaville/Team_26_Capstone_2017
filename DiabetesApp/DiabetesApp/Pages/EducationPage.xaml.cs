@@ -14,7 +14,14 @@ namespace DiabetesApp
 	{
 		public EducationPage ()
 		{
-			InitializeComponent ();
-		}
-	}
+			InitializeComponent ();                        
+        }
+
+        void onClick_lesson01(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new Lesson01());
+        }
+
+        
+    }
 }

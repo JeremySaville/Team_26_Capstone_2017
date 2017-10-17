@@ -25,6 +25,7 @@
                      />
                 <!--<img></img>-->
                 <!--<Button> Got it!</Button> Begins Lesson 1-->
+                <Button x:Name="lesson01" Text="Lesson One" Clicked="onClick_lesson01" Style="{StaticResource buttonStyle}"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
