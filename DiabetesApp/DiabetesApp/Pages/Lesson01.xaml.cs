@@ -17,5 +17,10 @@ namespace DiabetesApp
             InitializeComponent ();
         }
 
+        void btn_ClickedQuiz01(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new Quiz01());
+        }
+
     }
 }

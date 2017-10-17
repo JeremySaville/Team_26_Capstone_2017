@@ -33,11 +33,10 @@
                 <Label Text="Sugar, also called Glucose, is absorbed by your body from the food you eat. Glucose is like fuel for the body because the body needs glucose for energy. It gets around the body in the blood, and too much or too little sugar in the blood is unhealthy. The amount of sugar in your blood is referred to as your blood sugar level."
                  FontSize="Medium"
                 />
+                
                 <Button Text="START QUIZ"
-                 BackgroundColor="Blue"
-                 TextColor="White"
-                 FontAttributes="Bold"
-                 Font="Medium"
+                 Style="{StaticResource buttonStyle}"
+                 Clicked="btn_ClickedQuiz01"
                 />
 
             </StackLayout>

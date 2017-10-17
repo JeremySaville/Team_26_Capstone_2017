@@ -23,6 +23,10 @@
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
                      />
+                <Button Text="START QUIZ"
+                 Style="{StaticResource buttonStyle}"
+                 Clicked="btn_ClickedLesson01"
+                />
                 <!--<img></img>-->
                 <!--<Button> Got it!</Button> Begins Lesson 1-->
             </StackLayout>
