@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace DiabetesApp
+namespace DiabetesApp.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Quiz02 : ContentPage

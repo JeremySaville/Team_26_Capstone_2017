@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DiabetesApp.Lesson03">
+             x:Class="DiabetesApp.Pages.Lesson03">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
@@ -67,10 +67,19 @@
                 <Label Text="When you go to the doctor they will measure your blood sugar just like you do. However, they will also test for your glycosylated haemoglobin level - hbA1c for short. This tells them what your average blood sugar has been over the last 10 weeks – so you can't cheat on this test!" FontSize="Medium"
                 />
                 <Button Text="START QUIZ"
-                 BackgroundColor="Blue"
+                 BackgroundColor="DodgerBlue"
                  TextColor="White"
                  FontAttributes="Bold"
                  Font="Medium"
+                 Clicked="onClick_Quiz03"   
+                />
+
+                <Button Text="Back"
+                 BackgroundColor="DodgerBlue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="onClick_Back"   
                 />
             </StackLayout>
         </ScrollView>

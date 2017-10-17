@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DiabetesApp.Lesson11">
+             x:Class="DiabetesApp.Pages.Lesson11">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
@@ -92,10 +92,19 @@
 
 
                 <Button Text="START QUIZ"
-                 BackgroundColor="Blue"
+                 BackgroundColor="DodgerBlue"
                  TextColor="White"
                  FontAttributes="Bold"
                  Font="Medium"
+                 Clicked="onClick_Quiz11"   
+                />
+
+                <Button Text="Back"
+                 BackgroundColor="DodgerBlue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="onClick_Back"   
                 />
             </StackLayout>
         </ScrollView>

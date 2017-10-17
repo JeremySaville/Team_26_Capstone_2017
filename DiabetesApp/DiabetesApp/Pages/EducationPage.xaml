@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DiabetesApp.EducationPage">
+             x:Class="DiabetesApp.Pages.EducationPage">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
@@ -23,9 +23,109 @@
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
                      />
-                <Button Text="START QUIZ"
-                 Style="{StaticResource buttonStyle}"
-                 Clicked="btn_ClickedLesson01"
+                
+                <Button Text="Lesson 1 - Diabetes The Disease"      
+                 BackgroundColor="DodgerBlue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="onClick_Lesson01"
+                />
+
+                <Button Text="Lesson 2 - Treating Diabetes"      
+                 BackgroundColor="DodgerBlue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="onClick_Lesson02"
+                />
+
+                <Button Text="Lesson 3 - Monitoring Diabetes"      
+                 BackgroundColor="DodgerBlue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="onClick_Lesson03"
+                />
+
+                <Button Text="Lesson 4 - Insulin Part 1"      
+                 BackgroundColor="DodgerBlue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="onClick_Lesson04"
+                />
+
+                <Button Text="Lesson 5 - Insulin Part 2"      
+                 BackgroundColor="DodgerBlue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="onClick_Lesson05"
+                />
+
+                <Button Text="Lesson 6 - Avoiding Hypoglycaemia"      
+                 BackgroundColor="DodgerBlue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="onClick_Lesson06"
+                />
+
+                <Button Text="Lesson 7 - Hyperglycaemia"      
+                 BackgroundColor="DodgerBlue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="onClick_Lesson07"
+                />
+
+                <Button Text="Lesson 8 - Problem Solving"      
+                 BackgroundColor="DodgerBlue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="onClick_Lesson08"
+                />
+
+                <Button Text="Lesson 9 - Diet"      
+                 BackgroundColor="DodgerBlue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="onClick_Lesson09"
+                />
+
+                <Button Text="Lesson 10 - Exercise"      
+                 BackgroundColor="DodgerBlue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="onClick_Lesson10"
+                />
+
+                <Button Text="Lesson 11 - Goal Setting"      
+                 BackgroundColor="DodgerBlue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="onClick_Lesson11"
+                />
+
+                <Button Text="Lesson 12 - Barriers"      
+                 BackgroundColor="DodgerBlue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="onClick_Lesson12"
+                />
+
+                <Button Text="Lesson 13 - Everyday Life"      
+                 BackgroundColor="DodgerBlue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="onClick_Lesson13"
                 />
                 <!--<img></img>-->
                 <!--<Button> Got it!</Button> Begins Lesson 1-->

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace DiabetesApp
+namespace DiabetesApp.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Lesson04 : ContentPage
@@ -16,5 +16,15 @@ namespace DiabetesApp
 		{
 			InitializeComponent ();
 		}
-	}
+
+        void onClick_Quiz04(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new Quiz04());
+        }
+
+        void onClick_Back(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
+        }
+    }
 }

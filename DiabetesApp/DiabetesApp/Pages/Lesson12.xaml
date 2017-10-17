@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DiabetesApp.Lesson12">
+             x:Class="DiabetesApp.Pages.Lesson12">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
@@ -98,10 +98,19 @@
                 <Label Text="If BSLs are low (below 5mmol/L), you may reduce long acting insulin by up to 50%. Quick acting insulin should not be taken if you are not eating and drinking things containing carbohydrates. If you can't keep your sugars in the normal range, or you have ketones, you need to ring the hospital." FontSize="Medium"
                 />
                 <Button Text="START QUIZ"
-                 BackgroundColor="Blue"
+                 BackgroundColor="DodgerBlue"
                  TextColor="White"
                  FontAttributes="Bold"
                  Font="Medium"
+                 Clicked="onClick_Quiz12"   
+                />
+
+                <Button Text="Back"
+                 BackgroundColor="DodgerBlue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="onClick_Back"   
                 />
             </StackLayout>
         </ScrollView>

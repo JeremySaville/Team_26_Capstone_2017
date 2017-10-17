@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace DiabetesApp
+namespace DiabetesApp.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Lesson06 : ContentPage
@@ -16,12 +16,15 @@ namespace DiabetesApp
 		{
 			InitializeComponent ();
 		}
-        async void OnButtonClicked(object sender, EventArgs args)
+
+        void onClick_Quiz06(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            await DisplayAlert("Clicked!",
-                "The button labeled '" + button.Text + "' has been clicked",
-                "OK");
+            Navigation.PushModalAsync(new Quiz06());
+        }
+
+        void onClick_Back(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync();
         }
     }
 }

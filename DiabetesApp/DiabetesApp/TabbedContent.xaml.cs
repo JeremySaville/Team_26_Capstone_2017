@@ -17,7 +17,7 @@ namespace DiabetesApp {
             Children.Add(new NavigationPage(new LogbookPage(auth, gamified)) { Icon = "ic_assignment_white.png" });
             Children.Add(new AnalyticsPage(auth));
             Children.Add(new ProfilePage(auth, gamified));
-            Children.Add(new EducationPage() { Icon = "ic_school_white.png" });
+            Children.Add(new Pages.EducationPage() { Icon = "ic_school_white.png" });
             Children.Add(new SettingsPage(auth));
 
             if (gamified)

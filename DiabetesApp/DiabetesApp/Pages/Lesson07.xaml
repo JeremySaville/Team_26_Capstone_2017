@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DiabetesApp.Lesson07">
+             x:Class="DiabetesApp.Pages.Lesson07">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
@@ -91,10 +91,19 @@
                 <Label Text="If you have lots of ketones in your urine (above 1.5mmol/L), you are in the early stages of DKA. You need to call your diabetes educator to work out how much extra insulin you need to take. If you don't have lots of ketones, keep checking your BSL and ketones every 2 hours until your BSL is below 7. Do not exercise if your BSL is above 15mmol/L or ketones are present." FontSize="Medium"
                 />
                 <Button Text="START QUIZ"
-                 BackgroundColor="LightBlue"
+                 BackgroundColor="DodgerBlue"
                  TextColor="White"
                  FontAttributes="Bold"
                  Font="Medium"
+                 Clicked="onClick_Quiz07"   
+                />
+
+                <Button Text="Back"
+                 BackgroundColor="DodgerBlue"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 Font="Medium"
+                 Clicked="onClick_Back"   
                 />
             </StackLayout>
         </ScrollView>
