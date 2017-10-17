@@ -16,7 +16,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\BadgeList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\GamificationTools.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ProfileListItem.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\ChangeProfilePicturePage.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\ChangeProfilePicturePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Lesson13.xaml.cs">
       <DependentUpon>Lesson13.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -381,6 +383,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)Pages\ChangeProfilePicturePage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\ChangeProfilePicturePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -13,8 +13,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace DiabetesApp.Pages {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ChangeProfilePicturePage : ContentPage {
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class ChangeProfilePicturePage : ContentPage {
         GameStats gStats;
         FirebaseAuthLink auth;
         ObservableCollection<ProfileListItem> profilePics;
@@ -42,7 +42,7 @@ namespace DiabetesApp.Pages {
                 await DisplayAlert("Success", selection.name + " set as profile picture", "OK");
                 await Navigation.PopModalAsync();
             } else if (selection.details.Equals("Unlock for 500 coins")) {
-                if(gStats.coins >= 500) {
+                if (gStats.coins >= 500) {
                     bool buy = await DisplayAlert("Confirm unlock", "Spend 500 coins to unlock " + selection.name + "?", "Yes", "Cancel");
                     if (buy) {
                         gStats.coins -= 500;
@@ -63,7 +63,7 @@ namespace DiabetesApp.Pages {
             string[] gainedProfilePics = gStats.profilePictures.Split(' ');
             profilePics.Clear();
 
-            foreach(string p in allProfilePics) {
+            foreach (string p in allProfilePics) {
                 ProfileListItem prof = new ProfileListItem();
                 prof.id = p;
                 prof.name = getProfilePicName(p);
@@ -88,9 +88,9 @@ namespace DiabetesApp.Pages {
         }
 
         //cancel the change of profile picture page
-        public void onClick_cancelChange(object sender, EventArgs e) {
+        public async void onClick_cancelChange(object sender, EventArgs e) {
             cancel.IsEnabled = false;
-            Navigation.PopModalAsync();
+            await Navigation.PopModalAsync();
         }
     }
 }
