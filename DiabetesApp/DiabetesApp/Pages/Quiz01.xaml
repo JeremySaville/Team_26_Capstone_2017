@@ -3,22 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DiabetesApp.Pages.Quiz01">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="What organ makes insulin?" FontSize="Large" FontAttributes="Bold"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
-            <Label Text="What is the most common type of diabetes that affects young adults?" FontSize="Large" FontAttributes="Bold"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
-            <Label Text="Having type one diabetes means..." FontSize="Large" FontAttributes="Bold"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Spacing="10">
+                <Label Text="Lesson 1 Quiz Questions" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                <StackLayout x:Name="Question01" Margin="20,10,20,10">
+                    <Label Text="1. What organ makes insulin?" FontSize="Large" FontAttributes="Bold"/>
+                    <Button x:Name="Q1A1" Text="A. The Kidneys" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                    <Button x:Name="Q1A2" Text="B. The Brain" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                    <Button x:Name="Q1A3" Text="C. The Liver" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                    <Button x:Name="Q1A4" Text="D. The Pancreas" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                </StackLayout>
+                <StackLayout x:Name="Question02" Margin="20,10,20,10">
+                    <Label Text="2. What is the most common type of diabetes that affects young adults?" FontSize="Large" FontAttributes="Bold"/>
+                    <Button x:Name="Q2A1" Text="A. Type 1 Diabetes" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                    <Button x:Name="Q2A2" Text="B. Type 2 Diabetes" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                    <Button x:Name="Q2A3" Text="C. Gestational Diabetes" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                    <Button x:Name="Q2A4" Text="D. Sugar Diabetes" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                </StackLayout>
+                <StackLayout x:Name="Question03" Margin="20,10,20,10">
+                    <Label Text="3. Having type one diabetes means:" FontSize="Large" FontAttributes="Bold"/>
+                    <Button x:Name="Q3A1" Text="A. You eat too much" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                    <Button x:Name="Q3A2" Text="B. You don't do enough exercise" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                    <Button x:Name="Q3A3" Text="C. Your pancreas does not make enough insulin" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                    <Button x:Name="Q3A4" Text="D. You don't eat enough sugar" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                </StackLayout>
+                <Button x:Name="submit" Text="Submit" Clicked="onClick_Submit"/>
+            </StackLayout>
+            
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
