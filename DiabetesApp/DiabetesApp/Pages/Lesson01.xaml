@@ -10,6 +10,9 @@
                  VerticalOptions="Center"
                  Margin="20"
                 />
+
+                <Image Source="apple.png" HeightRequest="60"/>
+                
                 <Label Text="What is Diabetes?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
@@ -25,6 +28,9 @@
                 <Label Text="Insulin is made by the pancreas. Then insulin helps sugar get from your blood into your cells. Your cells than use the sugar for energy that your body needs. Ultimately, this helps lower your blood sugar"
                  FontSize="Medium"
                 />
+                
+                <Image Source="pancreas.png" HeightRequest="180"/>
+
                 <Label Text="What does Blood Sugar Mean?" FontSize="Medium" FontAttributes="Bold"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
@@ -33,6 +39,8 @@
                 <Label Text="Sugar, also called Glucose, is absorbed by your body from the food you eat. Glucose is like fuel for the body because the body needs glucose for energy. It gets around the body in the blood, and too much or too little sugar in the blood is unhealthy. The amount of sugar in your blood is referred to as your blood sugar level."
                  FontSize="Medium"
                 />
+
+                <Image Source="apple.png" HeightRequest="60"/>
                 
                 <Button Text="START QUIZ"
                  BackgroundColor="DodgerBlue"
