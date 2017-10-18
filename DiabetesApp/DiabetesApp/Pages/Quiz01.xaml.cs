@@ -1,7 +1,7 @@
 ﻿using Firebase.Xamarin.Auth;
 using Firebase.Xamarin.Database;
 using Firebase.Xamarin.Database.Query;
-
+using DiabetesApp.DataTypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,6 +70,12 @@ namespace DiabetesApp.Pages
             btn2.IsEnabled = false;
             btn3.IsEnabled = false;
             btn4.IsEnabled = false;
+        }
+
+        public void onClick_Submit(object sender, EventArgs e)
+        {
+
+            Navigation.PopModalAsync();
         }
 
     }
