@@ -154,7 +154,7 @@ namespace DiabetesApp.Pages
                     //Check whether a badge should be received for making log entries
                     string entryBadge = BadgeList.gotEntryBadge(gStats.logEntriesMade);
                     if (!entryBadge.Equals("")) {
-                        await GamificationTools.addBadge(entryBadge, auth);
+                        gStats.badges += " " + entryBadge;
                         await Navigation.PushPopupAsync(new Popups.BadgePopup(entryBadge));
                         gStats = await GamificationTools.addCoinsFromBadge(gStats, entryBadge, auth);
                     }
@@ -167,12 +167,12 @@ namespace DiabetesApp.Pages
                         string levelBadge = BadgeList.gotLevelBadge(gStats.level);
 
                         if (!levelBadge.Equals("")) {
-                            await GamificationTools.addBadge(levelBadge, auth);
+                            gStats.badges += " " + levelBadge;
                             await Navigation.PushPopupAsync(new Popups.BadgePopup(levelBadge));
                             gStats = await GamificationTools.addCoinsFromBadge(gStats, levelBadge, auth);
                         }
                     }
-                    GamificationTools.updateGStatsDB(auth, gStats);
+                    await GamificationTools.updateGStatsDB(auth, gStats);
                 }
                 await Navigation.PopModalAsync();
             } else {

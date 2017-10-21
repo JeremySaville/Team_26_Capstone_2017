@@ -7,6 +7,7 @@ using Xamarin.Forms.Xaml;
 using DiabetesApp.DataTypes;
 using DiabetesApp.Models;
 using System.Collections;
+using System.Threading.Tasks;
 
 namespace DiabetesApp {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -32,10 +33,10 @@ namespace DiabetesApp {
 		}
 
         //When the page is navigated back to 
-        protected override void OnAppearing() {
+        protected async override void OnAppearing() {
             updateStats();
             if (gamified) {
-                updateGamifiedStats();
+                await updateGamifiedStats();
                 updateBadges();
             }
             editButtonTapped = false;
@@ -78,7 +79,7 @@ namespace DiabetesApp {
         }
 
         //update the bits relevant to gamified users
-        private async void updateGamifiedStats() {
+        private async Task updateGamifiedStats() {
             gStats = await GamificationTools.getGStats(auth);
             updateGameStatsTable();
             updateProfileSection();
@@ -91,9 +92,9 @@ namespace DiabetesApp {
         }
 
         //Update the badges in the 
-        private async void updateBadges() {
+        private void updateBadges() {
             badges.Clear();
-            ArrayList badgeList = await GamificationTools.getBadges(auth);
+            string[] badgeList = gStats.badges.Split(' ');
             foreach(string badge in badgeList) {
                 badges.Add(new ImageCell() {
                     ImageSource = BadgeList.getBadgeLink(badge),
@@ -101,7 +102,7 @@ namespace DiabetesApp {
                     Detail = BadgeList.getBadgeDescription(badge)
                 });
             }
-            if (badges.Count > badgeList.Count) updateBadges();
+            //if (badges.Count > badgeList.Count) updateBadges();
         }
 
         //Update the profile section with the relevant image and stats

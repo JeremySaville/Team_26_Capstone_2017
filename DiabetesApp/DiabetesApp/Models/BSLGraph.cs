@@ -9,8 +9,6 @@ using System.Text;
 
 namespace DiabetesApp.Models {
     public class BSLGraph {
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public PlotModel BSLModel { get; set; }
 
         public BSLGraph(DateTime start, DateTime end, ObservableCollection<LogbookListItem> logs) {

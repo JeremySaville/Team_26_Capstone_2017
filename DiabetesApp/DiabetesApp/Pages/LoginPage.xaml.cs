@@ -79,26 +79,23 @@ namespace DiabetesApp
                     if(gStats.numLogins % 7 == 0) {
                         //Seven consecutive logins, bonus XP
                         levelUp = GamificationTools.levelUp(ref gStats, GamificationTools.loginBonusXp);
-                        GamificationTools.updateGStatsDB(auth, gStats);
                         await DisplayAlert("Login Bonus", "Received " + GamificationTools.loginBonusXp + "xp for seven consecutive logins", "OK");
                     } else {
                         //Normal XP
                         levelUp = GamificationTools.levelUp(ref gStats, GamificationTools.loginXP);
-                        GamificationTools.updateGStatsDB(auth, gStats);
                         await DisplayAlert("Login Reward", "Received " + GamificationTools.loginXP + "xp for logging in", "OK");
                     }
                 } else {
                     gStats.numLogins = 1;
                     gStats.lastLogin = loginTime.ToString("yyyy-MM-dd HH:mm:ss");
                     levelUp = GamificationTools.levelUp(ref gStats, GamificationTools.loginXP);
-                    GamificationTools.updateGStatsDB(auth, gStats);
                     await DisplayAlert("Login Reward", "Received " + GamificationTools.loginXP + "xp for logging in", "OK");
                 }
 
                 //Check whether a badge should be gained for logging in
-                string loginBadge = await GamificationTools.getLoginBadge(auth, gStats);
+                string loginBadge = GamificationTools.getLoginBadge(gStats);
                 if (!loginBadge.Equals("")) {
-                    await GamificationTools.addBadge(loginBadge, auth);
+                    gStats.badges += " " + loginBadge;
                     await Navigation.PushPopupAsync(new Popups.BadgePopup(loginBadge));
                     gStats = await GamificationTools.addCoinsFromBadge(gStats, loginBadge, auth);
                 }
@@ -111,11 +108,12 @@ namespace DiabetesApp
                     string levelBadge = BadgeList.gotLevelBadge(gStats.level);
 
                     if (!levelBadge.Equals("")) {
-                        await GamificationTools.addBadge(levelBadge, auth);
+                        gStats.badges += " " + levelBadge;
                         await Navigation.PushPopupAsync(new Popups.BadgePopup(levelBadge));
                         gStats = await GamificationTools.addCoinsFromBadge(gStats, levelBadge, auth);
                     }
                 }
+                await GamificationTools.updateGStatsDB(auth, gStats);
             }
             Application.Current.MainPage = new TabbedContent(auth, gamified);
         }

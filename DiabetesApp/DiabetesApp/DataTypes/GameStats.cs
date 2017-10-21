@@ -19,5 +19,6 @@ namespace DiabetesApp.DataTypes
         public int logEntriesMade { get; set; }
         public string currentProfilePic { get; set; }
         public string profilePictures { get; set; }
+        public string badges { get; set; }
     }
 }

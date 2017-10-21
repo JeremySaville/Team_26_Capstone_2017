@@ -3,7 +3,11 @@ using System.Globalization;
 
 namespace DiabetesApp.Models {
     class BadgeList {
-
+        private static string[] bIDs = new string[] { "b01_starting_out", "b02_ramping_up", "b03_getting_there", "b04_skilled",
+                            "b05_rugged", "b06_hardened", "b07_experienced", "b08_pen_and_paper", "b09_scribe", "b10_research_assistant",
+                            "b11_researcher_intern", "b12_novice_researcher", "b13_apprentice_researcher", "b14_adept_researcher",
+                            "b15_professional_researcher", "b16_habitual", "b17_enthusiastic", "b18_committed", "b19_dedicated", "b20_entrepreneur",
+                            "b21_money_man", "b22_investor", "b23_banker", "b24_ceo" };
         private static string[] bDescriptions = { "Reached Level 2", "Reached Level 5", "Reached Level 10", "Reached Level 20", "Reached Level 30", "Reached Level 40", "Reached Level 50",
                                                 "Made your first log entry!", "Made 10 log entries", "Made 20 log entries", "Made 50 log entries", "Made 100 log entries",
                                                 "Made 200 log entries", "Made 500 log entries", "Made 1,000 log entries!", "Logged in 5 days in a row", "Logged in 10 days in a row",
