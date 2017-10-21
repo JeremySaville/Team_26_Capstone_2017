@@ -113,8 +113,7 @@ namespace DiabetesApp.Models {
         }
 
         //init stats for current user (new firebase database entry)
-        public static GameStats initStats(FirebaseAuthLink auth) {
-            var firebase = new FirebaseClient(FirebaseURL);
+        public static async Task<GameStats> initStats(FirebaseAuthLink auth) {
             GameStats newStats = new GameStats();
             string minDate = DateTime.MinValue.ToString("yyyy-MM-dd HH:mm:ss");
             newStats.xp = 0;
@@ -130,9 +129,9 @@ namespace DiabetesApp.Models {
             newStats.logEntriesMade = 0;
             newStats.currentProfilePic = "p01_default_profile";
             newStats.profilePictures = "p01_default_profile";
-            newStats.badges = " ";
+            newStats.badges = "none";
 
-            updateGStatsDB(auth, newStats);
+            await updateGStatsDB(auth, newStats);
             return newStats;
         }
 
@@ -179,8 +178,10 @@ namespace DiabetesApp.Models {
                     .OnceSingleAsync<GameStats>();
                 gStats = item;
             } catch {
-                gStats = initStats(auth);
+                
             }
+            if(gStats == null) gStats = await initStats(auth);
+
             return gStats;
         }
 
@@ -194,7 +195,6 @@ namespace DiabetesApp.Models {
                 await PopupNavigation.PushAsync(new Popups.BadgePopup(coinBadge));
             }
             gStats.coins += coinsToAdd;
-            updateGStatsDB(auth, gStats);
             return gStats;
         }
 

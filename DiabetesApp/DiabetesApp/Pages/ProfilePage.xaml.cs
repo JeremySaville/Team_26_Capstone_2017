@@ -96,13 +96,14 @@ namespace DiabetesApp {
             badges.Clear();
             string[] badgeList = gStats.badges.Split(' ');
             foreach(string badge in badgeList) {
-                badges.Add(new ImageCell() {
-                    ImageSource = BadgeList.getBadgeLink(badge),
-                    Text = BadgeList.getBadgeName(badge),
-                    Detail = BadgeList.getBadgeDescription(badge)
-                });
+                if (!badge.Equals("none")) {
+                    badges.Add(new ImageCell() {
+                        ImageSource = BadgeList.getBadgeLink(badge),
+                        Text = BadgeList.getBadgeName(badge),
+                        Detail = BadgeList.getBadgeDescription(badge)
+                    });
+                }
             }
-            //if (badges.Count > badgeList.Count) updateBadges();
         }
 
         //Update the profile section with the relevant image and stats

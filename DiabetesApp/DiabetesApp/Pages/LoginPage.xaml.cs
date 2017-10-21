@@ -56,10 +56,11 @@ namespace DiabetesApp
                 var item = await firebase
                     .Child("users")
                     .Child(auth.User.LocalId)
+                    .Child("gamified")
                     .WithAuth(auth.FirebaseToken)
-                    .OnceSingleAsync<DataTypes.User>();
+                    .OnceSingleAsync<int>();
 
-                gamified = item.gamified == 2;
+                gamified = item == 2;
 
             } catch { 
                 //user is not gamified
@@ -68,12 +69,13 @@ namespace DiabetesApp
             //if gamified, check for num logins, increment if necessary
             if (gamified) {
                 gStats = await GamificationTools.getGStats(auth);
+                while (gStats == null) ;
                 bool levelUp = false;
                 DateTime loginTime = DateTime.Now;
                 DateTime lastLogin = DateTime.Parse(gStats.lastLogin);
                 if (loginTime.Year == lastLogin.Year && loginTime.Month == lastLogin.Month && loginTime.Day == lastLogin.Day) {
                     //Nothing happens already logged in today
-                } else if (loginTime.Year == lastLogin.Year && loginTime.Month == lastLogin.Month && loginTime.Day == lastLogin.Day + 1) {
+                } else if (loginTime.Equals(lastLogin.AddDays(1))) {
                     gStats.numLogins += 1;
                     gStats.lastLogin = loginTime.ToString("yyyy-MM-dd HH:mm:ss");
                     if(gStats.numLogins % 7 == 0) {
