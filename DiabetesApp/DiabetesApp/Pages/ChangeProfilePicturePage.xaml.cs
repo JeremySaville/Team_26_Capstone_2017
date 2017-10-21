@@ -38,7 +38,7 @@ namespace DiabetesApp.Pages {
 
             if (selection.details.Equals("Unlocked")) {
                 gStats.currentProfilePic = selection.id;
-                GamificationTools.updateGStatsDB(auth, gStats);
+                await GamificationTools.updateGStatsDB(auth, gStats);
                 await DisplayAlert("Success", selection.name + " set as profile picture", "OK");
                 await Navigation.PopModalAsync();
             } else if (selection.details.Equals("Unlock for 500 coins")) {
@@ -47,7 +47,7 @@ namespace DiabetesApp.Pages {
                     if (buy) {
                         gStats.coins -= 500;
                         gStats.profilePictures += " " + selection.id;
-                        GamificationTools.updateGStatsDB(auth, gStats);
+                        await GamificationTools.updateGStatsDB(auth, gStats);
                         await DisplayAlert("Success", selection.name + " unlocked", "OK");
                         updateListView();
                     }
