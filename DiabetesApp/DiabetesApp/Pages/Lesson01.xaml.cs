@@ -1,4 +1,5 @@
 ﻿using System;
+using Firebase.Xamarin.Auth;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,17 @@ namespace DiabetesApp.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Lesson01 : ContentPage
     {
-        public Lesson01()
+        FirebaseAuthLink auth;
+
+        public Lesson01(FirebaseAuthLink auth)
         {
-            InitializeComponent ();
+            InitializeComponent();
+            this.auth = auth;
         }
 
         void onClick_Quiz01(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Quiz01());
+            Navigation.PushModalAsync(new Quiz01(auth));
         }
 
         void onClick_Back(object sender, EventArgs e)

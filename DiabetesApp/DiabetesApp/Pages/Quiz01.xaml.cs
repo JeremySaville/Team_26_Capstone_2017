@@ -16,10 +16,20 @@ namespace DiabetesApp.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Quiz01 : ContentPage
 	{
-		public Quiz01 ()
+        FirebaseAuthLink auth;
+        private int score = 0;
+        DateTime nowTime;
+        private const string FirebaseURL = "https://diabetesarp.firebaseio.com/";
+
+        public Quiz01 (FirebaseAuthLink auth)
 		{
 			InitializeComponent ();
-		}
+            //nowTime = new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second).ToString();
+            nowTime = new DateTime();
+            nowTime = DateTime.Now;
+            this.auth = auth;
+            //score = 0;
+        }
 
         public void onClick_Question01(object sender, EventArgs e)
         {
@@ -28,7 +38,9 @@ namespace DiabetesApp.Pages
             button.IsEnabled = false;
             if (button.Equals(Q1A4)) {
                 button.BackgroundColor = Color.LawnGreen;
-            } else
+                score++;
+            }
+            else
             {
                 button.BackgroundColor = Color.IndianRed;
             }
@@ -42,6 +54,7 @@ namespace DiabetesApp.Pages
             if (button.Equals(Q2A1))
             {
                 button.BackgroundColor = Color.LawnGreen;
+                score++;
             }
             else
             {
@@ -57,6 +70,7 @@ namespace DiabetesApp.Pages
             if (button.Equals(Q3A3))
             {
                 button.BackgroundColor = Color.LawnGreen;
+                score++;
             }
             else
             {
@@ -72,10 +86,21 @@ namespace DiabetesApp.Pages
             btn4.IsEnabled = false;
         }
 
-        public void onClick_Submit(object sender, EventArgs e)
+        async void onClick_Submit(object sender, EventArgs e)
         {
+            var firebase = new FirebaseClient(FirebaseURL);
 
-            Navigation.PopModalAsync();
+            await firebase
+                    .Child("QuizResults")
+                    .Child(auth.User.LocalId)
+                    .Child("Quiz01")
+                    .Child(nowTime.ToString("yyyy-MM-dd HH:mm:ss"))
+                    .WithAuth(auth.FirebaseToken)
+                    .PutAsync(score);
+
+            await DisplayAlert("Quiz Complete" ,"You got " + score.ToString() + " out of 3 correct!", "OK");
+
+            await Navigation.PopModalAsync();
         }
 
     }

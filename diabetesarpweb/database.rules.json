@@ -39,6 +39,12 @@
     "RandomisationTotals": {
       ".read": "true",
       ".write": "true"
-    }
+    },
+      "QuizResults":{
+      "$uid": {
+        ".read": "auth.uid == $uid",
+        ".write": "auth.uid == $uid"
+      }
   }
+ }
 }

@@ -3,22 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DiabetesApp.Pages.Quiz04">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Which type of insulin do most people with diabetes take right before eating?" FontSize="Large" FontAttributes="Bold"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
-            <Label Text="What are carbohydrates broken down to in the digestive system?" FontSize="Large" FontAttributes="Bold"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
-            <Label Text="Where can I find out how much insulin to use?" FontSize="Large" FontAttributes="Bold"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Spacing="10">
+                <Label Text="Lesson 4 Quiz Questions" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                <StackLayout x:Name="Question01" Margin="20,10,20,10">
+                    <Label Text="Which type of insulin do most people with diabetes take right before eating?" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
+                    <Button x:Name="Q1A1" Text="Quick acting insulin" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                    <Button x:Name="Q1A2" Text="Long acting insulin" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                    <Button x:Name="Q1A3" Text="Background insulin" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                    <Button x:Name="Q1A4" Text="Nightime insulin" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                </StackLayout>
+                <StackLayout x:Name="Question02" Margin="20,10,20,10">
+                    <Label Text="What are carbohydrates broken down to in the digestive system?" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
+                    <Button x:Name="Q2A1" Text="Ketones" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                    <Button x:Name="Q2A2" Text="Insulin" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                    <Button x:Name="Q2A3" Text="Glucose" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                    <Button x:Name="Q2A4" Text="Enzymes" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                </StackLayout>
+                <StackLayout x:Name="Question03" Margin="20,10,20,10">
+                    <Label Text="Where can I find out how much insulin to use?" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
+                    <Button x:Name="Q3A1" Text="Searching the internet" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                    <Button x:Name="Q3A2" Text="Reading a book" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                    <Button x:Name="Q3A3" Text="Asking my doctor and reading the information they gave me" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                    <Button x:Name="Q3A4" Text="Asking my friends" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                </StackLayout>
+                <Button x:Name="submit" Text="Submit" BackgroundColor="DodgerBlue" Clicked="onClick_Submit"/>
+            </StackLayout>
+
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
