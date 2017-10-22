@@ -361,6 +361,78 @@
   <ItemGroup>
     <BundleResource Include="Resources\apple.png.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b02_ramping_up_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b03_getting_there_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b04_skilled_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b05_rugged_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b06_hardened_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b07_experienced_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b08_pen_and_paper_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b09_scribe_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b10_research_assistant_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b11_researcher_intern_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b12_novice_researcher_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b13_apprentice_researcher_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b14_adept_researcher_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b15_professional_researcher_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b16_habitual_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b17_enthusiastic_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b18_committed_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b19_dedicated_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b20_entrepreneur_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b21_money_man_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b22_investor_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b23_banker_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b24_ceo_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\b01_starting_out_grey.png" />
+  </ItemGroup>
   <Import Project="..\DiabetesApp\DiabetesApp.projitems" Label="Shared" Condition="Exists('..\DiabetesApp\DiabetesApp.projitems')" />
   <Import Project="..\DiabetesApp\App1.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

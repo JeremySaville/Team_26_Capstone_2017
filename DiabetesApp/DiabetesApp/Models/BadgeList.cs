@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace DiabetesApp.Models {
     class BadgeList {
-        private static string[] bIDs = new string[] { "b01_starting_out", "b02_ramping_up", "b03_getting_there", "b04_skilled",
+        public static string[] bIDs = new string[] { "b01_starting_out", "b02_ramping_up", "b03_getting_there", "b04_skilled",
                             "b05_rugged", "b06_hardened", "b07_experienced", "b08_pen_and_paper", "b09_scribe", "b10_research_assistant",
                             "b11_researcher_intern", "b12_novice_researcher", "b13_apprentice_researcher", "b14_adept_researcher",
                             "b15_professional_researcher", "b16_habitual", "b17_enthusiastic", "b18_committed", "b19_dedicated", "b20_entrepreneur",
@@ -30,6 +30,11 @@ namespace DiabetesApp.Models {
         //Get the image link for the badge
         public static String getBadgeLink(String badgeKey) {
             return badgeKey + ".png";
+        }
+
+        //Get the image link for a greyed out (unearned) badge
+        public static String getUBadgeLink(String badgeKey) {
+            return badgeKey + "_grey.png";
         }
 
         //Get the description of the badge based on the badge key

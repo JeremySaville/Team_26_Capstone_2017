@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiabetesApp.Pages.ViewBadgePage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="badgeName" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" FontSize="Large" Margin="5" HorizontalOptions="Center" TextColor="{StaticResource mainTextColour}"/>
+            <Image x:Name="badgeImage" Grid.Column="1" Grid.Row="1"/>
+            <Label x:Name="badgeDescription" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Margin="10" HorizontalOptions="Center" TextColor="{StaticResource mainTextColour}"/>
+            <Button x:Name="backButton" Grid.Column="1" Grid.Row="4" Text="Back" Clicked="onClick_backButton" HorizontalOptions="Center" Style="{StaticResource buttonStyle}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
