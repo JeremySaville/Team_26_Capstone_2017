@@ -5,97 +5,97 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
-                <Label Text="Lesson 12 - Barriers" FontSize="Large" FontAttributes="Bold"
+                <Label Text="Lesson 12 - Barriers" FontSize="Large" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                 />
-                <Label Text="Who can I contact for help?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="Who can I contact for help?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                 />
-                <Label Text="There are many people that can be contacted for help if you have questions about your diabetes. " FontSize="Medium"
+                <Label Text="There are many people that can be contacted for help if you have questions about your diabetes. " FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="Most hospitals have diabetes educators that can be contacted if you have questions about BSLs and insulin. At your next diabetes specialist (doctor) appointment, you can ask about these services.  " FontSize="Medium"
+                <Label Text="Most hospitals have diabetes educators that can be contacted if you have questions about BSLs and insulin. At your next diabetes specialist (doctor) appointment, you can ask about these services.  " FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="In emergency situations, you can also contact the hospital, or call 000 if it is life threatening." FontSize="Medium"
+                <Label Text="In emergency situations, you can also contact the hospital, or call 000 if it is life threatening." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="Other professionals, such as your GP and psychologists can also be helpful in managing specific issues you may have – such as anxiety about your condition, and questions about diet and exercise." FontSize="Medium"
+                <Label Text="Other professionals, such as your GP and psychologists can also be helpful in managing specific issues you may have – such as anxiety about your condition, and questions about diet and exercise." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="Your diabetes educator may also know of some support groups and hotlines that you can use as well if you are interested." FontSize="Medium"
+                <Label Text="Your diabetes educator may also know of some support groups and hotlines that you can use as well if you are interested." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="What issues do adolescents with type one most commonly face?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="What issues do adolescents with type one most commonly face?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                 />
-                <Label Text="There are a lot of things that makes managing diabetes harder." FontSize="Medium"
+                <Label Text="There are a lot of things that makes managing diabetes harder." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="A lot of adolescents and young adults face problems with getting support from family, friends, work, school and uni – sometimes people find it difficult and embarrassing to ask for help, and sometimes help is hard to find!" FontSize="Medium"
+                <Label Text="A lot of adolescents and young adults face problems with getting support from family, friends, work, school and uni – sometimes people find it difficult and embarrassing to ask for help, and sometimes help is hard to find!" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="Others have difficulty managing the number of injections they should take per day, because it can be hard to find time or find the money to pay for insulin." FontSize="Medium"
+                <Label Text="Others have difficulty managing the number of injections they should take per day, because it can be hard to find time or find the money to pay for insulin." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="It is always helpful to think about these things and try to identify your individual barriers. Often your doctor will be able to give you some advice at your next appointment – no-matter what the issue is." FontSize="Medium"
+                <Label Text="It is always helpful to think about these things and try to identify your individual barriers. Often your doctor will be able to give you some advice at your next appointment – no-matter what the issue is." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="What do others say?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="What do others say?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                 />
-                <Label Text="Below are some good quotes from other young people with diabetes. Remember you aren't alone, and it's tough sometimes!" FontSize="Medium"
+                <Label Text="Below are some good quotes from other young people with diabetes. Remember you aren't alone, and it's tough sometimes!" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="I have to check my sugar and count my carbohydrates before every meal. I always need to have my meter and wear identification. I have so many doctors' appointments, It's ridiculous." FontSize="Medium" FontAttributes="Italic"
+                <Label Text="I have to check my sugar and count my carbohydrates before every meal. I always need to have my meter and wear identification. I have so many doctors' appointments, It's ridiculous." FontSize="Medium" FontAttributes="Italic" TextColor="Black"
                 />
-                <Label Text="I know what I should do, but I just can't seem to do it. Maybe I don't have the energy; maybe I don't care." FontSize="Medium" FontAttributes="Italic"
+                <Label Text="I know what I should do, but I just can't seem to do it. Maybe I don't have the energy; maybe I don't care." FontSize="Medium" FontAttributes="Italic" TextColor="Black"
                 />
-                <Label Text="First it takes 20 minutes before I finally get transferred to the right person. It took another 2 months before I got an appointment with the doctor. Then all the doctor did was look at my logbook and tell me my numbers were too high. I felt lousy." FontSize="Medium" FontAttributes="Italic"
+                <Label Text="First it takes 20 minutes before I finally get transferred to the right person. It took another 2 months before I got an appointment with the doctor. Then all the doctor did was look at my logbook and tell me my numbers were too high. I felt lousy." FontSize="Medium" FontAttributes="Italic" TextColor="Black"
                 />
-                <Label Text="How can prompts and cues help me?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="How can prompts and cues help me?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                 />
-                <Label Text="For people who are forgetful or busy, prompts can help. A prompt is something you use to help you remember to do something. A prompt is also called a cue. We have found the following prompts to be helpful..." FontSize="Medium"
+                <Label Text="For people who are forgetful or busy, prompts can help. A prompt is something you use to help you remember to do something. A prompt is also called a cue. We have found the following prompts to be helpful..." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Use an app or alarm on your phone to remind you to test your BSL before bed and when you wake up" FontSize="Medium"
+                <Label Text="• Use an app or alarm on your phone to remind you to test your BSL before bed and when you wake up" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Set an alarm on your phone for the day before each appointment you have at the hospital to remind you" FontSize="Medium"
+                <Label Text="• Set an alarm on your phone for the day before each appointment you have at the hospital to remind you" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• When you feel hungry, eat and test your blood sugar at the same time" FontSize="Medium"
+                <Label Text="• When you feel hungry, eat and test your blood sugar at the same time" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Keep your glucometer near your food so you remember to test your sugars" FontSize="Medium"
+                <Label Text="• Keep your glucometer near your food so you remember to test your sugars" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="How do I manage my BSLs when I get sick?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="How do I manage my BSLs when I get sick?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                 />
-                <Label Text="Young people with diabetes do not get sick more often than others. But when they are sick managing their sugars is hard. Being sick with a virus, cold, or infection can cause your blood sugar to go high OR low. When you are sick, this is how you should manage your diabetes..." FontSize="Medium"
+                <Label Text="Young people with diabetes do not get sick more often than others. But when they are sick managing their sugars is hard. Being sick with a virus, cold, or infection can cause your blood sugar to go high OR low. When you are sick, this is how you should manage your diabetes..." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Visit your GP if you are concerned about your illness, for example if you have a cough that won't go away." FontSize="Medium"
+                <Label Text="• Visit your GP if you are concerned about your illness, for example if you have a cough that won't go away." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Call 000 in an emergency." FontSize="Medium"
+                <Label Text="• Call 000 in an emergency." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Use Panadol for pain or fever" FontSize="Medium"
+                <Label Text="• Use Panadol for pain or fever" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Drink more fluids. If your BSL is higher than 12 mmol/L drink water only." FontSize="Medium"
+                <Label Text="• Drink more fluids. If your BSL is higher than 12 mmol/L drink water only." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Rest" FontSize="Medium"
+                <Label Text="• Rest" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Check BSLs every 2-4 hours" FontSize="Medium"
+                <Label Text="• Check BSLs every 2-4 hours" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Check ketones at least once per day when sick. " FontSize="Medium"
+                <Label Text="• Check ketones at least once per day when sick." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Do not skip insulin if your BSL is low. Some insulin is always required." FontSize="Medium"
+                <Label Text="• Do not skip insulin if your BSL is low. Some insulin is always required." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="High BSLs when Sick" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="High BSLs when Sick" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                 />
-                <Label Text="If your BSL is above 15mmol/L and moderate or high ketones are present, give an extra dose of quick acting insulin (e.g. novorapid) equal to 10% of all the insulin you usually take in a day. Extra insulin can be given every 2-4 hours." FontSize="Medium"
+                <Label Text="If your BSL is above 15mmol/L and moderate or high ketones are present, give an extra dose of quick acting insulin (e.g. novorapid) equal to 10% of all the insulin you usually take in a day. Extra insulin can be given every 2-4 hours." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="DKA is more likely when you are sick. If ketones and BSLs are high you are at high risk of going into DKA (ketoacidosis – a serious condition). The signs of DKA include nausea, vomiting, and abdominal pain." FontSize="Medium"
+                <Label Text="DKA is more likely when you are sick. If ketones and BSLs are high you are at high risk of going into DKA (ketoacidosis – a serious condition). The signs of DKA include nausea, vomiting, and abdominal pain." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="Low BSLs when Sick" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="Low BSLs when Sick" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                 />
-                <Label Text="If BSLs are low (below 5mmol/L), you may reduce long acting insulin by up to 50%. Quick acting insulin should not be taken if you are not eating and drinking things containing carbohydrates. If you can't keep your sugars in the normal range, or you have ketones, you need to ring the hospital." FontSize="Medium"
+                <Label Text="If BSLs are low (below 5mmol/L), you may reduce long acting insulin by up to 50%. Quick acting insulin should not be taken if you are not eating and drinking things containing carbohydrates. If you can't keep your sugars in the normal range, or you have ketones, you need to ring the hospital." FontSize="Medium" TextColor="Black"
                 />
                 <Button Text="START QUIZ"
                  BackgroundColor="DodgerBlue"

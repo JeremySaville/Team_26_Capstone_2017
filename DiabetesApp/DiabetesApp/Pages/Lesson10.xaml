@@ -5,43 +5,45 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
-                <Label Text="Lesson 10 - Exercise" FontSize="Large" FontAttributes="Bold"
+                <Label Text="Lesson 10 - Exercise" FontSize="Large" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                 />
-                <Label Text="We all know that physical activity is good for us. But many young people with type 1 find it makes managing their sugars difficult. As a result, many young people lose confidence and stop playing sport or exercising." FontSize="Medium"
+                <Label Text="We all know that physical activity is good for us. But many young people with type 1 find it makes managing their sugars difficult. As a result, many young people lose confidence and stop playing sport or exercising." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="It is sometimes easy to forget that if you don't exercise it can make it harder to control your blood sugars. It also stops you from gaining weight, which can make it much harder to manage your diabetes." FontSize="Medium"
+                <Label Text="It is sometimes easy to forget that if you don't exercise it can make it harder to control your blood sugars. It also stops you from gaining weight, which can make it much harder to manage your diabetes." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="How much exercise should you do?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="How much exercise should you do?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                 />
-                <Label Text="This depends on how old you are. People under 18 should exercise or play sport for at least 60 minutes every day. People 18 years or older should exercise or play sport for at least 30 minutes every day." FontSize="Medium"
+                <Label Text="This depends on how old you are. People under 18 should exercise or play sport for at least 60 minutes every day. People 18 years or older should exercise or play sport for at least 30 minutes every day." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="What effect does exercise have on insulin?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="What effect does exercise have on insulin?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                 />
-                <Label Text="It will help your insulin to work more effectively and assist with your blood glucose control. " FontSize="Medium"
+                <Label Text="It will help your insulin to work more effectively and assist with your blood glucose control. " FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="What effect does exercise have on blood sugar?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="What effect does exercise have on blood sugar?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                 />
-                <Label Text="Exercise usually lowers your blood sugar. Hypos caused by exercise may occur up to 24 hours later. To stop your blood sugar from going to low, it is important to have extra fast acting carbohydrate drinks or snacks before activity, and every 30 minutes during long games of sport. Very demanding exercise might actually increase your blood sugar. However, this doesn't last long, as it normally drops soon after you finish exercising." FontSize="Medium"
+                <Label Text="Exercise usually lowers your blood sugar. Hypos caused by exercise may occur up to 24 hours later. To stop your blood sugar from going to low, it is important to have extra fast acting carbohydrate drinks or snacks before activity, and every 30 minutes during long games of sport." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="When should exercise be avoided?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="Very demanding exercise might actually increase your blood sugar. However, this doesn't last long, as it normally drops soon after you finish exercising." FontSize="Medium" TextColor="Black"
+                />
+                <Label Text="When should exercise be avoided?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                 />
-                <Label Text="If you feel sick, if your BSL is higher than 14mmol/L and you have ketones. Also if your BSL is less than 4mmol/L" FontSize="Medium"
+                <Label Text="If you feel sick, if your BSL is higher than 14mmol/L and you have ketones. Also if your BSL is less than 4mmol/L" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="Should I take extra insulin before I exercise?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="Should I take extra insulin before I exercise?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                 />
-                <Label Text="You should never take extra insulin before you exercise. This would make your blood sugar drop too low! A lower dose of insulin may be needed when you are active, and meal insulin doses decreased just before and just after the activity. Exercising every day may require an overall reduction in your total daily insulin dose." FontSize="Medium"
+                <Label Text="You should never take extra insulin before you exercise. This would make your blood sugar drop too low! A lower dose of insulin may be needed when you are active, and meal insulin doses decreased just before and just after the activity. Exercising every day may require an overall reduction in your total daily insulin dose." FontSize="Medium" TextColor="Black"
                 />
 
                 <Button Text="START QUIZ"

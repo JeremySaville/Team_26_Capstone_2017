@@ -3,22 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DiabetesApp.Pages.Quiz08">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="You realise just before dinner time that you forgot to take your insulin before lunch. What should you do now?" FontSize="Large" FontAttributes="Bold"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
-            <Label Text="Which of the following will most likely cause low blood sugar?" FontSize="Large" FontAttributes="Bold"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
-            <Label Text="What information should be recorded in your diabetes diary?" FontSize="Large" FontAttributes="Bold"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Spacing="10">
+                <Label Text="Lesson 8 Quiz Questions" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                <StackLayout x:Name="Question01" Margin="20,10,20,10">
+                    <Label Text="You realize just before dinner time that you forgot to take your insulin before lunch. What should you do now?" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
+                    <Button x:Name="Q1A1" Text="Skip dinner to lower your blood glucose" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                    <Button x:Name="Q1A2" Text="Take the insulin that you usually take at lunch" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                    <Button x:Name="Q1A3" Text="Take twice as much insulin as you usually take at lunch" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                    <Button x:Name="Q1A4" Text="Check your BSL to decide how much insulin to take" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                </StackLayout>
+                <StackLayout x:Name="Question02" Margin="20,10,20,10">
+                    <Label Text="Which of the following will most likely cause low blood sugar?" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
+                    <Button x:Name="Q2A1" Text="Not enough insulin " BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                    <Button x:Name="Q2A2" Text="Exercise" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                    <Button x:Name="Q2A3" Text="Too much food" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                    <Button x:Name="Q2A4" Text="Stress" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                </StackLayout>
+                <StackLayout x:Name="Question03" Margin="20,10,20,10">
+                    <Label Text="What information should be recorded in your diabetes diary?" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
+                    <Button x:Name="Q3A1" Text="Results of blood sugar checks" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                    <Button x:Name="Q3A2" Text="Adjustment insulin doses" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                    <Button x:Name="Q3A3" Text="Time spent exercising" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                    <Button x:Name="Q3A4" Text="All of these" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                </StackLayout>
+                <Button x:Name="submit" Text="Submit" BackgroundColor="DodgerBlue" Clicked="onClick_Submit"/>
+            </StackLayout>
+
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

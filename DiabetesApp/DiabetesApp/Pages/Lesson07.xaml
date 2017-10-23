@@ -5,90 +5,96 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
-                <Label Text="Lesson 7 - Hyperglycaemia" FontSize="Large" FontAttributes="Bold"
+                <Label Text="Lesson 7 - Hyperglycaemia" FontSize="Large" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                  Margin="20"
                 />
-                <Label Text="Hyperglycemia is the medical term for high blood glucose levels. Blood levels above 7mmol/L are considered high. All young adults with diabetes have some blood glucose levels above the target range. This is not a problem if the majority are within the target range." FontSize="Medium"
+                <Label Text="Hyperglycemia is the medical term for high blood glucose levels. Blood levels above 7mmol/L are considered high. All young adults with diabetes have some blood glucose levels above the target range. This is not a problem if the majority are within the target range." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="Does hyperglycaemia make you feel sick?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="Does hyperglycaemia make you feel sick?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                  Margin="20"
                 />
-                <Label Text="It is possible for your blood sugar level to be high without you realising. Many people do not feel sick until their blood sugar levels are extremely high (above 15mmol/L)." FontSize="Medium"
+                <Label Text="It is possible for your blood sugar level to be high without you realising. Many people do not feel sick until their blood sugar levels are extremely high (above 15mmol/L)." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="What might I feel like when my blood sugar is too high?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="What might I feel like when my blood sugar is too high?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                  Margin="20"
                 />
-                <Label Text="Some of the signs include feeling..." FontSize="Medium"
+                <Label Text="Some of the signs include feeling..." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Excessively thirsy" FontSize="Medium"
+                <Label Text="• Excessively thirsy" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Frequently needing to wee" FontSize="Medium"
+                <Label Text="• Frequently needing to wee" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Feeling tired" FontSize="Medium"
+                <Label Text="• Feeling tired" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Blurred vision" FontSize="Medium"
+                <Label Text="• Blurred vision" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Weight loss" FontSize="Medium"
+                <Label Text="• Weight loss" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Hunger" FontSize="Medium"
+                <Label Text="• Hunger" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Mood changes" FontSize="Medium"
+                <Label Text="• Mood changes" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="What can cause high BSL's?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="What can cause high BSL's?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                  Margin="20"
                 />
-                <Label Text="• Illness" FontSize="Medium"
+                <Label Text="• Illness" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Infection" FontSize="Medium"
+                <Label Text="• Infection" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Stress, worry and anxiety" FontSize="Medium"
+                <Label Text="• Stress, worry and anxiety" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Too many carbohydrates at once" FontSize="Medium"
+                <Label Text="• Too many carbohydrates at once" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Not enough insulin" FontSize="Medium"
+                <Label Text="• Not enough insulin" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Less exercise than usual" FontSize="Medium"
+                <Label Text="• Less exercise than usual" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="What short-term problems can occur with hyperglycaemia?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="What short-term problems can occur with hyperglycaemia?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                  Margin="20"
                 />
-                <Label Text="If hyperglycemia is left untreated ketoacidosis may develop. Ketoacidosis (DKA) is a serious condition associated with illness or very high blood glucose levels in type 1 diabetes. It develops gradually over hours or days. It is a sign of insufficient insulin. Without enough insulin, the body's cells cannot use glucose for energy. To make up for this, the body begins to burn fat for energy instead. This leads to accumulation of dangerous chemical substances in the blood called ketones, which also appear in the urine. Signs of DKA include..." FontSize="Medium"
+                <Label Text="If hyperglycemia is left untreated ketoacidosis may develop. Ketoacidosis (DKA) is a serious condition associated with illness or very high blood glucose levels in type 1 diabetes. It develops gradually over hours or days. It is a sign of insufficient insulin, and without enough insulin, the body's cells cannot use glucose for energy." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Rapid breathing" FontSize="Medium"
+                <Label Text="To make up for this, the body begins to burn fat for energy instead. This leads to accumulation of dangerous chemical substances in the blood called ketones, which also appear in the urine. Signs of DKA include..." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Flushed cheeks" FontSize="Medium"
+                <Label Text="• Rapid breathing" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Abdominal pain" FontSize="Medium"
+                <Label Text="• Flushed cheeks" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Vomiting" FontSize="Medium"
+                <Label Text="• Abdominal pain" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="• Dehydration" FontSize="Medium"
+                <Label Text="• Vomiting" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="What long-term problems can occur with hyperglycaemia?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="• Dehydration" FontSize="Medium" TextColor="Black"
+                />
+                <Label Text="What long-term problems can occur with hyperglycaemia?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                  Margin="20"
                 />
-                <Label Text="When blood glucose is too high too often, it can harm blood vessels and cause heart attacks. It can also damage organs in the body and cause blindness, kidney failure, or loss of toes or feet." FontSize="Medium"
+                <Label Text="When blood glucose is too high too often, it can harm blood vessels and cause heart attacks. It can also damage organs in the body and cause blindness, kidney failure, or loss of toes or feet." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="What do I do if my blood sugar is too high?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="What do I do if my blood sugar is too high?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                  Margin="20"
                 />
-                <Label Text="If your blood sugar is too high, you need to lower it by adjusting the amount of insulin you take with your next meal. You also should drink plenty of fluids because hyperglycaemia can make you dehydrated. If your blood sugar is very high (above 15mmol/L) you need to check for ketones as well. You can do this by testing your urine with strips, or by using a special glucometer with a drop of blood." FontSize="Medium"
+                <Label Text="If your blood sugar is too high, you need to lower it by adjusting the amount of insulin you take with your next meal. You also should drink plenty of fluids because hyperglycaemia can make you dehydrated." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="If you have lots of ketones in your urine (above 1.5mmol/L), you are in the early stages of DKA. You need to call your diabetes educator to work out how much extra insulin you need to take. If you don't have lots of ketones, keep checking your BSL and ketones every 2 hours until your BSL is below 7. Do not exercise if your BSL is above 15mmol/L or ketones are present." FontSize="Medium"
+                <Label Text="If your blood sugar is very high (above 15mmol/L) you need to check for ketones as well. You can do this by testing your urine with strips, or by using a special glucometer with a drop of blood." FontSize="Medium" TextColor="Black"
+                />
+                <Label Text="If you have lots of ketones in your urine (above 1.5mmol/L), you are in the early stages of DKA. You need to call your diabetes educator to work out how much extra insulin you need to take." FontSize="Medium" TextColor="Black"
+                />
+                <Label Text="If you don't have lots of ketones, keep checking your BSL and ketones every 2 hours until your BSL is below 7. Do not exercise if your BSL is above 15mmol/L or ketones are present." FontSize="Medium" TextColor="Black"
                 />
                 <Button Text="START QUIZ"
                  BackgroundColor="DodgerBlue"

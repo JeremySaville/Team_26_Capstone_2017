@@ -3,22 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DiabetesApp.Pages.Quiz10">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="What effect does moderate exercise usually have on BSLs?" FontSize="Large" FontAttributes="Bold"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
-            <Label Text="How much extra insulin should be taken before exercising for 30mins?" FontSize="Large" FontAttributes="Bold"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
-            <Label Text="What effect does exercise have on insulin?" FontSize="Large" FontAttributes="Bold"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Spacing="10">
+                <Label Text="Lesson 10 Quiz Questions" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                <StackLayout x:Name="Question01" Margin="20,10,20,10">
+                    <Label Text="What effect does moderate exercise usually have on BSLs?" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
+                    <Button x:Name="Q1A1" Text="It causes insulin to stop working" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                    <Button x:Name="Q1A2" Text="It raises BSLs" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                    <Button x:Name="Q1A3" Text="It lowers BSLs" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                    <Button x:Name="Q1A4" Text="It has no effect on BSLs" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                </StackLayout>
+                <StackLayout x:Name="Question02" Margin="20,10,20,10">
+                    <Label Text="How much extra insulin should be taken before exercising for 30mins?" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
+                    <Button x:Name="Q2A1" Text="2 Units" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                    <Button x:Name="Q2A2" Text="4 Units" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                    <Button x:Name="Q2A3" Text="8 Units" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                    <Button x:Name="Q2A4" Text="NO extra insulin should be taken because of exercise" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                </StackLayout>
+                <StackLayout x:Name="Question03" Margin="20,10,20,10">
+                    <Label Text="What effect does exercise have on insulin?" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
+                    <Button x:Name="Q3A1" Text="Routine, daily exercise will not affect how much insulin you need to take" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                    <Button x:Name="Q3A2" Text="A higher dose of insulin may be needed when exercising" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                    <Button x:Name="Q3A3" Text="It makes insulin work less effectively" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                    <Button x:Name="Q3A4" Text="Exercise done at the same time, duration and intensity on a daily basis will ensure the most predictable blood glucose responses." BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                </StackLayout>
+                <Button x:Name="submit" Text="Submit" BackgroundColor="DodgerBlue" Clicked="onClick_Submit"/>
+            </StackLayout>
+
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

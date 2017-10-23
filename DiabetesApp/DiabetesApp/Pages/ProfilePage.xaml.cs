@@ -93,17 +93,41 @@ namespace DiabetesApp {
 
         //Update the badges in the 
         private void updateBadges() {
-            badges.Clear();
-            string[] badgeList = gStats.badges.Split(' ');
-            foreach(string badge in badgeList) {
-                if (!badge.Equals("none")) {
-                    badges.Add(new ImageCell() {
-                        ImageSource = BadgeList.getBadgeLink(badge),
-                        Text = BadgeList.getBadgeName(badge),
-                        Detail = BadgeList.getBadgeDescription(badge)
-                    });
+            BadgeGrid.Children.Clear();
+            BadgeGrid.RowDefinitions.Clear();
+            int index = 0;
+            string[] allBadges = BadgeList.bIDs;
+            string badgeList = gStats.badges;
+            foreach(string badge in allBadges) {
+                string badgeSource = "";
+                if (badgeList.Contains(badge)) {
+                    badgeSource = BadgeList.getBadgeLink(badge);
+                } else {
+                    badgeSource = BadgeList.getUBadgeLink(badge);
                 }
+                Image badgeImage = new Image() {
+                    Source = badgeSource
+                };
+                TapGestureRecognizer t = new TapGestureRecognizer();
+                t.Tapped += onClick_badge;
+                badgeImage.GestureRecognizers.Add(t);
+                BadgeGrid.Children.Add(badgeImage, index % 4 + 1, index / 4);
+                index++;
             }
+            for(int i = 0; i < Math.Ceiling(((double)index) / 4); i++) {
+                BadgeGrid.RowDefinitions.Add(new RowDefinition() {
+                    Height = 70
+                });
+            }
+        }
+
+        public void onClick_badge(object sender, EventArgs e) {
+            Image tappedBadge = (Image)sender;
+            FileImageSource objFileImageSource = (Xamarin.Forms.FileImageSource)tappedBadge.Source;
+            string strFileName = objFileImageSource.File;
+            string strFile = strFileName.Substring(0, strFileName.Length - 4);
+            if(!strFileName.Contains("_grey.png"))
+                Navigation.PushModalAsync(new Pages.ViewBadgePage(strFile));
         }
 
         //Update the profile section with the relevant image and stats

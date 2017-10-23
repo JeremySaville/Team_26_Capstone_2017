@@ -3,22 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DiabetesApp.Pages.Quiz05">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Which is the following is a place where you can inject insulin?" FontSize="Large" FontAttributes="Bold"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
-            <Label Text="What range should your blood glucose be before a meal?" FontSize="Large" FontAttributes="Bold"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
-            <Label Text="What should you do before you inject insulin?" FontSize="Large" FontAttributes="Bold"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Spacing="10">
+                <Label Text="Lesson 5 Quiz Questions" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                <StackLayout x:Name="Question01" Margin="20,10,20,10">
+                    <Label Text="Which is the following is a place where you can inject insulin?" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
+                    <Button x:Name="Q1A1" Text="Your hands" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                    <Button x:Name="Q1A2" Text="Your feet" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                    <Button x:Name="Q1A3" Text="Your thigh" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                    <Button x:Name="Q1A4" Text="Your calf muscle" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>
+                </StackLayout>
+                <StackLayout x:Name="Question02" Margin="20,10,20,10">
+                    <Label Text="What range should your blood glucose be before a meal?" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
+                    <Button x:Name="Q2A1" Text="7-10gramsl/L" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                    <Button x:Name="Q2A2" Text="4-7mmol/L" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                    <Button x:Name="Q2A3" Text="4-1grams/L" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                    <Button x:Name="Q2A4" Text="8-3mmol/L" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question02"/>
+                </StackLayout>
+                <StackLayout x:Name="Question03" Margin="20,10,20,10">
+                    <Label Text="What should you do before you inject insulin?" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
+                    <Button x:Name="Q3A1" Text="Measure your blood glucose" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                    <Button x:Name="Q3A2" Text="Wash your hands" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                    <Button x:Name="Q3A3" Text="Gently pinch up the skin around where you will give the shot and hold it until the needle goes in" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                    <Button x:Name="Q3A4" Text="You need to do all of the above" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
+                </StackLayout>
+                <Button x:Name="submit" Text="Submit" BackgroundColor="DodgerBlue" Clicked="onClick_Submit"/>
+            </StackLayout>
+
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

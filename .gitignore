@@ -26,3 +26,4 @@ UpgradeLog.*
 *.dotCover
 diabetesarpweb/firebase-debug.log
 *.ide
+*.ide

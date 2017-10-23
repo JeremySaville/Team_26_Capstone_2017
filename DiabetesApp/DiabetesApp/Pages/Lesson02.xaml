@@ -5,46 +5,49 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
-                <Label Text="Lesson 2 - Treating Diabetes" FontSize="Large" FontAttributes="Bold"
+                <Label Text="Lesson 2 - Treating Diabetes" FontSize="Large" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                  Margin="20"
                 />
-                <Label Text="When you are diagnosed with Diabetes you will have it for the rest of your life - but the good news is that it can be treated!" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="When you are diagnosed with Diabetes you will have it for the rest of your life - but the good news is that it can be treated!" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="What is the key to diabetes treatment?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="What is the key to diabetes treatment?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                  Margin="20"/>
-                <Label Text="The key to taking care of your diabetes is to keep your blood glucose as close to normal as possible. For most people a blood glucose between 4 and 7 is normal, but your doctor will tell you what blood glucose level is right for you. Your goal is to keep your blood glucose as close to this level as you can. A blood sugar that is too high is bad, and so is having a blood sugar too low. Both are potentially dangerous." FontSize="Medium"
+
+                <Label Text="The key to taking care of your diabetes is to keep your blood glucose as close to normal as possible. For most people a blood glucose between 4 and 7 is normal, but your doctor will tell you what blood glucose level is right for you. Your goal is to keep your blood glucose as close to this level as you can. A blood sugar that is too high is bad, and so is having a blood sugar too low. Both are potentially dangerous." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="How do I check my blood glucose?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="How do I check my blood glucose?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                  Margin="20"
                 />
-                <Label Text="Your doctor or diabetes educator will teach you how to check your blood sugar with a glucose meter (glucometer) at home . Most people have to do this a few times every day." FontSize="Medium"
+                <Label Text="Your doctor or diabetes educator will teach you how to check your blood sugar with a glucose meter (glucometer) at home . Most people have to do this a few times every day." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="How do I keep my blood sugar in the right range?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="How do I keep my blood sugar in the right range?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                  Margin="20"
                 />
-                <Label Text="In Type 1 Diabetes, insulin injections are needed to control your blood sugar levels. Insulin helps glucose get from your blood into your cells. This is good because it lowers your blood sugar, and gives your cells energy. You will also need to learn how to use other diabetes medications if you experience a diabetes emergency!" FontSize="Medium"
+                <Label Text="In Type 1 Diabetes, insulin injections are needed to control your blood sugar levels. Insulin helps glucose get from your blood into your cells. This is good because it lowers your blood sugar, and gives your cells energy. You will also need to learn how to use other diabetes medications if you experience a diabetes emergency!" FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="Are diet and exercise important?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="Are diet and exercise important?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                  Margin="20"
                 />
-                <Label Text="Eating well is very important when you have diabetes. Because having diabetes means that your body cannot manage the amount of glucose in your blood you have to do the 'thinking' for your body. you have to make sure you have enough sugar, but not too much. Carbohydrates, or carbs for short, are a good source of sugar for our bodies. But if you eat too many carbs at one time, your blood glucose can get too high. Exercise is also very important when you have diabetes and so are regular visits to the doctor" FontSize="Medium"
+                <Label Text="Eating well is very important when you have diabetes. Because having diabetes means that your body cannot manage the amount of glucose in your blood you have to do the 'thinking' for your body. you have to make sure you have enough sugar, but not too much." FontSize="Medium" TextColor="Black"
                 />
-                <Label Text="Why should Diabetes be treated?" FontSize="Medium" FontAttributes="Bold"
+                <Label Text="Carbohydrates, or carbs for short, are a good source of sugar for our bodies. But if you eat too many carbs at one time, your blood glucose can get too high. Exercise is also very important when you have diabetes and so are regular visits to the doctor" FontSize="Medium" TextColor="Black"
+                />
+                <Label Text="Why should Diabetes be treated?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                  Margin="20"
                 />
-                <Label Text="When blood glucose is too high too often, it can harm blood vessels and cause heart attacks. It can also damage organs in the body and cause blindness, kidney failure, or loss of toes or feet. The good news is that when you take care of your diabetes, you can reduce your chance by having these problems by a lot. Do not let diabetes stop you! You can still do all the things your friends do and live a long and healthy life." FontSize="Medium"
+                <Label Text="When blood glucose is too high too often, it can harm blood vessels and cause heart attacks. It can also damage organs in the body and cause blindness, kidney failure, or loss of toes or feet. The good news is that when you take care of your diabetes, you can reduce your chance by having these problems by a lot. Do not let diabetes stop you! You can still do all the things your friends do and live a long and healthy life." FontSize="Medium" TextColor="Black"
                 />
                 <Button Text="START QUIZ"
                  BackgroundColor="DodgerBlue"
