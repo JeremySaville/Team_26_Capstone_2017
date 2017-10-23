@@ -10,6 +10,7 @@ using DiabetesApp.Models;
 using Rg.Plugins.Popup.Extensions;
 using Rg.Plugins.Popup.Services;
 using Rg.Plugins.Popup.Pages;
+using System.Threading.Tasks;
 
 namespace DiabetesApp
 {
@@ -73,9 +74,10 @@ namespace DiabetesApp
                 bool levelUp = false;
                 DateTime loginTime = DateTime.Now;
                 DateTime lastLogin = DateTime.Parse(gStats.lastLogin);
+                DateTime lastLoginNextDay = lastLogin.AddDays(1);
                 if (loginTime.Year == lastLogin.Year && loginTime.Month == lastLogin.Month && loginTime.Day == lastLogin.Day) {
                     //Nothing happens already logged in today
-                } else if (loginTime.Equals(lastLogin.AddDays(1))) {
+                } else if (loginTime.Year == lastLoginNextDay.Year && loginTime.Month == lastLoginNextDay.Month && loginTime.Day == lastLoginNextDay.Day) {
                     gStats.numLogins += 1;
                     gStats.lastLogin = loginTime.ToString("yyyy-MM-dd HH:mm:ss");
                     if(gStats.numLogins % 7 == 0) {
@@ -98,25 +100,37 @@ namespace DiabetesApp
                 string loginBadge = GamificationTools.getLoginBadge(gStats);
                 if (!loginBadge.Equals("")) {
                     gStats.badges += " " + loginBadge;
-                    await Navigation.PushPopupAsync(new Popups.BadgePopup(loginBadge));
-                    gStats = await GamificationTools.addCoinsFromBadge(gStats, loginBadge, auth);
+                    await Navigation.PushModalAsync(new Pages.NewBadgePage(loginBadge));
+                    string loginCoinBadge = GamificationTools.addCoinsFromBadge(ref gStats, loginBadge);
+                    if (!loginCoinBadge.Equals(""))
+                        await Navigation.PushModalAsync(new Pages.NewBadgePage(loginCoinBadge));
                 }
 
                 //Level up and gain any associated badges
                 if (levelUp) {
+                    Random r = new Random();
+                    int levelCoins = r.Next(100, 250);
+                    string levelCoinBadge = GamificationTools.AddCoins(ref gStats, levelCoins);
+                    if (!levelCoinBadge.Equals(""))
+                        await Navigation.PushModalAsync(new Pages.NewBadgePage(levelCoinBadge));
                     await DisplayAlert("Levelled Up!",
-                        "Advanced to Level " + gStats.level + "\n" + GamificationTools.getExpToNextLevel(gStats.level, gStats.xp) + " Experience to the next level", 
+                        "Advanced to Level " + gStats.level.ToString() + "\n" + GamificationTools.getExpToNextLevel(gStats.level, gStats.xp).ToString() + " Experience to the next level\n" +
+                        levelCoins + " coins received",
                         "OK");
                     string levelBadge = BadgeList.gotLevelBadge(gStats.level);
 
                     if (!levelBadge.Equals("")) {
                         gStats.badges += " " + levelBadge;
-                        await Navigation.PushPopupAsync(new Popups.BadgePopup(levelBadge));
-                        gStats = await GamificationTools.addCoinsFromBadge(gStats, levelBadge, auth);
+                        await Navigation.PushModalAsync(new Pages.NewBadgePage(levelBadge));
+                        string coinBadge = GamificationTools.addCoinsFromBadge(ref gStats, levelBadge);
+                        if (!coinBadge.Equals(""))
+                            await Navigation.PushModalAsync(new Pages.NewBadgePage(coinBadge));
                     }
                 }
                 await GamificationTools.updateGStatsDB(auth, gStats);
             }
+            while (Navigation.ModalStack.Count > 0)
+                await Task.Delay(100);
             Application.Current.MainPage = new TabbedContent(auth, gamified);
         }
     }

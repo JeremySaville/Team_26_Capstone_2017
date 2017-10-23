@@ -155,25 +155,37 @@ namespace DiabetesApp.Pages
                     string entryBadge = BadgeList.gotEntryBadge(gStats.logEntriesMade);
                     if (!entryBadge.Equals("")) {
                         gStats.badges += " " + entryBadge;
-                        await Navigation.PushPopupAsync(new Popups.BadgePopup(entryBadge));
-                        gStats = await GamificationTools.addCoinsFromBadge(gStats, entryBadge, auth);
+                        await Navigation.PushModalAsync(new NewBadgePage(entryBadge));
+                        string EntryCoinBadge = GamificationTools.addCoinsFromBadge(ref gStats, entryBadge);
+                        if (!EntryCoinBadge.Equals(""))
+                            await Navigation.PushModalAsync(new NewBadgePage(EntryCoinBadge));
                     }
 
                     //Handle any levels gained
                     if (levelUp) {
+                        Random r = new Random();
+                        int levelCoins = r.Next(100, 250);
+                        string levelCoinBadge = GamificationTools.AddCoins(ref gStats, levelCoins);
+                        if (!levelCoinBadge.Equals(""))
+                            await Navigation.PushModalAsync(new NewBadgePage(levelCoinBadge));
                         await DisplayAlert("Levelled Up!",
-                            "Advanced to Level " + gStats.level.ToString() + "\n" + GamificationTools.getExpToNextLevel(gStats.level, gStats.xp).ToString() + " Experience to the next level",
+                            "Advanced to Level " + gStats.level.ToString() + "\n" + GamificationTools.getExpToNextLevel(gStats.level, gStats.xp).ToString() + " Experience to the next level\n" +
+                            levelCoins + " coins received",
                             "OK");
                         string levelBadge = BadgeList.gotLevelBadge(gStats.level);
 
                         if (!levelBadge.Equals("")) {
                             gStats.badges += " " + levelBadge;
-                            await Navigation.PushPopupAsync(new Popups.BadgePopup(levelBadge));
-                            gStats = await GamificationTools.addCoinsFromBadge(gStats, levelBadge, auth);
+                            await Navigation.PushModalAsync(new NewBadgePage(levelBadge));
+                            string coinBadge = GamificationTools.addCoinsFromBadge(ref gStats, levelBadge);
+                            if (!coinBadge.Equals(""))
+                                await Navigation.PushModalAsync(new NewBadgePage(coinBadge));
                         }
                     }
                     await GamificationTools.updateGStatsDB(auth, gStats);
                 }
+                while (Navigation.ModalStack.Count > 1)
+                    await Task.Delay(100);
                 await Navigation.PopModalAsync();
             } else {
                 //Unable to post log, error message
