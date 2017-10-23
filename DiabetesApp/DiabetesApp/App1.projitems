@@ -139,17 +139,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\SettingsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\ViewBadgePage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\ViewEntryPage.xaml.cs">
-=======
     <Compile Include="$(MSBuildThisFileDirectory)Pages\NewBadgePage.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Pages\ViewBadgePage.xaml.cs">
->>>>>>> a96ed9bc9938ff2c92b2f6669ec9509c04c5b753
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Pages\ViewEntryPage.xaml.cs">

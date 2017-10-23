@@ -339,51 +339,6 @@
     <AndroidResource Include="Resources\Drawable\apple.png.png" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <AndroidResource Include="Resources\Drawable\bloodicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\burgericon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\clipboardicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\coneicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\everydayicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\glucometericon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\hearticon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\needleicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\questionicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\2bloodicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\2needleicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\appleicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\bicycleicon.png" />
-=======
-=======
->>>>>>> 0d9259108b810199bfe41e5545b95dc2162cf056
-=======
->>>>>>> a96ed9bc9938ff2c92b2f6669ec9509c04c5b753
     <AndroidResource Include="Resources\Drawable\b02_ramping_up_grey.png" />
   </ItemGroup>
   <ItemGroup>
@@ -454,13 +409,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\b01_starting_out_grey.png" />
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 0d9259108b810199bfe41e5545b95dc2162cf056
-=======
->>>>>>> 0d9259108b810199bfe41e5545b95dc2162cf056
-=======
->>>>>>> a96ed9bc9938ff2c92b2f6669ec9509c04c5b753
   </ItemGroup>
   <Import Project="..\DiabetesApp\DiabetesApp.projitems" Label="Shared" Condition="Exists('..\DiabetesApp\DiabetesApp.projitems')" />
   <Import Project="..\DiabetesApp\App1.projitems" Label="Shared" />

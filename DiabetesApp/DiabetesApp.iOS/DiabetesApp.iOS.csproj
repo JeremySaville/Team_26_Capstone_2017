@@ -362,51 +362,6 @@
     <BundleResource Include="Resources\apple.png.png" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <BundleResource Include="Resources\everydayicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\glucometericon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\hearticon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\needleicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\questionicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\2bloodicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\2needleicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\appleicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\bicycleicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\bloodicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\burgericon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\clipboardicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\coneicon.png" />
-=======
-=======
->>>>>>> 0d9259108b810199bfe41e5545b95dc2162cf056
-=======
->>>>>>> a96ed9bc9938ff2c92b2f6669ec9509c04c5b753
     <BundleResource Include="Resources\b02_ramping_up_grey.png" />
   </ItemGroup>
   <ItemGroup>
@@ -477,13 +432,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\b01_starting_out_grey.png" />
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 0d9259108b810199bfe41e5545b95dc2162cf056
-=======
->>>>>>> 0d9259108b810199bfe41e5545b95dc2162cf056
-=======
->>>>>>> a96ed9bc9938ff2c92b2f6669ec9509c04c5b753
   </ItemGroup>
   <Import Project="..\DiabetesApp\DiabetesApp.projitems" Label="Shared" Condition="Exists('..\DiabetesApp\DiabetesApp.projitems')" />
   <Import Project="..\DiabetesApp\App1.projitems" Label="Shared" />
