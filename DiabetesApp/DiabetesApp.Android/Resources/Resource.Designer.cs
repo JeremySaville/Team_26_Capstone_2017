@@ -2243,6 +2243,7 @@ namespace DiabetesApp.Droid
 			// aapt resource value: 0x7f020057
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			public const int avd_hide_password = 2130837591;
 			
 			// aapt resource value: 0x7f020058
@@ -3039,13 +3040,30 @@ namespace DiabetesApp.Droid
 			public const int b03_getting_there = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
+=======
+			public const int b01_starting_out_grey = 2130837591;
+			
+			// aapt resource value: 0x7f020058
+			public const int b02_ramping_up = 2130837592;
+			
+			// aapt resource value: 0x7f020059
+			public const int b02_ramping_up_grey = 2130837593;
+			
+			// aapt resource value: 0x7f02005a
+			public const int b03_getting_there = 2130837594;
+			
+			// aapt resource value: 0x7f02005b
+>>>>>>> a96ed9bc9938ff2c92b2f6669ec9509c04c5b753
 			public const int b03_getting_there_grey = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
 			public const int b04_skilled = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
+<<<<<<< HEAD
 >>>>>>> 0d9259108b810199bfe41e5545b95dc2162cf056
+=======
+>>>>>>> a96ed9bc9938ff2c92b2f6669ec9509c04c5b753
 			public const int b04_skilled_grey = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
@@ -3828,9 +3846,12 @@ namespace DiabetesApp.Droid
 			// aapt resource value: 0x7f02015f
 			public const int pancreas = 2130837855;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 0d9259108b810199bfe41e5545b95dc2162cf056
 =======
 >>>>>>> 0d9259108b810199bfe41e5545b95dc2162cf056
+=======
+>>>>>>> a96ed9bc9938ff2c92b2f6669ec9509c04c5b753
 			
 			static Drawable()
 			{

@@ -341,6 +341,7 @@
   <ItemGroup>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <AndroidResource Include="Resources\Drawable\bloodicon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -381,6 +382,8 @@
 =======
 =======
 >>>>>>> 0d9259108b810199bfe41e5545b95dc2162cf056
+=======
+>>>>>>> a96ed9bc9938ff2c92b2f6669ec9509c04c5b753
     <AndroidResource Include="Resources\Drawable\b02_ramping_up_grey.png" />
   </ItemGroup>
   <ItemGroup>
@@ -452,9 +455,12 @@
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\b01_starting_out_grey.png" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 0d9259108b810199bfe41e5545b95dc2162cf056
 =======
 >>>>>>> 0d9259108b810199bfe41e5545b95dc2162cf056
+=======
+>>>>>>> a96ed9bc9938ff2c92b2f6669ec9509c04c5b753
   </ItemGroup>
   <Import Project="..\DiabetesApp\DiabetesApp.projitems" Label="Shared" Condition="Exists('..\DiabetesApp\DiabetesApp.projitems')" />
   <Import Project="..\DiabetesApp\App1.projitems" Label="Shared" />

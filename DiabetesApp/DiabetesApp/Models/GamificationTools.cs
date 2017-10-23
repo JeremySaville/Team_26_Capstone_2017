@@ -185,17 +185,29 @@ namespace DiabetesApp.Models {
             return gStats;
         }
 
+        //Add coins and check whether a badge has been received
+        public static string AddCoins(ref GameStats gStats, int coins) {
+            string coinBadge = "";
+            if (coins >= BadgeList.coinsToNextBadge(gStats.coins) && BadgeList.coinsToNextBadge(gStats.coins) != -1) {
+                coinBadge = BadgeList.GetCoinBadge(gStats.coins);
+                gStats.coins += BadgeList.getCoins(coinBadge);
+                gStats.badges += " " + coinBadge;
+            }
+            gStats.coins += coins;
+            return coinBadge;
+        }
+
         //Add the coins that should be added from the badge received
-        public async static Task<GameStats> addCoinsFromBadge(GameStats gStats, string badgeKey, FirebaseAuthLink auth) {
+        public static string addCoinsFromBadge(ref GameStats gStats, string badgeKey) {
+            string coinBadge = "";
             int coinsToAdd = BadgeList.getCoins(badgeKey);
             if(coinsToAdd >= BadgeList.coinsToNextBadge(gStats.coins) && BadgeList.coinsToNextBadge(gStats.coins) != -1) {
-                string coinBadge = BadgeList.GetCoinBadge(gStats.coins);
-                gStats.coins += coinsToAdd + BadgeList.getCoins(coinBadge);
+                coinBadge = BadgeList.GetCoinBadge(gStats.coins);
+                gStats.coins += BadgeList.getCoins(coinBadge);
                 gStats.badges += " " + coinBadge;
-                await PopupNavigation.PushAsync(new Popups.BadgePopup(coinBadge));
             }
             gStats.coins += coinsToAdd;
-            return gStats;
+            return coinBadge;
         }
 
         //Return whether the login badge should be received
