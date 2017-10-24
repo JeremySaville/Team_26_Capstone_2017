@@ -433,6 +433,48 @@
   <ItemGroup>
     <BundleResource Include="Resources\b01_starting_out_grey.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\questionicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appleicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bicycleicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bloodicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\burgericon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\clipboardicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\coneicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\everydayicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\glucometericon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hearticon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\needleicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\needleicontwo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bloodicontwo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\nutrifacts.png" />
+  </ItemGroup>
   <Import Project="..\DiabetesApp\DiabetesApp.projitems" Label="Shared" Condition="Exists('..\DiabetesApp\DiabetesApp.projitems')" />
   <Import Project="..\DiabetesApp\App1.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
