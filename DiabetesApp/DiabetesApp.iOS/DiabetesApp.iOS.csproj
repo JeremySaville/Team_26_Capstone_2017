@@ -472,6 +472,9 @@
   <ItemGroup>
     <BundleResource Include="Resources\bloodicontwo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\nutrifacts.png" />
+  </ItemGroup>
   <Import Project="..\DiabetesApp\DiabetesApp.projitems" Label="Shared" Condition="Exists('..\DiabetesApp\DiabetesApp.projitems')" />
   <Import Project="..\DiabetesApp\App1.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

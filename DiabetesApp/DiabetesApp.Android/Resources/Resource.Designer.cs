@@ -3029,11 +3029,11 @@ namespace DiabetesApp.Droid
 			// aapt resource value: 0x7f02015d
 			public const int notification_icon_background = 2130837853;
 			
-			// aapt resource value: 0x7f02016d
-			public const int notification_template_icon_bg = 2130837869;
-			
 			// aapt resource value: 0x7f02016e
-			public const int notification_template_icon_low_bg = 2130837870;
+			public const int notification_template_icon_bg = 2130837870;
+			
+			// aapt resource value: 0x7f02016f
+			public const int notification_template_icon_low_bg = 2130837871;
 			
 			// aapt resource value: 0x7f02015e
 			public const int notification_tile_bg = 2130837854;
@@ -3042,43 +3042,46 @@ namespace DiabetesApp.Droid
 			public const int notify_panel_notification_icon_bg = 2130837855;
 			
 			// aapt resource value: 0x7f020160
-			public const int p01_default_profile = 2130837856;
+			public const int nutrifacts = 2130837856;
 			
 			// aapt resource value: 0x7f020161
-			public const int p02_knight = 2130837857;
+			public const int p01_default_profile = 2130837857;
 			
 			// aapt resource value: 0x7f020162
-			public const int p03_princess = 2130837858;
+			public const int p02_knight = 2130837858;
 			
 			// aapt resource value: 0x7f020163
-			public const int p04_ninja = 2130837859;
+			public const int p03_princess = 2130837859;
 			
 			// aapt resource value: 0x7f020164
-			public const int p05_wizard = 2130837860;
+			public const int p04_ninja = 2130837860;
 			
 			// aapt resource value: 0x7f020165
-			public const int p06_ranger = 2130837861;
+			public const int p05_wizard = 2130837861;
 			
 			// aapt resource value: 0x7f020166
-			public const int p07_monk = 2130837862;
+			public const int p06_ranger = 2130837862;
 			
 			// aapt resource value: 0x7f020167
-			public const int p08_heart = 2130837863;
+			public const int p07_monk = 2130837863;
 			
 			// aapt resource value: 0x7f020168
-			public const int p09_cat = 2130837864;
+			public const int p08_heart = 2130837864;
 			
 			// aapt resource value: 0x7f020169
-			public const int p10_dog = 2130837865;
+			public const int p09_cat = 2130837865;
 			
 			// aapt resource value: 0x7f02016a
-			public const int p11_cookie = 2130837866;
+			public const int p10_dog = 2130837866;
 			
 			// aapt resource value: 0x7f02016b
-			public const int pancreas = 2130837867;
+			public const int p11_cookie = 2130837867;
 			
 			// aapt resource value: 0x7f02016c
-			public const int questionicon = 2130837868;
+			public const int pancreas = 2130837868;
+			
+			// aapt resource value: 0x7f02016d
+			public const int questionicon = 2130837869;
 			
 			static Drawable()
 			{

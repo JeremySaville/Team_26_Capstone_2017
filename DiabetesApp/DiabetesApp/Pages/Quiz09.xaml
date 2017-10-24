@@ -22,6 +22,7 @@
                 </StackLayout>
                 <StackLayout x:Name="Question03" Margin="20,10,20,10">
                     <Label Text="You are reading the food label below to work out how much insulin to take with your lunch. If you had one serve of this food, how many carbohydrate exchanges are you eating?" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
+                    <Image Source="nutrifacts.png" HeightRequest="350"/>
                     <Button x:Name="Q3A1" Text="About 1.0" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
                     <Button x:Name="Q3A2" Text="About 1.4" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
                     <Button x:Name="Q3A3" Text="About 2.8" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question03"/>
