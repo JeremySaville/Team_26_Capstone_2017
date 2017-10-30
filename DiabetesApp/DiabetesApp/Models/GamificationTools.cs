@@ -103,13 +103,14 @@ namespace DiabetesApp.Models {
         }
 
         //update the database with the new value of gStats
-        public static async Task updateGStatsDB(FirebaseAuthLink auth, GameStats gStats) {
+        public static async Task<bool> updateGStatsDB(FirebaseAuthLink auth, GameStats gStats) {
             var firebase = new FirebaseClient(FirebaseURL);
             await firebase
                 .Child("gameStats")
                 .Child(auth.User.LocalId)
                 .WithAuth(auth.FirebaseToken)
                 .PutAsync(gStats);
+            return true;
         }
 
         //init stats for current user (new firebase database entry)

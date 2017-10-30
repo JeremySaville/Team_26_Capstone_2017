@@ -85,10 +85,10 @@ namespace DiabetesApp.Models {
             if (entries == entriesForBadge[1]) return "b09_scribe";
             if (entries == entriesForBadge[2]) return "b10_research_assistant";
             if (entries == entriesForBadge[3]) return "b11_researcher_intern";
-            if (entries == entriesForBadge[5]) return "b12_novice_researcher";
-            if (entries == entriesForBadge[6]) return "b13_apprentice_researcher";
-            if (entries == entriesForBadge[7]) return "b14_adept_researcher";
-            if (entries == entriesForBadge[8]) return "b15_professional_researcher";
+            if (entries == entriesForBadge[4]) return "b12_novice_researcher";
+            if (entries == entriesForBadge[5]) return "b13_apprentice_researcher";
+            if (entries == entriesForBadge[6]) return "b14_adept_researcher";
+            if (entries == entriesForBadge[7]) return "b15_professional_researcher";
             return "";
         }
     }
