@@ -5,10 +5,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
-                <Label Text="Lesson 9 - Diet" FontSize="Large" TextColor="Black"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                />
+                <Label Text="Lesson 9 - Diet" Style="{StaticResource titleStyle}" />
+                
                 <Label Text="Managing diabetes however is not simply about insulin and blood sugars. Diet is also a very important part. " FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="Young people with diabetes are told again and again – manage your diabetes or else you will have complications like kidney damage. It's really hard to wrap your head around this logic, since these long-term problems feel like they are too far off to matter." FontSize="Medium" TextColor="Black"

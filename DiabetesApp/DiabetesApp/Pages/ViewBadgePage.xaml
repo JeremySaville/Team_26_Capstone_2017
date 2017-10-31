@@ -16,7 +16,7 @@
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="badgeName" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" FontSize="Large" Margin="5" HorizontalOptions="Center" TextColor="{StaticResource mainTextColour}"/>
+            <Label x:Name="badgeName" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Style="{StaticResource titleStyle}"/>
             <Image x:Name="badgeImage" Grid.Column="1" Grid.Row="1"/>
             <Label x:Name="badgeDescription" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" Margin="10" HorizontalOptions="Center" TextColor="{StaticResource mainTextColour}"/>
             <Button x:Name="backButton" Grid.Column="1" Grid.Row="4" Text="Back" Clicked="onClick_backButton" HorizontalOptions="Center" Style="{StaticResource buttonStyle}"/>

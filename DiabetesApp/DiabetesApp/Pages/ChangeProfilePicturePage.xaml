@@ -13,7 +13,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Text="Change Profile Picture" FontSize="Large" TextColor="{StaticResource mainTextColour}" HorizontalOptions="Center" Margin="5"/>
+            <Label Grid.Row="0" Text="Change Profile Picture" Style="{StaticResource titleStyle}"/>
             <Button Grid.Row="1" x:Name="cancel" Text="Cancel" Clicked="onClick_cancelChange" Style="{StaticResource buttonStyle}"/>
             <ScrollView Grid.Row="2">
                 <ListView x:Name="profileList" ItemTapped="onClick_profileItem" IsPullToRefreshEnabled="False">

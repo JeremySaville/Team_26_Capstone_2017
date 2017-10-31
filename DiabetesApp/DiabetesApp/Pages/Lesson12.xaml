@@ -5,10 +5,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
-                <Label Text="Lesson 12 - Barriers" FontSize="Large" TextColor="Black"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                />
+                <Label Text="Lesson 12 - Barriers" Style="{StaticResource titleStyle}"/>
+                
                 <Label Text="Who can I contact for help?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"

@@ -5,11 +5,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
-                <Label Text="Lesson 5 - Insulin Part 2" FontSize="Large" TextColor="Black"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
+                <Label Text="Lesson 5 - Insulin Part 2" Style="{StaticResource titleStyle}"/>
+                
                 <Label Text="Do I need to measure my blood sugar before I give insulin?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"

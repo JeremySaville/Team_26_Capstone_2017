@@ -5,11 +5,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
-                <Label Text="Lesson 7 - Hyperglycaemia" FontSize="Large" TextColor="Black"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
+                <Label Text="Lesson 7 - Hyperglycaemia" Style="{StaticResource titleStyle}"/>
+                
                 <Label Text="Hyperglycemia is the medical term for high blood glucose levels. Blood levels above 7mmol/L are considered high. All young adults with diabetes have some blood glucose levels above the target range. This is not a problem if the majority are within the target range." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="Does hyperglycaemia make you feel sick?" FontSize="Medium" TextColor="Black"

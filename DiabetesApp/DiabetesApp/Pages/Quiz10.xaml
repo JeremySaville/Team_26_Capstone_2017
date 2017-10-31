@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="10">
-                <Label Text="Lesson 10 Quiz Questions" TextColor="Black" FontAttributes="Bold" FontSize="Large"/>
+                <Label Text="Lesson 10 Quiz Questions" Style="{StaticResource titleStyle}"/>
                 <StackLayout x:Name="Question01" Margin="20,10,20,10">
                     <Label Text="What effect does moderate exercise usually have on BSLs?" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
                     <Button x:Name="Q1A1" Text="It causes insulin to stop working" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>

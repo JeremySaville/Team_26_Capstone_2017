@@ -17,8 +17,7 @@
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Text="Congratulations! New badge earned" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" FontSize="Large" Margin="5, 10, 5, 20" 
-                   HorizontalOptions="Center" TextColor="{StaticResource mainTextColour}"/>
+            <Label Text="Congratulations! New badge earned" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Style="{StaticResource titleStyle}"/>
             <Label x:Name="badgeName" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" FontSize="Large" Margin="5" HorizontalOptions="Center" TextColor="{StaticResource mainTextColour}"/>
             <Image x:Name="badgeImage" Grid.Column="1" Grid.Row="2"/>
             <Label x:Name="badgeDescription" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Margin="10" HorizontalOptions="Center" TextColor="{StaticResource mainTextColour}"/>

@@ -6,7 +6,7 @@
              Style="{StaticResource pageStyle}">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Logbook" FontSize="Large" TextColor="{StaticResource mainTextColour}" Margin="10" HorizontalOptions="Center"/>
+            <Label Text="Logbook" Style="{StaticResource titleStyle}"/>
             <Button x:Name="createButton" Text="Create Entry" Clicked="onClick_createEntry" Style="{StaticResource buttonStyle}"/>
             <Label Text="Logbook Entries" TextColor="{StaticResource mainTextColour}" FontSize="Medium" Margin="10"/>
             <StackLayout Orientation="Horizontal">

@@ -5,10 +5,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
-                <Label Text="Lesson 13 - Everyday Life" FontSize="Large" TextColor="Black"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                />
+                <Label Text="Lesson 13 - Everyday Life" Style="{StaticResource titleStyle}"/>
+                
                 <Label Text="Managing diabetes can make everyday tasks more challenging. Some good examples and strategies to manage them are discussed here." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="Work" FontSize="Medium" TextColor="Black"

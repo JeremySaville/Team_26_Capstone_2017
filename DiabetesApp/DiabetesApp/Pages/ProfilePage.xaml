@@ -20,6 +20,7 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -29,15 +30,16 @@
                     </Grid.ColumnDefinitions>
                     <Image x:Name="profileImage" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" WidthRequest="100"/>
                     <Label x:Name="level" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Margin="5" TextColor="{StaticResource mainTextColour}"/>
-                    <Label x:Name="editButton" Grid.Column="3" Grid.Row="0" Text="EDIT" FontAttributes="Bold" VerticalOptions="Center" Margin="0, 0, 20, 0" TextColor="{StaticResource accentColour}">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="onClick_editButton"/>
-                        </Label.GestureRecognizers>
-                    </Label>
                     <Label x:Name="profileXP" Grid.Column="1" Grid.Row="1" Margin="5" TextColor="{StaticResource mainTextColour}"/>
                     <ProgressBar x:Name="progress" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" 
                                  Margin="0, 0, 15, 0" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" HeightRequest="15" />
                     <Label x:Name="coins" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Margin="5" TextColor="{StaticResource mainTextColour}"/>
+                    <Label x:Name="editButton" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" Text="CHANGE PROFILE PICTURE" FontAttributes="Bold" 
+                           VerticalOptions="Center" Margin="10, 0, 20, 0" TextColor="{StaticResource accentColour}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="onClick_editButton"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                 </Grid>
             </StackLayout>
             <ScrollView Orientation="Vertical" Grid.Row="1" Grid.Column="0">

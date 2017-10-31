@@ -5,11 +5,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
-                <Label Text="Lesson 3 - Monitoring Diabetes" FontSize="Large" TextColor="Black"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
+                <Label Text="Lesson 3 - Monitoring Diabetes" Style="{StaticResource titleStyle}"/>
+                
                 <Label Text="Diabetes is monitored by checking blood sugar levels. This is done both by you at home, and by the doctor when you visit them. The term Blood Glucose Level (or Blood Sugar Level) is often abbreviated to BSL or BGL. These terms all mean the same thing. Recording other factors such as exercise, carbs and insulin also play a role in monitoring." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="Why do we check BSL?" FontSize="Medium" TextColor="Black"

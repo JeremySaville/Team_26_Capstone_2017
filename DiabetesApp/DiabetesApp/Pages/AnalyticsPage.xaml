@@ -8,7 +8,7 @@
              Style="{StaticResource pageStyle}">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Analytics" FontSize="Large" HorizontalOptions="Center" TextColor="{StaticResource mainTextColour}" Margin="20, 10, 20, 10"/>
+            <Label Text="Analytics" Style="{StaticResource titleStyle}"/>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>

@@ -23,6 +23,13 @@
                 <Setter Property="BarBackgroundColor" Value="{StaticResource accentColour}"/>
                 <Setter Property="BarTextColor" Value="{StaticResource accentTextColour}"/>
             </Style>
+            <Style x:Key="titleStyle" TargetType="Label">
+                <Setter Property="Margin" Value="20, 5, 20, 5"/>
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="{StaticResource mainTextColour}"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

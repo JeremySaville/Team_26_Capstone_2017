@@ -5,11 +5,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
-                <Label Text="Lesson 1 - Diabetes The Disease" FontSize="Large" TextColor="Black"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
+                <Label Text="Lesson 1 - Diabetes The Disease" Style="{StaticResource titleStyle}"/>
 
                 <Image Source="apple.png" HeightRequest="60"/>
 

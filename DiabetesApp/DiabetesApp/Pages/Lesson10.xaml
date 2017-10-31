@@ -5,10 +5,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
-                <Label Text="Lesson 10 - Exercise" FontSize="Large" TextColor="Black"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                />
+                <Label Text="Lesson 10 - Exercise" Style="{StaticResource titleStyle}"/>
+                
                 <Label Text="We all know that physical activity is good for us. But many young people with type 1 find it makes managing their sugars difficult. As a result, many young people lose confidence and stop playing sport or exercising." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="It is sometimes easy to forget that if you don't exercise it can make it harder to control your blood sugars. It also stops you from gaining weight, which can make it much harder to manage your diabetes." FontSize="Medium" TextColor="Black"

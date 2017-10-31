@@ -5,11 +5,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
-                <Label Text="Lesson 2 - Treating Diabetes" FontSize="Large" TextColor="Black"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
+                <Label Text="Lesson 2 - Treating Diabetes" Style="{StaticResource titleStyle}"/>
+                
                 <Label Text="When you are diagnosed with Diabetes you will have it for the rest of your life - but the good news is that it can be treated!" FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="What is the key to diabetes treatment?" FontSize="Medium" TextColor="Black"

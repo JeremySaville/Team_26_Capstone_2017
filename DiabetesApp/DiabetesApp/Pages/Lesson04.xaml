@@ -5,11 +5,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
-                <Label Text="Lesson 4 - Insulin Part 1" FontSize="Large" TextColor="Black"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
+                <Label Text="Lesson 4 - Insulin Part 1" Style="{StaticResource titleStyle}"/>
+                
                 <Label Text="If you have Type 1 Diabetes, you need to use insulin every day. Insulin is given as an injection – which means inserting a needle just under the skin." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="What types of insulin are there?" FontSize="Medium" TextColor="Black"

@@ -5,11 +5,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
-                <Label Text="Lesson 6 - Avoiding Hypoglycaemia" FontSize="Large" TextColor="Black"
-                 HorizontalOptions="Center"
-                 VerticalOptions="Center"
-                 Margin="20"
-                />
+                <Label Text="Lesson 6 - Avoiding Hypoglycaemia" Style="{StaticResource titleStyle}"/>
+                
                 <Label Text="Hypoglycaemia – also called a hypo – is the medical word for low blood glucose levels. BSLs below 4mmol/L are considered low." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="Why are hypos bad?" FontSize="Medium" TextColor="Black"
