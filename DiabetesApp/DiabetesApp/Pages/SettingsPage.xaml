@@ -7,6 +7,8 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Settings" Style="{StaticResource titleStyle}"/>
+            <Label Text="Contact Us" FontSize="Medium" Margin="20, 30, 10, 10" TextColor="{StaticResource mainTextColour}"/>
+            <Label Text="Email: a.deacon@uq.edu.au" Margin="20, 0, 20, 50" TextColor="{StaticResource mainTextColour}"/>
             <Button x:Name="logout" Text="Log Out" Style="{StaticResource buttonStyle}" Clicked="onClick_logoutButton"/>
         </StackLayout>
     </ContentPage.Content>

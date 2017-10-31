@@ -38,7 +38,10 @@ namespace DiabetesApp.Pages {
                 FirebaseClient firebase = new FirebaseClient(FirebaseURL);
 
                 bool delete = await DisplayAlert("Delete Log?", "Are you sure you want to delete this log entry?", "Yes", "Cancel");
-                if (!delete) return;
+                if (!delete) {
+                    enableButtons();
+                    return;
+                }
 
                 await firebase
                     .Child("logbooks")
