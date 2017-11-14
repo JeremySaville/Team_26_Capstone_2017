@@ -8,7 +8,6 @@
         <StackLayout>
             <Label Text="Logbook" Style="{StaticResource titleStyle}"/>
             <Button x:Name="createButton" Text="Create Entry" Clicked="onClick_createEntry" Style="{StaticResource buttonStyle}"/>
-            <Label Text="Logbook Entries" TextColor="{StaticResource mainTextColour}" FontSize="Medium" Margin="10"/>
             <StackLayout Orientation="Horizontal">
                 <StackLayout Orientation="Vertical">
                     <Label Text="Start Date:" Margin="10, 10, 10, 0" TextColor="{StaticResource mainTextColour}"/>
@@ -20,15 +19,13 @@
                 </StackLayout>
                 <Button x:Name="searchButton" Clicked="onClick_searchEntries" Text="Search" Style="{StaticResource buttonStyle}"/>
             </StackLayout>
-            <ScrollView>
-                <ListView x:Name="logsList" ItemTapped="onClick_logEntryListItem" IsPullToRefreshEnabled="True" Refreshing="onRefresh">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextCell Text="{Binding title}" Detail="{Binding description}"/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </ScrollView>
+            <ListView x:Name="logsList" ItemTapped="onClick_logEntryListItem" IsPullToRefreshEnabled="True" Refreshing="onRefresh" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding title}" Detail="{Binding description}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
