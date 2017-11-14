@@ -20,5 +20,6 @@ namespace DiabetesApp.DataTypes
         public string currentProfilePic { get; set; }
         public string profilePictures { get; set; }
         public string badges { get; set; }
+        public int lifetimeCoins { get; set; }
     }
 }

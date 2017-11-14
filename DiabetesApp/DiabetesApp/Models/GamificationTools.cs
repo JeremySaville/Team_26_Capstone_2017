@@ -131,6 +131,7 @@ namespace DiabetesApp.Models {
             newStats.currentProfilePic = "p01_default_profile";
             newStats.profilePictures = "p01_default_profile";
             newStats.badges = "none";
+            newStats.lifetimeCoins = 0;
 
             await updateGStatsDB(auth, newStats);
             return newStats;
@@ -189,26 +190,21 @@ namespace DiabetesApp.Models {
         //Add coins and check whether a badge has been received
         public static string AddCoins(ref GameStats gStats, int coins) {
             string coinBadge = "";
-            if (coins >= BadgeList.coinsToNextBadge(gStats.coins) && BadgeList.coinsToNextBadge(gStats.coins) != -1) {
-                coinBadge = BadgeList.GetCoinBadge(gStats.coins);
+            if (coins >= BadgeList.coinsToNextBadge(gStats.lifetimeCoins) && BadgeList.coinsToNextBadge(gStats.lifetimeCoins) != -1) {
+                coinBadge = BadgeList.GetCoinBadge(gStats.lifetimeCoins);
                 gStats.coins += BadgeList.getCoins(coinBadge);
+                gStats.lifetimeCoins += BadgeList.getCoins(coinBadge);
                 gStats.badges += " " + coinBadge;
             }
             gStats.coins += coins;
+            gStats.lifetimeCoins += coins;
             return coinBadge;
         }
 
         //Add the coins that should be added from the badge received
         public static string addCoinsFromBadge(ref GameStats gStats, string badgeKey) {
-            string coinBadge = "";
             int coinsToAdd = BadgeList.getCoins(badgeKey);
-            if(coinsToAdd >= BadgeList.coinsToNextBadge(gStats.coins) && BadgeList.coinsToNextBadge(gStats.coins) != -1) {
-                coinBadge = BadgeList.GetCoinBadge(gStats.coins);
-                gStats.coins += BadgeList.getCoins(coinBadge);
-                gStats.badges += " " + coinBadge;
-            }
-            gStats.coins += coinsToAdd;
-            return coinBadge;
+            return AddCoins(ref gStats, coinsToAdd);
         }
 
         //Return whether the login badge should be received
