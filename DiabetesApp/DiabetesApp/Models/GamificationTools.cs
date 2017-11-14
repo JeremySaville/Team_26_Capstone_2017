@@ -24,7 +24,8 @@ namespace DiabetesApp.Models {
         public const int xpForLaterLevels = 1500;
 
         public static readonly string[] profileImageList = new string[] { "p01_default_profile", "p02_knight", "p03_princess", "p04_ninja", "p05_wizard",
-                                                            "p06_ranger", "p07_monk", "p08_heart", "p09_cat", "p10_dog", "p11_cookie" };
+                                                            "p06_ranger", "p07_monk", "p08_heart", "p09_cat", "p10_dog", "p11_cookie", "p12_fish",
+                                                            "p13_bard", "p14_fox", "p15_wing", "p16_eiffel_tower", "p17_leaning_tower_of_pisa" };
 
         //Add stats for a new log entry
         public static void addLogEntryStats(ref GameStats gStats, DateTime entryTime) {
@@ -219,6 +220,15 @@ namespace DiabetesApp.Models {
             if (gStats.numLogins == 30 && !gStats.badges.Contains("b19_dedicated")) return "b19_dedicated";
 
             return "";
+        }
+
+        //Return whether a badge should be received for the current quiz
+        public static string getQuizBadge(GameStats gStats, int score, string badge) {
+            if(score == 3 && !gStats.badges.Contains(badge)) {
+                return badge;
+            } else {
+                return "";
+            }
         }
     }
 }

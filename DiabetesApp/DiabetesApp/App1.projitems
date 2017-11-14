@@ -9,8 +9,6 @@
     <Import_RootNamespace>DiabetesApp</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)DataTypes\Educational.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DataTypes\Badges.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataTypes\GameStats.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataTypes\LogbookEntry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\BadgeList.cs" />

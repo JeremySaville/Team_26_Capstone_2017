@@ -7,13 +7,19 @@ namespace DiabetesApp.Models {
                             "b05_rugged", "b06_hardened", "b07_experienced", "b08_pen_and_paper", "b09_scribe", "b10_research_assistant",
                             "b11_researcher_intern", "b12_novice_researcher", "b13_apprentice_researcher", "b14_adept_researcher",
                             "b15_professional_researcher", "b16_habitual", "b17_enthusiastic", "b18_committed", "b19_dedicated", "b20_entrepreneur",
-                            "b21_money_man", "b22_investor", "b23_banker", "b24_ceo" };
+                            "b21_money_man", "b22_investor", "b23_banker", "b24_ceo", "b25_student", "b26_learner", "b27_capable", "b28_bright",
+                            "b29_intelligent", "b30_accomplished", "b31_sharp", "b32_knowledgeable", "b33_clever", "b34_smart", "b35_brainy",
+                            "b36_intellectual", "b37_graduate" };
         private static string[] bDescriptions = { "Reached Level 2", "Reached Level 5", "Reached Level 10", "Reached Level 20", "Reached Level 30", "Reached Level 40", "Reached Level 50",
                                                 "Made your first log entry!", "Made 10 log entries", "Made 20 log entries", "Made 50 log entries", "Made 100 log entries",
                                                 "Made 200 log entries", "Made 500 log entries", "Made 1,000 log entries!", "Logged in 5 days in a row", "Logged in 10 days in a row",
                                                 "Logged in 20 days in a row", "Logged in 30 days in a row", "Collected 500 Coins", "Collected 1,000 Coins", "Collected 2,000 Coins",
-                                                "Collected 5,000 Coins", "Collected 10,000 Coins"};
-        private static int[] bCoins = { 20, 50, 100, 200, 200, 200, 300, 10, 20, 50, 75, 100, 100, 150, 200, 10, 20, 30, 50, 10, 50, 100, 150, 200 };
+                                                "Collected 5,000 Coins", "Collected 10,000 Coins", "Got full marks for quiz 1", "Got full marks for quiz 2", "Got full marks for quiz 3",
+                                                "Got full marks for quiz 4", "Got full marks for quiz 5", "Got full marks for quiz 6", "Got full marks for quiz 7",
+                                                "Got full marks for quiz 8", "Got full marks for quiz 9", "Got full marks for quiz 10", "Got full marks for quiz 11",
+                                                "Got full marks for quiz 12", "Got full marks for quiz 13" };
+        private static int[] bCoins = { 20, 50, 100, 200, 200, 200, 300, 10, 20, 50, 75, 100, 100, 150, 200, 10, 20, 30, 50, 10, 50, 100, 150, 200, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
+                                        50, 50, 50};
         private static int[] coinsForBadge = { 500, 1000, 2000, 5000, 10000 };
         private static int[] entriesForBadge = { 1, 10, 20, 50, 100, 200, 500, 1000 };
 
