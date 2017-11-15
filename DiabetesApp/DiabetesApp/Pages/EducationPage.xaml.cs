@@ -14,11 +14,13 @@ namespace DiabetesApp.Pages
 	public partial class EducationPage : ContentPage
 	{
         FirebaseAuthLink auth;
+        bool gamified;
 
-		public EducationPage (FirebaseAuthLink auth)
+		public EducationPage (FirebaseAuthLink auth, bool gamified)
 		{
             InitializeComponent ();
             this.auth = auth;
+            this.gamified = gamified;
             
             // lesson 1 tapgesturerecogniser
             var lesson01Image = new TapGestureRecognizer();
@@ -89,133 +91,67 @@ namespace DiabetesApp.Pages
 
         void lesson01Image_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Lesson01(auth));
+            Navigation.PushModalAsync(new Lesson01(auth, gamified));
         }
 
         void lesson02Image_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Lesson02(auth));
+            Navigation.PushModalAsync(new Lesson02(auth, gamified));
         }
 
         void lesson03Image_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Lesson03(auth));
+            Navigation.PushModalAsync(new Lesson03(auth, gamified));
         }
 
         void lesson04Image_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Lesson04(auth));
+            Navigation.PushModalAsync(new Lesson04(auth, gamified));
         }
 
         void lesson05Image_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Lesson05(auth));
+            Navigation.PushModalAsync(new Lesson05(auth, gamified));
         }
 
         void lesson06Image_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Lesson06(auth));
+            Navigation.PushModalAsync(new Lesson06(auth, gamified));
         }
 
         void lesson07Image_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Lesson07(auth));
+            Navigation.PushModalAsync(new Lesson07(auth, gamified));
         }
 
         void lesson08Image_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Lesson08(auth));
+            Navigation.PushModalAsync(new Lesson08(auth, gamified));
         }
 
         void lesson09Image_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Lesson09(auth));
+            Navigation.PushModalAsync(new Lesson09(auth, gamified));
         }
 
         void lesson10Image_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Lesson10(auth));
+            Navigation.PushModalAsync(new Lesson10(auth, gamified));
         }
 
         void lesson11Image_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Lesson11(auth));
+            Navigation.PushModalAsync(new Lesson11(auth, gamified));
         }
 
         void lesson12Image_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Lesson12(auth));
+            Navigation.PushModalAsync(new Lesson12(auth, gamified));
         }
 
         void lesson13Image_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Lesson13(auth));
+            Navigation.PushModalAsync(new Lesson13(auth, gamified));
         }
-
-        //void onClick_Lesson01(object sender, EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new Lesson01(auth));
-        //}
-
-        //void onClick_Lesson02(object sender, EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new Lesson02(auth));
-        //}
-
-        //void onClick_Lesson03(object sender, EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new Lesson03(auth));
-        //}
-
-        //void onClick_Lesson04(object sender, EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new Lesson04(auth));
-        //}
-
-        //void onClick_Lesson05(object sender, EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new Lesson05(auth));
-        //}
-
-        //void onClick_Lesson06(object sender, EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new Lesson06(auth));
-        //}
-
-        //void onClick_Lesson07(object sender, EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new Lesson07(auth));
-        //}
-
-        //void onClick_Lesson08(object sender, EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new Lesson08(auth));
-        //}
-
-        //void onClick_Lesson09(object sender, EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new Lesson09(auth));
-        //}
-
-        //void onClick_Lesson10(object sender, EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new Lesson10(auth));
-        //}
-
-        //void onClick_Lesson11(object sender, EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new Lesson11(auth));
-        //}
-
-        //void onClick_Lesson12(object sender, EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new Lesson12(auth));
-        //}
-
-        //void onClick_Lesson13(object sender, EventArgs e)
-        //{
-        //    Navigation.PushModalAsync(new Lesson13(auth));
-        //}
-
     }
 }

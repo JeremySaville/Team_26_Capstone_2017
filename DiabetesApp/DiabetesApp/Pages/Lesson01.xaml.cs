@@ -14,16 +14,18 @@ namespace DiabetesApp.Pages
     public partial class Lesson01 : ContentPage
     {
         FirebaseAuthLink auth;
+        bool gamified;
 
-        public Lesson01(FirebaseAuthLink auth)
+        public Lesson01(FirebaseAuthLink auth, bool gamified)
         {
             InitializeComponent();
             this.auth = auth;
+            this.gamified = gamified;
         }
 
         void onClick_Quiz01(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new Quiz01(auth));
+            Navigation.PushModalAsync(new Quiz01(auth, gamified));
         }
 
         void onClick_Back(object sender, EventArgs e)

@@ -24,7 +24,8 @@ namespace DiabetesApp.Models {
         public const int xpForLaterLevels = 1500;
 
         public static readonly string[] profileImageList = new string[] { "p01_default_profile", "p02_knight", "p03_princess", "p04_ninja", "p05_wizard",
-                                                            "p06_ranger", "p07_monk", "p08_heart", "p09_cat", "p10_dog", "p11_cookie" };
+                                                            "p06_ranger", "p07_monk", "p08_heart", "p09_cat", "p10_dog", "p11_cookie", "p12_fish",
+                                                            "p13_bard", "p14_fox", "p15_wing", "p16_eiffel_tower", "p17_leaning_tower_of_pisa" };
 
         //Add stats for a new log entry
         public static void addLogEntryStats(ref GameStats gStats, DateTime entryTime) {
@@ -131,6 +132,7 @@ namespace DiabetesApp.Models {
             newStats.currentProfilePic = "p01_default_profile";
             newStats.profilePictures = "p01_default_profile";
             newStats.badges = "none";
+            newStats.lifetimeCoins = 0;
 
             await updateGStatsDB(auth, newStats);
             return newStats;
@@ -189,26 +191,21 @@ namespace DiabetesApp.Models {
         //Add coins and check whether a badge has been received
         public static string AddCoins(ref GameStats gStats, int coins) {
             string coinBadge = "";
-            if (coins >= BadgeList.coinsToNextBadge(gStats.coins) && BadgeList.coinsToNextBadge(gStats.coins) != -1) {
-                coinBadge = BadgeList.GetCoinBadge(gStats.coins);
+            if (coins >= BadgeList.coinsToNextBadge(gStats.lifetimeCoins) && BadgeList.coinsToNextBadge(gStats.lifetimeCoins) != -1) {
+                coinBadge = BadgeList.GetCoinBadge(gStats.lifetimeCoins);
                 gStats.coins += BadgeList.getCoins(coinBadge);
+                gStats.lifetimeCoins += BadgeList.getCoins(coinBadge);
                 gStats.badges += " " + coinBadge;
             }
             gStats.coins += coins;
+            gStats.lifetimeCoins += coins;
             return coinBadge;
         }
 
         //Add the coins that should be added from the badge received
         public static string addCoinsFromBadge(ref GameStats gStats, string badgeKey) {
-            string coinBadge = "";
             int coinsToAdd = BadgeList.getCoins(badgeKey);
-            if(coinsToAdd >= BadgeList.coinsToNextBadge(gStats.coins) && BadgeList.coinsToNextBadge(gStats.coins) != -1) {
-                coinBadge = BadgeList.GetCoinBadge(gStats.coins);
-                gStats.coins += BadgeList.getCoins(coinBadge);
-                gStats.badges += " " + coinBadge;
-            }
-            gStats.coins += coinsToAdd;
-            return coinBadge;
+            return AddCoins(ref gStats, coinsToAdd);
         }
 
         //Return whether the login badge should be received
@@ -223,6 +220,15 @@ namespace DiabetesApp.Models {
             if (gStats.numLogins == 30 && !gStats.badges.Contains("b19_dedicated")) return "b19_dedicated";
 
             return "";
+        }
+
+        //Return whether a badge should be received for the current quiz
+        public static string getQuizBadge(GameStats gStats, int score, string badge) {
+            if(score == 3 && !gStats.badges.Contains(badge)) {
+                return badge;
+            } else {
+                return "";
+            }
         }
     }
 }
