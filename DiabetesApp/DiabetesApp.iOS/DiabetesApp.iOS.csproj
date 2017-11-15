@@ -571,6 +571,54 @@
   <ItemGroup>
     <BundleResource Include="Resources\b37_graduate_grey.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sandwich.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\anatomy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\glucom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\inject.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\katie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\novorapid.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\nutritiontable.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\target.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tired.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\abdominalpain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\andrew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\beerwine.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bloodfinger.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\carbtable.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\foodtable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\exercise.jpg.png" />
+  </ItemGroup>
   <Import Project="..\DiabetesApp\DiabetesApp.projitems" Label="Shared" Condition="Exists('..\DiabetesApp\DiabetesApp.projitems')" />
   <Import Project="..\DiabetesApp\App1.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

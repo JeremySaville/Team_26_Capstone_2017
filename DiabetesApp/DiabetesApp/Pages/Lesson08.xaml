@@ -7,7 +7,7 @@
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
                 <Label Text="Lesson 8 - Problem Solving" Style="{StaticResource titleStyle}"/>
-                
+                <Image Source="apple.png" HeightRequest="60"/>
                 <Label Text="Everyone who has diabetes eventually has some problems with their BSLs. In this topic, we will consider some examples of how common diabetes problems can be solved." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="Katies Story" FontSize="Medium" TextColor="Black"
@@ -17,6 +17,7 @@
                 />
                 <Label Text="Katie has type one diabetes and lives in Brisbane. Usually, her blood glucose is fairly well controlled. However, she sometimes has problems with low blood sugar." FontSize="Medium" TextColor="Black"
                 />
+                <Image Source="katie.png" HeightRequest="180"/>
                 <Label Text="For example, she recently went on a weekend trip with friends. While she was away, her blood sugar went so low that she felt like she was going to pass out. When she drank some cordial, she felt better and her blood sugar rose from 2.4 to 6.2mmol/L." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="There are many possible causes of low blood sugar. When you are trying to figure out which cause applies to you, it helps to have good records of your monitoring results. This is why you need to use a logbook, or an app like this one, to record your blood sugar readings." FontSize="Medium" TextColor="Black"
@@ -40,6 +41,7 @@
                 />
                 <Label Text="Andrew has type one diabetes and lives in Logan. Unfortunately, Andrew's BSLs have not been well controlled this month. His blood sugar is sometimes too high and sometimes too low." FontSize="Medium" TextColor="Black"
                 />
+                <Image Source="andrew.png" HeightRequest="180"/>
                 <Label Text="When Andrew looks at his logbook he sees that his BSLs are often too high in the morning and then too low around dinner time. This makes it very difficult for him to calculate the correct insulin dose." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="At his next doctor's appointment, Andrew asked the doctor what might be happening. After looking at his logbook the doctor told Andrew his insulin dose with meals might be too high for him! " FontSize="Medium" TextColor="Black"
@@ -57,6 +59,7 @@
                 />
                 <Label Text="• Checking your BSL if you feel sick, skip a meal, or before you take any insulin." FontSize="Medium" TextColor="Black"
                 />
+                <Image Source="apple.png" HeightRequest="60"/>
                 <Button Text="START QUIZ"
                  BackgroundColor="DodgerBlue"
                  TextColor="White"

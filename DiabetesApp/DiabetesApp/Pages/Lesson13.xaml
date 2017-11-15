@@ -7,7 +7,7 @@
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
                 <Label Text="Lesson 13 - Everyday Life" Style="{StaticResource titleStyle}"/>
-                
+                <Image Source="apple.png" HeightRequest="60"/>
                 <Label Text="Managing diabetes can make everyday tasks more challenging. Some good examples and strategies to manage them are discussed here." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="Work" FontSize="Medium" TextColor="Black"
@@ -24,6 +24,7 @@
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                 />
+                <Image Source="school.jpg" HeightRequest="180"/>
                 <Label Text="Young people with diabetes can participate fully in school life." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="However, there are aspects of school life that can affect diabetes, for example sports, break times, school camps and exams. Because of this, it's important that your school knows you have diabetes. " FontSize="Medium" TextColor="Black"
@@ -44,6 +45,7 @@
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
                 />
+                <Image Source="car.jpg" HeightRequest="180"/>
                 <Label Text="If you have diabetes you can drive if your diabetes is well managed. The main concern is the possibility of having a hypo while driving." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="Hypoglycaemia can impair your ability to drive safely. Ensure that you always have a carbohydrate snack available in your car." FontSize="Medium" TextColor="Black"
@@ -58,6 +60,8 @@
                 />
                 <Label Text="Drinking alcohol can be a problem for young people with Type 1 diabetes as it increases the risk of having a hypo." FontSize="Medium" TextColor="Black"
                 />
+                <Image Source="beerwine.jpg" HeightRequest="180"/>
+                       
                 <Label Text="When you are out drinking with friends it is often easy to forget to eat as well. This is another risk for having a hypo." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="There are some important things to remember about drinking..." FontSize="Medium" TextColor="Black"
@@ -78,7 +82,8 @@
                 />
                 <Label Text="• Wear a medic alert bracelet when you do drink so people know you are diabetic in an emergency." FontSize="Medium" TextColor="Black"
                 />
-
+                <Image Source="apple.png" HeightRequest="60"/>
+                    
                 <Button Text="START QUIZ"
                  BackgroundColor="DodgerBlue"
                  TextColor="White"

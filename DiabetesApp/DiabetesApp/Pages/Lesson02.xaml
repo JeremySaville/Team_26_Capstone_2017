@@ -7,7 +7,9 @@
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
                 <Label Text="Lesson 2 - Treating Diabetes" Style="{StaticResource titleStyle}"/>
-                
+
+                <Image Source="apple.png" HeightRequest="60"/>
+
                 <Label Text="When you are diagnosed with Diabetes you will have it for the rest of your life - but the good news is that it can be treated!" FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="What is the key to diabetes treatment?" FontSize="Medium" TextColor="Black"
@@ -22,6 +24,7 @@
                  VerticalOptions="Center"
                  Margin="20"
                 />
+                <Image Source="glucom.png" HeightRequest="180"/> 
                 <Label Text="Your doctor or diabetes educator will teach you how to check your blood sugar with a glucose meter (glucometer) at home . Most people have to do this a few times every day." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="How do I keep my blood sugar in the right range?" FontSize="Medium" TextColor="Black"
@@ -47,6 +50,7 @@
                 />
                 <Label Text="When blood glucose is too high too often, it can harm blood vessels and cause heart attacks. It can also damage organs in the body and cause blindness, kidney failure, or loss of toes or feet. The good news is that when you take care of your diabetes, you can reduce your chance by having these problems by a lot. Do not let diabetes stop you! You can still do all the things your friends do and live a long and healthy life." FontSize="Medium" TextColor="Black"
                 />
+                <Image Source="apple.png" HeightRequest="60"/>
                 <Button Text="START QUIZ"
                  BackgroundColor="DodgerBlue"
                  TextColor="White"

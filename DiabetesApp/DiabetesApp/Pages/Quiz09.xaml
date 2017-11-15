@@ -7,6 +7,8 @@
         <ScrollView>
             <StackLayout Spacing="10">
                 <Label Text="Lesson 9 Quiz Questions" Style="{StaticResource titleStyle}"/>
+                <Label Text="You are reading the food label below to work out how much insulin to take with your lunch. If you had one serve of this food, how many carbohydrate exchanges are you eating?" TextColor="Black" FontSize="Large"/>
+                <Image Source="nutritiontable.jpg" HeightRequest="200"/>
                 <StackLayout x:Name="Question01" Margin="20,10,20,10">
                     <Label Text="Carbohydrates are found in which foods?" TextColor="Black" FontSize="Large" FontAttributes="Bold"/>
                     <Button x:Name="Q1A1" Text="Fruit, milk, starchy vegetables" BackgroundColor="DodgerBlue" TextColor="White" FontAttributes="Bold" FontSize="Small" Clicked="onClick_Question01"/>

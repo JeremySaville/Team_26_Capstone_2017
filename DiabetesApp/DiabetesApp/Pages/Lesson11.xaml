@@ -7,11 +7,12 @@
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
                 <Label Text="Lesson 11 - Goal Setting" Style="{StaticResource titleStyle}"/>
-                
+                <Image Source="apple.png" HeightRequest="60"/>
                 <Label Text="Having goals is useful for young diabetics with busy lives. It is often difficult to think about what your BSLs, insulin doses and test results mean when you see them." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="Goals make it easier to understand the impact of these individual numbers, as you can see if you are meeting the targets that are important to you." FontSize="Medium" TextColor="Black"
                 />
+                <Image Source="target.jpg" HeightRequest="180"/>
                 <Label Text="What diabetes related goals are worthwhile setting?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
@@ -88,8 +89,7 @@
                 />
                 <Label Text="HbA1c is a test of what average blood sugar has been over the last 10 weeks. Keeping this below 7% (or 7.5% if you are under 18) is a very good goal to have. If your HbA1c is low, it means your diabetes control is excellent." FontSize="Medium" TextColor="Black"
                 />
-
-
+                <Image Source="apple.png" HeightRequest="60"/>
                 <Button Text="START QUIZ"
                  BackgroundColor="DodgerBlue"
                  TextColor="White"

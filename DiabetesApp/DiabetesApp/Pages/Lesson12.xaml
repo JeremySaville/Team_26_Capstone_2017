@@ -7,7 +7,7 @@
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
                 <Label Text="Lesson 12 - Barriers" Style="{StaticResource titleStyle}"/>
-                
+                <Image Source="apple.png" HeightRequest="60"/>
                 <Label Text="Who can I contact for help?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
@@ -34,6 +34,7 @@
                 />
                 <Label Text="It is always helpful to think about these things and try to identify your individual barriers. Often your doctor will be able to give you some advice at your next appointment – no-matter what the issue is." FontSize="Medium" TextColor="Black"
                 />
+                <Image Source="mountain.jpg" HeightRequest="180"/>
                 <Label Text="What do others say?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
@@ -96,6 +97,7 @@
                 />
                 <Label Text="If BSLs are low (below 5mmol/L), you may reduce long acting insulin by up to 50%. Quick acting insulin should not be taken if you are not eating and drinking things containing carbohydrates. If you can't keep your sugars in the normal range, or you have ketones, you need to ring the hospital." FontSize="Medium" TextColor="Black"
                 />
+                <Image Source="apple.png" HeightRequest="60"/>
                 <Button Text="START QUIZ"
                  BackgroundColor="DodgerBlue"
                  TextColor="White"

@@ -7,7 +7,7 @@
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
                 <Label Text="Lesson 6 - Avoiding Hypoglycaemia" Style="{StaticResource titleStyle}"/>
-                
+                <Image Source="apple.png" HeightRequest="60"/>
                 <Label Text="Hypoglycaemia – also called a hypo – is the medical word for low blood glucose levels. BSLs below 4mmol/L are considered low." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="Why are hypos bad?" FontSize="Medium" TextColor="Black"
@@ -59,6 +59,7 @@
                 />
                 <Label Text="Common times for hypos are just before lunch and during and after sport. They can also happen during the night if your blood sugar is too low before you go to bed." FontSize="Medium" TextColor="Black"
                 />
+                <Image Source="hypo.jpg" HeightRequest="180"/>
                 <Label Text="What should I do if I think I'm having a hypo?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
@@ -112,6 +113,7 @@
                 />
                 <Label Text="If you are worried, eat something sweet. Tell somebody in case it doesn't improve. Write down what happened in your logbook. And don't forget to always carry hypo foods with you" FontSize="Medium" TextColor="Black"
                 />
+                <Image Source="apple.png" HeightRequest="60"/>
                 <Button Text="START QUIZ"
                  BackgroundColor="DodgerBlue"
                  TextColor="White"

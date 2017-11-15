@@ -8,6 +8,8 @@
             <StackLayout Padding="20,30,20,30">
                 <Label Text="Lesson 4 - Insulin Part 1" Style="{StaticResource titleStyle}"/>
                 
+                <Image Source="apple.png" HeightRequest="60"/>
+                
                 <Label Text="If you have Type 1 Diabetes, you need to use insulin every day. Insulin is given as an injection – which means inserting a needle just under the skin." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="What types of insulin are there?" FontSize="Medium" TextColor="Black"
@@ -15,6 +17,7 @@
                  VerticalOptions="Center"
                  Margin="20"
                 />
+                <Image Source="novorapid.jpg" HeightRequest="180"/>
                 <Label Text="There are two main types of insulin: quick acting (QA), and long acting insulin. Quick acting insulin is absorbed quickly into the body. It is taken just before or just after a meal so that your body can absorb glucose. It can also be taken when blood sugar is too high. Novorapid is the name used for rapid acting insulin, but yours might have a different name on the box." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="Long acting insulin is absorbed slower. This insulin is used to ensure there is always a small amount of insulin in your system so glucose can be absorbed by your cells. Long acting insulin is also called background insulin (BI)." FontSize="Medium" TextColor="Black"
@@ -44,6 +47,7 @@
                  VerticalOptions="Center"
                  Margin="20"
                 />
+                <Image Source="sandwich.jpg" HeightRequest="180"/>
                 <Label Text="Carbohydrate is the name given to all the sugar in the food we eat. When carbohydrates are eaten they are broken down into glucose (a.k.a. sugar) by the digestive system. The glucose is then absorbed into the bloodstream and this increases blood sugar levels." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="Many foods contain carbs. The amount of carbs can be found by looking at the back of the box you bought the food in. If there is no information on the back of the box, you could look it up on the internet!" FontSize="Medium" TextColor="Black"
@@ -51,6 +55,7 @@
                 <Label Text="15 grams (15g) of carbohydrates is referred to as 1 carbohydrate exchange." FontSize="Medium" TextColor="Black"
                 Margin="20"
                 />
+                <Image Source="apple.png" HeightRequest="60"/>
                 <Button Text="START QUIZ"
                  BackgroundColor="DodgerBlue"
                  TextColor="White"

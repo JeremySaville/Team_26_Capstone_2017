@@ -7,7 +7,7 @@
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
                 <Label Text="Lesson 9 - Diet" Style="{StaticResource titleStyle}" />
-                
+                <Image Source="apple.png" HeightRequest="60"/>
                 <Label Text="Managing diabetes however is not simply about insulin and blood sugars. Diet is also a very important part. " FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="Young people with diabetes are told again and again – manage your diabetes or else you will have complications like kidney damage. It's really hard to wrap your head around this logic, since these long-term problems feel like they are too far off to matter." FontSize="Medium" TextColor="Black"
@@ -28,6 +28,7 @@
                  VerticalOptions="Center"
                  Margin="20"
                 />
+                <Image Source="carbtable.jpg" HeightRequest="180"/>
                 <Label Text="Foods supply us with energy (calories, kilojoules). We obtain nutrition through the foods we eat. To keep your body running, you need three main types of nutrients..." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="• Carbohydrate" FontSize="Medium" TextColor="Black"
@@ -83,6 +84,7 @@
                 />
                 <Label Text="Below are some examples of what 1 carbohydrate exchange (15g) can look like" FontSize="Medium" TextColor="Black"
                 />
+                <Image Source="foodtable.png" HeightRequest="200"/>
                 <Label Text="What foods contain carbohydrates?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
@@ -122,6 +124,7 @@
                 />
                 <Label Text="If you have more carbohydrate with a meal than you planned, consider taking more insulin. Nutritious, high fibre, low fat foods (they are absorbed slower - generally fruits, wholegrains and dairy) will make you feel less hungry, and help prevent glucose highs and glucose lows." FontSize="Medium" TextColor="Black"
                 />
+                <Image Source="apple.png" HeightRequest="60"/>
                 <Button Text="START QUIZ"
                  BackgroundColor="DodgerBlue"
                  TextColor="White"

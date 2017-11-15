@@ -7,7 +7,7 @@
         <ScrollView>
             <StackLayout Padding="20,30,20,30">
                 <Label Text="Lesson 7 - Hyperglycaemia" Style="{StaticResource titleStyle}"/>
-                
+                <Image Source="apple.png" HeightRequest="60"/>
                 <Label Text="Hyperglycemia is the medical term for high blood glucose levels. Blood levels above 7mmol/L are considered high. All young adults with diabetes have some blood glucose levels above the target range. This is not a problem if the majority are within the target range." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="Does hyperglycaemia make you feel sick?" FontSize="Medium" TextColor="Black"
@@ -62,6 +62,7 @@
                 />
                 <Label Text="If hyperglycemia is left untreated ketoacidosis may develop. Ketoacidosis (DKA) is a serious condition associated with illness or very high blood glucose levels in type 1 diabetes. It develops gradually over hours or days. It is a sign of insufficient insulin, and without enough insulin, the body's cells cannot use glucose for energy." FontSize="Medium" TextColor="Black"
                 />
+                <Image Source="hyper.png" HeightRequest="180"/>
                 <Label Text="To make up for this, the body begins to burn fat for energy instead. This leads to accumulation of dangerous chemical substances in the blood called ketones, which also appear in the urine. Signs of DKA include..." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="• Rapid breathing" FontSize="Medium" TextColor="Black"
@@ -94,6 +95,7 @@
                 />
                 <Label Text="If you don't have lots of ketones, keep checking your BSL and ketones every 2 hours until your BSL is below 7. Do not exercise if your BSL is above 15mmol/L or ketones are present." FontSize="Medium" TextColor="Black"
                 />
+                <Image Source="apple.png" HeightRequest="60"/>
                 <Button Text="START QUIZ"
                  BackgroundColor="DodgerBlue"
                  TextColor="White"
