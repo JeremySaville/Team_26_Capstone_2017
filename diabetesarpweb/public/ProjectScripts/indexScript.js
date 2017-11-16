@@ -176,7 +176,7 @@ function initApp() {
     document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
     document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
     document.getElementById('next').addEventListener('click', stepForward, false);
-    document.getElementById('admin').addEventListener('click', function () { window.location = 'adminLogin.html'; });
+    //document.getElementById('admin').addEventListener('click', function () { window.location = 'adminLogin.html'; });
     
 }
 
