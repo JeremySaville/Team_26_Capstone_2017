@@ -60,8 +60,7 @@
                 />
                 <Label Text="Drinking alcohol can be a problem for young people with Type 1 diabetes as it increases the risk of having a hypo." FontSize="Medium" TextColor="Black"
                 />
-                <Image Source="beerwine.jpg" HeightRequest="180"/>
-                       
+
                 <Label Text="When you are out drinking with friends it is often easy to forget to eat as well. This is another risk for having a hypo." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="There are some important things to remember about drinking..." FontSize="Medium" TextColor="Black"

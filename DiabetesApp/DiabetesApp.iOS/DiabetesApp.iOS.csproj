@@ -593,12 +593,6 @@
     <BundleResource Include="Resources\nutritiontable.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\target.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\tired.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\abdominalpain.png" />
   </ItemGroup>
   <ItemGroup>
@@ -618,6 +612,12 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\exercise.jpg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mountain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\target.png" />
   </ItemGroup>
   <Import Project="..\DiabetesApp\DiabetesApp.projitems" Label="Shared" Condition="Exists('..\DiabetesApp\DiabetesApp.projitems')" />
   <Import Project="..\DiabetesApp\App1.projitems" Label="Shared" />

@@ -12,7 +12,7 @@
                 />
                 <Label Text="Goals make it easier to understand the impact of these individual numbers, as you can see if you are meeting the targets that are important to you." FontSize="Medium" TextColor="Black"
                 />
-                <Image Source="target.jpg" HeightRequest="180"/>
+                <Image Source="target.png" HeightRequest="180"/>
                 <Label Text="What diabetes related goals are worthwhile setting?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"

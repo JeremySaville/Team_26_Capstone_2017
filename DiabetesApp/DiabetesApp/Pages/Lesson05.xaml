@@ -33,7 +33,7 @@
                  VerticalOptions="Center"
                  Margin="20"
                 />
-                <Image Source="anatomy.png" HeightRequest="180"/>
+                <Image Source="anatomy.png" HeightRequest="220"/>
                 <Label Text="Insulin is injected into the fat layer just under your skin. You can inject insulin into your abdomen, buttocks and upper thigh. If insulin is injected anywhere else, it gets absorbed too fast. It is important you use a different spot each time you inject insulin so your skin doesn't get lumpy or scarred." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="How do I inject insulin?" FontSize="Medium" TextColor="Black"

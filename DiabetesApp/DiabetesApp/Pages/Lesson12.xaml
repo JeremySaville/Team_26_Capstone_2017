@@ -34,7 +34,7 @@
                 />
                 <Label Text="It is always helpful to think about these things and try to identify your individual barriers. Often your doctor will be able to give you some advice at your next appointment – no-matter what the issue is." FontSize="Medium" TextColor="Black"
                 />
-                <Image Source="mountain.jpg" HeightRequest="180"/>
+                <Image Source="mountain.png" HeightRequest="180"/>
                 <Label Text="What do others say?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"

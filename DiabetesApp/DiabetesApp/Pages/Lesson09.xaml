@@ -28,7 +28,7 @@
                  VerticalOptions="Center"
                  Margin="20"
                 />
-                <Image Source="carbtable.jpg" HeightRequest="180"/>
+                <Image Source="carbtable.jpg" HeightRequest="220"/>
                 <Label Text="Foods supply us with energy (calories, kilojoules). We obtain nutrition through the foods we eat. To keep your body running, you need three main types of nutrients..." FontSize="Medium" TextColor="Black"
                 />
                 <Label Text="• Carbohydrate" FontSize="Medium" TextColor="Black"
@@ -84,7 +84,7 @@
                 />
                 <Label Text="Below are some examples of what 1 carbohydrate exchange (15g) can look like" FontSize="Medium" TextColor="Black"
                 />
-                <Image Source="foodtable.png" HeightRequest="200"/>
+                <Image Source="foodtable.png" HeightRequest="220"/>
                 <Label Text="What foods contain carbohydrates?" FontSize="Medium" TextColor="Black"
                  HorizontalOptions="Center"
                  VerticalOptions="Center"
