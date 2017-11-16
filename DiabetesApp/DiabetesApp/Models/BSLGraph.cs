@@ -36,7 +36,7 @@ namespace DiabetesApp.Models {
             lowBSSeries.Points.Add(new DataPoint(earliestDate, 4));
             lowBSSeries.Color = OxyColor.FromRgb(255, 128, 128);
 
-            var lineSeries = new LineSeries();
+            var lineSeries = new LineSeries() { MarkerType = MarkerType.Circle, MarkerSize = 3, MarkerStroke = OxyColor.FromRgb(0, 61, 153) };
             foreach(LogbookListItem l in logs) {
                 if (l.entryTime.CompareTo(start) >= 0 && l.entryTime.CompareTo(end) <= 0)
                     lineSeries.Points.Add(new DataPoint(DateTimeAxis.ToDouble(l.entryTime), l.BG));
@@ -47,7 +47,11 @@ namespace DiabetesApp.Models {
             model.Series.Add(lowBSSeries);
             model.Series.Add(lineSeries);
 
-            model.Axes.Add(new DateTimeAxis { Position = AxisPosition.Bottom, AbsoluteMinimum = earliestDate, AbsoluteMaximum = latestDate, StringFormat = "MMM d" });
+            if (start.Day.Equals(end.Day) && start.Month.Equals(end.Month) && start.Year.Equals(end.Year)) {
+                model.Axes.Add(new DateTimeAxis { Position = AxisPosition.Bottom, AbsoluteMinimum = earliestDate, AbsoluteMaximum = latestDate, StringFormat = "hhtt" });
+            } else {
+                model.Axes.Add(new DateTimeAxis { Position = AxisPosition.Bottom, AbsoluteMinimum = earliestDate, AbsoluteMaximum = latestDate, StringFormat = "MMM d" });
+            }
             model.Axes.Add(new LinearAxis { Position = AxisPosition.Left, AbsoluteMinimum = 0, AbsoluteMaximum = 14, Title = "Blood Glucose" });
             model.PlotAreaBackground = OxyColor.FromRgb(255, 255, 255);
             return model;
