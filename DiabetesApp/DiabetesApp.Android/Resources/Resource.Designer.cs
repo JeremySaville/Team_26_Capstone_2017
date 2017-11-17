@@ -2246,8 +2246,26 @@ namespace DiabetesApp.Droid
 			// aapt resource value: 0x7f020058
 			public const int avd_hide_password = 2130837592;
 			
+			// aapt resource value: 0x7f0201a4
+			public const int avd_hide_password_1 = 2130837924;
+			
+			// aapt resource value: 0x7f0201a5
+			public const int avd_hide_password_2 = 2130837925;
+			
+			// aapt resource value: 0x7f0201a6
+			public const int avd_hide_password_3 = 2130837926;
+			
 			// aapt resource value: 0x7f020059
 			public const int avd_show_password = 2130837593;
+			
+			// aapt resource value: 0x7f0201a7
+			public const int avd_show_password_1 = 2130837927;
+			
+			// aapt resource value: 0x7f0201a8
+			public const int avd_show_password_2 = 2130837928;
+			
+			// aapt resource value: 0x7f0201a9
+			public const int avd_show_password_3 = 2130837929;
 			
 			// aapt resource value: 0x7f02005a
 			public const int b01_starting_out = 2130837594;

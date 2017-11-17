@@ -108,7 +108,7 @@ namespace DiabetesApp.Pages
                 GameStats gStats = await GamificationTools.getGStats(auth);
                 while (gStats == null) ;
 
-                string quizBadge = GamificationTools.getQuizBadge(gStats, score, "b26_learned");
+                string quizBadge = GamificationTools.getQuizBadge(gStats, score, "b26_learner");
                 if (!quizBadge.Equals("")) {
                     gStats.badges += " " + quizBadge;
                     await Navigation.PushModalAsync(new NewBadgePage(quizBadge));
