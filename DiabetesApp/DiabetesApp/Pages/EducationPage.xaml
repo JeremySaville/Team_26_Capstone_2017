@@ -11,13 +11,15 @@
                 <Label Text= "Hello, and welcome to the learning section! There are 13 lessons to read through, and at the end of each lesson there will be a mini quiz" TextColor="Black" FontSize="Medium"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
-                       HorizontalTextAlignment="Center"/>
+                       HorizontalTextAlignment="Center"
+                       Margin="0,0,0,10"/>
                 
-                <Label Text= "Participation in this section will earn you coins. Don't panic if you get a question wrong, you will have endless chances to answer correctly." TextColor="Black" FontSize="Medium"
+                
+                <!--<Label Text= "Participation in this section will earn you coins. Don't panic if you get a question wrong, you will have endless chances to answer correctly." TextColor="Black" FontSize="Medium"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
                        HorizontalTextAlignment="Center"
-                       Margin="0, 0, 0, 10"/>
+                       Margin="0, 0, 0, 10"/>-->
             
             <Grid>
                 <Grid.RowDefinitions>
