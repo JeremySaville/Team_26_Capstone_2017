@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.xamarin.diabetesapp.android">
-	<uses-sdk android:minSdkVersion="15" />
-	<application android:label="DiabetesApp.Android"></application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.xamarin.diabetesapp.android" android:versionCode="1" android:versionName="1.0">
+	<uses-sdk android:minSdkVersion="21" />
+	<application android:icon="@drawable/Icon" android:label="Diabetes App Research Project"></application>
 </manifest>
