@@ -27,7 +27,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>com.xamarin.diabetesapp.ios</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon-60@2x.png</string>
@@ -52,5 +52,11 @@
 	<array>
 		<string>Fonts/ChelseaMarket-Regular.ttf</string>
 	</array>
+	<key>CFBundleName</key>
+	<string>Diabetes Logbook</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.1</string>
+	<key>UIMainStoryboardFile</key>
+	<string>LaunchScreen</string>
 </dict>
 </plist>
